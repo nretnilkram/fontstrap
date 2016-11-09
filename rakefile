@@ -1,0 +1,41 @@
+# encoding: utf-8
+# frozen_string_literal: true
+
+require 'fileutils'
+
+namespace :sass do
+  task create_dirs: :cleanup do
+    FileUtils.mkdir_p('dist/fonts') unless Dir.exist? 'dist/fonts'
+    FileUtils.mkdir_p('dist/images') unless Dir.exist? 'dist/images'
+    FileUtils.mkdir_p('dist/js') unless Dir.exist? 'dist/js'
+    FileUtils.mkdir_p('dist/css') unless Dir.exist? 'dist/css'
+  end
+
+  task :move_static_content do
+    FileUtils.copy_entry 'assets/fonts', 'dist/fonts/' if Dir.exist? 'assets/fonts'
+    FileUtils.copy_entry 'assets/images', 'dist/images/' if Dir.exist? 'assets/images'
+    FileUtils.copy_entry 'assets/javascripts', 'dist/js/' if Dir.exist? 'assets/javascripts'
+  end
+
+  task setup: [:create_dirs, :move_static_content] do
+    puts 'Setup Complete'
+  end
+
+  task :cleanup do
+    FileUtils.remove_dir 'dist' if Dir.exist? 'dist'
+  end
+
+  task reset: [:cleanup, :setup, :compile]
+
+  task compile: :setup do
+    system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.min.css --style compressed'
+  end
+
+  task compile_full: :setup do
+    system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.css'
+  end
+
+  task watch: :setup do
+    system 'sass --watch assets/stylesheets/_full.scss:dist/css/fontstrap.min.css --style compressed'
+  end
+end
