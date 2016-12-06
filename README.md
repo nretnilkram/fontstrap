@@ -20,3 +20,23 @@
 rake sass:compile
 ```
 4. Use
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Page Title</title>
+
+	<link type="text/css" href="dist/css/fontstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<script type="text/javascript" src="dist/js/fontstrap.js"></script>
+
+</body>
+</html>
+```
