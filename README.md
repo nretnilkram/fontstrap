@@ -19,7 +19,9 @@
 ```
 rake sass:compile
 ```
-4. Use
+4. Use:
+	** copy over entire dist directory to root of site. The fontstrap.js file will pull in all other required js files from dist/js.
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +29,7 @@ rake sass:compile
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-
 	<title>Fontstrap</title>
-
 	<link type="text/css" href="dist/css/fontstrap.min.css" rel="stylesheet">
 
 </head>
