@@ -27,4 +27,5 @@ loadScript("dist/js/jquery-3.1.1.min.js", function(){
             $(function () {$('[data-toggle="tooltip"]').tooltip();});
         });
     });
+    loadScript("dist/js/lodash.min.js", function(){ });
 });

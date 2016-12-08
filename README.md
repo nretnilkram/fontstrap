@@ -1,15 +1,16 @@
 # fontstrap
 
-### Fontstrap is a combination project where the lastest Bootstrap and Fontawesome versions are combined into a single css file using their SASS versions.  Currently those versions are:
+### Fontstrap is a combination project where the lastest Bootstrap and Fontawesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
 * Bootstrap: 4.0.0-alpha.5
 * FontAwesome: 4.7.0
 
-### Javascript files are also loaded from a single file.  Those versions are:
+### Some neccessary and useful javascript files are also loaded from a single file. Those versions are:
 
 * JQuery: 3.1.1
 * Tether: 1.3.3
 * Bootstrap: 4.0.0-alpha.5
+* Lodash 4.17.2
 
 ### How to Customize:
 
@@ -32,13 +33,12 @@ rake sass:compile
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Fontstrap</title>
+	<link rel="icon" href="dist/img/favicon.png">
 	<link type="text/css" href="dist/css/fontstrap.min.css" rel="stylesheet">
-
 </head>
 <body>
-
+<!-- Insert HTML code here. -->
 	<script type="text/javascript" src="dist/js/fontstrap.js"></script>
-
 </body>
 </html>
 ```

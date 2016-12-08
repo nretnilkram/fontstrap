@@ -18,7 +18,7 @@ function loadScript(url, callback){
     }
 
     script.src = url;
-    document.getElementsByTagName("body")[0].appendChild(script);
+    document.getElementsByTagName("head")[0].appendChild(script);
 }
 
 loadScript("dist/js/jquery-3.1.1.min.js", function(){ 
@@ -27,4 +27,5 @@ loadScript("dist/js/jquery-3.1.1.min.js", function(){
             $(function () {$('[data-toggle="tooltip"]').tooltip();});
         });
     });
+    loadScript("dist/js/lodash.min.js", function(){ });
 });

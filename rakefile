@@ -6,14 +6,14 @@ require 'fileutils'
 namespace :sass do
   task create_dirs: :cleanup do
     FileUtils.mkdir_p('dist/fonts') unless Dir.exist? 'dist/fonts'
-    FileUtils.mkdir_p('dist/images') unless Dir.exist? 'dist/images'
+    FileUtils.mkdir_p('dist/img') unless Dir.exist? 'dist/img'
     FileUtils.mkdir_p('dist/js') unless Dir.exist? 'dist/js'
     FileUtils.mkdir_p('dist/css') unless Dir.exist? 'dist/css'
   end
 
   task :move_static_content do
     FileUtils.copy_entry 'assets/fonts', 'dist/fonts/' if Dir.exist? 'assets/fonts'
-    FileUtils.copy_entry 'assets/images', 'dist/images/' if Dir.exist? 'assets/images'
+    FileUtils.copy_entry 'assets/images', 'dist/img/' if Dir.exist? 'assets/images'
     FileUtils.copy_entry 'assets/javascripts', 'dist/js/' if Dir.exist? 'assets/javascripts'
   end
 
