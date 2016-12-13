@@ -21,11 +21,14 @@ function loadScript(url, callback){
     document.getElementsByTagName("head")[0].appendChild(script);
 }
 
-loadScript("dist/js/jquery-3.1.1.min.js", function(){ 
-    loadScript("dist/js/tether.min.js", function(){ 
-        loadScript("dist/js/bootstrap.min.js", function(){
+var currSrc = document.currentScript.src,
+    jsPath = currSrc.substr(0, currSrc.lastIndexOf("/")) + '/'; // "dist/js/";
+
+loadScript(jsPath + "jquery-3.1.1.min.js", function(){
+    loadScript(jsPath + "tether.min.js", function(){
+        loadScript(jsPath + "bootstrap.min.js", function(){
             $(function () {$('[data-toggle="tooltip"]').tooltip();});
         });
     });
-    loadScript("dist/js/lodash.min.js", function(){ });
+    loadScript(jsPath + "lodash.min.js", function(){ });
 });
