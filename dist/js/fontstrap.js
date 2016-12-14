@@ -3,7 +3,7 @@ function loadScript(url, callback){
     var script = document.createElement("script");
     script.type = "text/javascript";
 
-    if (script.readyState){  //IE
+    if (script.readyState){ //IE
         script.onreadystatechange = function(){
             if (script.readyState == "loaded" ||
                     script.readyState == "complete"){
@@ -11,7 +11,7 @@ function loadScript(url, callback){
                 callback();
             }
         };
-    } else {  //Others
+    } else { //Others
         script.onload = function(){
             callback();
         };
@@ -31,4 +31,5 @@ loadScript(jsPath + "jquery-3.1.1.min.js", function(){
         });
     });
     loadScript(jsPath + "lodash.min.js", function(){ });
+    loadScript(jsPath + "tools.js", function(){ });
 });
