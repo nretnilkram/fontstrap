@@ -1,16 +1,16 @@
-# fontstrap v1.0.4
+# fontstrap v1.1.0
 
 ### Fontstrap is a combination project where the lastest Bootstrap and Fontawesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
-* Bootstrap: 4.0.0-alpha.5
+* Bootstrap: 4.0.0-alpha.6
 * FontAwesome: 4.7.0
 
 ### Some neccessary and useful javascript files are also loaded from a single file. Those versions are:
 
 * JQuery: 3.1.1
 * Tether: 1.3.3
-* Bootstrap: 4.0.0-alpha.5
-* Lodash 4.17.2
+* Bootstrap: 4.0.0-alpha.6
+* Lodash 4.17.4
 
 ### How to Customize:
 
@@ -37,7 +37,7 @@ rake sass:compile
 	<link type="text/css" href="dist/css/fontstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<!-- Insert HTML code here. -->
+	<!-- Insert HTML code here. -->
 	<script type="text/javascript" src="dist/js/fontstrap.js"></script>
 </body>
 </html>
