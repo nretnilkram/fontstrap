@@ -24,12 +24,14 @@ function loadScript(url, callback){
 var currSrc = document.currentScript.src,
     jsPath = currSrc.substr(0, currSrc.lastIndexOf("/")) + '/'; // "dist/js/";
 
-loadScript(jsPath + "jquery-3.1.1.min.js", function(){
-    loadScript(jsPath + "tether.min.js", function(){
-        loadScript(jsPath + "bootstrap.min.js", function(){
-            $(function () {$('[data-toggle="tooltip"]').tooltip();});
-        });
+if (!window.jQuery) { // Only load jQuery if it is not already loaded 
+    loadScript(jsPath + "jquery-3.1.1.min.js", function(){ });
+}
+
+loadScript(jsPath + "tether.min.js", function(){
+    loadScript(jsPath + "bootstrap.min.js", function(){
+        $(function () {$('[data-toggle="tooltip"]').tooltip();});
     });
-    loadScript(jsPath + "lodash.min.js", function(){ });
-    loadScript(jsPath + "tools.js", function(){ });
 });
+loadScript(jsPath + "lodash.min.js", function(){ });
+loadScript(jsPath + "tools.js", function(){ });
