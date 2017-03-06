@@ -32,7 +32,7 @@ $panel-danger-border:         $state-danger-border;
 $panel-danger-heading-bg:     $state-danger-bg;
 
 .panel {
-  margin-bottom: $line-height-base;
+  margin-bottom: $line-height-base * 1rem;
   background-color: $panel-bg;
   border: 1px solid transparent;
   border-radius: $panel-border-radius;
