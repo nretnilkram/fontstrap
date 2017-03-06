@@ -37,5 +37,5 @@ var loadRequirements = function () {
 if (!window.jQuery) { // Only load jQuery if it is not already loaded 
     loadScript(jsPath + "jquery-3.1.1.min.js", function(){ loadRequirements(); });
 } else {
-    loadResources();
+    loadRequirements();
 }
