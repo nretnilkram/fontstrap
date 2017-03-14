@@ -15,3 +15,18 @@ jQuery.fn.fullScreenBackground = function(settings){
 		$(this).css({'background-image': "url('" + img + "')"});
 	});
 };
+
+
+jQuery.fn.keepAtTop = function(settings){
+
+  var options = jQuery.extend({
+  }, settings);
+
+	var $window = $(window),
+	$el = $(this),
+	elTop = $el.offset().top;
+
+	$window.scroll(function() {
+		$el.toggleClass('sticky', $window.scrollTop() > elTop);
+	});
+};

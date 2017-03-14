@@ -3,7 +3,7 @@
   height: 100vh;
   background-color: transparent;
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   padding: 10vh 10vw;
 
@@ -19,8 +19,10 @@
   }
 
   &.dark {
-    .title {
-      color: white;
-    }
+    color: white;
+  }
+
+  @include media-breakpoint-up(sm) {
+    background-attachment: fixed;
   }
 }
