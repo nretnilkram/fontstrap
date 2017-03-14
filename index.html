@@ -12,10 +12,13 @@
 	<link type="text/css" href="dist/css/fontstrap.min.css" rel="stylesheet">
 
 	<style>
-		
+
 	</style>
 </head>
 <body>
+	<div class="full-screen-bg dark" data-image="dist/img/boot.jpg">
+		<div class="title">Full Screen Dark Background Title</div>
+	</div>
 	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -83,7 +86,11 @@
 		</ul>
 	</div>
 
-	<div class="container">
+	<div class="full-screen-bg half" data-image="dist/img/wood.jpg">
+		<div class="title">Half Screen Light Background Title</div>
+	</div>
+
+	<div class="container pt-4">
 		<div class="row justify-content-center">
 			<div class="col-8">
 				<div class="well">
@@ -133,7 +140,13 @@
 
 	<div class="footer text-center my-4">&copy; Fontstrap, 2017</div>
 
+	<script type="text/javascript" src="dist/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="dist/js/fontstrap.js"></script>
+	<script>
+		$(window).on('load', function() {
+			$('.full-screen-bg').fullScreenBackground();
+		});
+	</script>
 
 </body>
 </html>

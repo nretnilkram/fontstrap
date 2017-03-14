@@ -1,0 +1,26 @@
+.full-screen-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 10vh 10vw;
+
+  &.half {
+    width: 100vw;
+    height: 50vh;
+    padding: 5vh 10vw;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  &.dark {
+    .title {
+      color: white;
+    }
+  }
+}
