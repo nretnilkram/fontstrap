@@ -38,14 +38,20 @@ rake sass:compile
 </head>
 <body>
 	<!-- Insert HTML code here. -->
+	<script type="text/javascript" src="dist/js/jquery-3.1.1.min.js"></script> <!-- optional jQuery load if needed -->
 	<script type="text/javascript" src="dist/js/fontstrap.js"></script>
+	<script>
+		$(window).on('load', function() {
+			// Additional JS Here
+		});
+	</script>
 </body>
 </html>
 ```
 
 ### Additional Features:
 
-* $().fullScreenBackground();
+* $().fullScreenBackground()
 
 ```html
 ...
@@ -59,7 +65,7 @@ rake sass:compile
 ...
 ```
 
-* $().keepAtTop();
+* $().keepAtTop()
 
 ```html
 ...
