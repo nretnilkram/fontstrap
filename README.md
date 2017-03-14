@@ -42,3 +42,29 @@ rake sass:compile
 </body>
 </html>
 ```
+
+### Additional Features:
+
+* $().fullScreenBackground();
+
+```html
+...
+<div class="full-screen-bg dark" data-image="dist/img/boot.jpg">
+	<div class="title">Full Screen Dark Background Title</div>
+</div>
+...
+<script>
+	$('.full-screen-bg').fullScreenBackground();
+</script>
+...
+```
+
+* $().keepAtTop();
+
+```html
+...
+<script>
+	$('.navbar').keepAtTop();
+</script>
+...
+```
