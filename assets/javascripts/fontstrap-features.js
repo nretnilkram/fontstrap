@@ -24,9 +24,16 @@ jQuery.fn.keepAtTop = function(settings){
 
 	var $window = $(window),
 	$el = $(this),
+	elHeight = $el.outerHeight(),
 	elTop = $el.offset().top;
 
 	$window.scroll(function() {
-		$el.toggleClass('sticky', $window.scrollTop() > elTop);
+		if ($window.scrollTop() > elTop) {
+			$el.addClass('stick-to-top');
+			$('body').css({'padding-top': elHeight + 'px'});
+		} else {
+			$el.removeClass('stick-to-top');
+			$('body').css({'padding-top': ''});
+		}
 	});
 };
