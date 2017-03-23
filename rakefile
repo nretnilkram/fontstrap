@@ -1,9 +1,13 @@
+#!/bin/env ruby
 # encoding: utf-8
 # frozen_string_literal: true
 
 require 'fileutils'
 
 namespace :sass do
+  #####
+  # This task will create the necessary directories should they not already exiest.  It initilizes with cleanup.
+  #####
   task create_dirs: :cleanup do
     FileUtils.mkdir_p('dist/fonts') unless Dir.exist? 'dist/fonts'
     FileUtils.mkdir_p('dist/img') unless Dir.exist? 'dist/img'
@@ -11,30 +15,49 @@ namespace :sass do
     FileUtils.mkdir_p('dist/css') unless Dir.exist? 'dist/css'
   end
 
+  #####
+  # This task will move fonts, images, and javascript files from assets to their respective dist directory locations.
+  #####
   task :move_static_content do
     FileUtils.copy_entry 'assets/fonts', 'dist/fonts/' if Dir.exist? 'assets/fonts'
     FileUtils.copy_entry 'assets/images', 'dist/img/' if Dir.exist? 'assets/images'
     FileUtils.copy_entry 'assets/javascripts', 'dist/js/' if Dir.exist? 'assets/javascripts'
   end
 
-  task setup: [:create_dirs, :move_static_content] do
-    puts 'Setup Complete'
-  end
+  #####
+  # This task combines create_dirs and move_static_content.
+  #####
+  task setup: [:create_dirs, :move_static_content]
 
+  #####
+  # This task removes the dist directory.
+  #####
   task :cleanup do
     FileUtils.remove_dir 'dist' if Dir.exist? 'dist'
   end
 
+  #####
+  # This task combines cleanup, setup, and compile.
+  #####
   task reset: [:cleanup, :setup, :compile]
 
+  #####
+  # This task will create the minified version of the fontstrap css.  It initilizes with setup.
+  #####
   task compile: :setup do
     system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.min.css --style compressed'
   end
 
+  #####
+  # This task will create the non minified version of the fontstrap css.  It initilizes with setup.
+  #####
   task compile_full: :setup do
     system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.css'
   end
 
+  #####
+  # This task will create the minified version of fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
+  #####
   task watch: :setup do
     system 'sass --watch assets/stylesheets/_full.scss:dist/css/fontstrap.min.css --style compressed'
   end

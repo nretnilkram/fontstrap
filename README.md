@@ -1,11 +1,11 @@
 # fontstrap v1.1.3
 
-### Fontstrap is a combination project where the lastest Bootstrap and Fontawesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
+### Fontstrap is a combination project where the latest Bootstrap and Fontawesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
 * Bootstrap: 4.0.0-alpha.6
 * FontAwesome: 4.7.0
 
-### Some neccessary and useful javascript files are also loaded from a single file. Those versions are:
+### Some necessary and useful javascript files are also loaded from a single file. Those versions are:
 
 * JQuery: 3.1.1
 * Tether: 1.3.3
@@ -23,7 +23,7 @@ rake sass:compile
 
 ### How to use:
 
-* copy over entire dist directory to root of site. The fontstrap.js file will pull in all other required js files from dist/js.
+* copy over entire dist directory to root of site. The fontstrap.js file will pull in all other required javascript files from dist/js.
 
 ```html
 <!DOCTYPE html>
