@@ -27,7 +27,7 @@ namespace :sass do
   #####
   # This task combines create_dirs and move_static_content.
   #####
-  task setup: [:create_dirs, :move_static_content]
+  task setup: %i(create_dirs move_static_content)
 
   #####
   # This task removes the dist directory.
@@ -39,7 +39,7 @@ namespace :sass do
   #####
   # This task combines cleanup, setup, and compile.
   #####
-  task reset: [:cleanup, :setup, :compile]
+  task reset: %i(cleanup setup compile)
 
   #####
   # This task will create the minified version of the fontstrap css.  It initilizes with setup.

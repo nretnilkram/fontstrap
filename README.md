@@ -1,4 +1,4 @@
-# fontstrap v1.1.3
+# fontstrap v1.1.4
 
 ### Fontstrap is a combination project where the latest Bootstrap and Fontawesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
@@ -49,7 +49,7 @@ rake sass:compile
 </html>
 ```
 
-### Additional Features:
+### Additional jQuery Features:
 
 * $().fullScreenBackground()
 
@@ -65,12 +65,32 @@ rake sass:compile
 ...
 ```
 
-* $().keepAtTop()
+* $().keepAtTop() - When element reaches top of screen that element will remain fixed to the top of the screen until scrolled to a position where it would be below the top again.
 
 ```html
 ...
 <script>
 	$('.navbar').keepAtTop();
+</script>
+...
+```
+
+* $().keepAtBottom() - When element reaches bottom of screen that element will remain fixed to the bottom of the screen until scrolled to a position where it would be above the bottom again.
+
+```html
+...
+<script>
+	$('.navbar').keepAtBottom();
+</script>
+...
+```
+
+* $().keepOnScreen() - Combination of $().keepAtTop() and $().keepAtBottom().
+
+```html
+...
+<script>
+	$('.navbar').keepOnScreen();
 </script>
 ...
 ```
