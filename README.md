@@ -7,7 +7,7 @@
 
 ### Some necessary and useful javascript files are also loaded from a single file. Those versions are:
 
-* JQuery: 3.1.1
+* JQuery: 3.2.0
 * Tether: 1.3.3
 * Bootstrap: 4.0.0-beta
 * Lodash 4.17.4
@@ -38,7 +38,7 @@ rake sass:compile
 </head>
 <body>
 	<!-- Insert HTML code here. -->
-	<script type="text/javascript" src="dist/js/jquery-3.1.1.min.js"></script> <!-- optional jQuery load if needed -->
+	<script type="text/javascript" src="dist/js/jquery.min.js"></script> <!-- optional jQuery load if needed -->
 	<script type="text/javascript" src="dist/js/fontstrap.js"></script>
 	<script>
 		$(window).on('load', function() {
