@@ -46,6 +46,7 @@ namespace :sass do
   #####
   task compile: :setup do
     system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.min.css --style compressed'
+    system 'sass assets/stylesheets/_full_square.scss dist/css/fontstrap_square.min.css --style compressed'
   end
 
   #####
@@ -53,6 +54,7 @@ namespace :sass do
   #####
   task compile_full: :setup do
     system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.css'
+    system 'sass assets/stylesheets/_full_square.scss dist/css/fontstrap_square.css'
   end
 
   #####
@@ -60,5 +62,12 @@ namespace :sass do
   #####
   task watch: :setup do
     system 'sass --watch assets/stylesheets/_full.scss:dist/css/fontstrap.min.css --style compressed'
+  end
+
+  #####
+  # This task will create the minified version of square fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
+  #####
+  task watch_square: :setup do
+    system 'sass --watch assets/stylesheets/_full_square.scss:dist/css/fontstrap_square.min.css --style compressed'
   end
 end

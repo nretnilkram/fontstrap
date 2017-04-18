@@ -23,7 +23,7 @@ rake sass:compile
 
 ### How to use:
 
-* copy over entire dist directory to root of site. The fontstrap.js file will pull in all other required javascript files from dist/js.
+* Copy over entire dist directory to root of site. The fontstrap.js file will pull in all other required javascript files from dist/js.
 
 ```html
 <!DOCTYPE html>
@@ -94,3 +94,6 @@ rake sass:compile
 </script>
 ...
 ```
+
+### Other Variations
+* Fontstrap Square can be found minified in dist directory.  This variation sets the default border-radius for all elements to 0 so they have square corners.
