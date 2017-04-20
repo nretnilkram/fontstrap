@@ -32,10 +32,10 @@ $panel-danger-border:         $state-danger-border;
 $panel-danger-heading-bg:     $state-danger-bg;
 
 .panel {
-  margin-bottom: $line-height-base * 1rem;
   background-color: $panel-bg;
   border: 1px solid transparent;
   border-radius: $panel-border-radius;
+  margin-bottom: $line-height-base * 1rem;
 }
 
 .panel-body {
@@ -43,20 +43,22 @@ $panel-danger-heading-bg:     $state-danger-bg;
 }
 
 .panel-heading {
-  padding: $panel-heading-padding;
-  border-bottom: 1px solid transparent;
   @include border-top-radius(($panel-border-radius - 1));
+  border-bottom: 1px solid transparent;
+  padding: $panel-heading-padding;
 
-  > .dropdown .dropdown-toggle {
-    color: inherit;
+  > .dropdown {
+    .dropdown-toggle {
+      color: inherit;
+    }
   }
 }
 
 .panel-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: ceil(($font-size-base * 1.125));
   color: inherit;
+  font-size: ceil(($font-size-base * 1.125));
+  margin-bottom: 0;
+  margin-top: 0;
 
   > a,
   > small,
@@ -68,10 +70,10 @@ $panel-danger-heading-bg:     $state-danger-bg;
 }
 
 .panel-footer {
-  padding: $panel-footer-padding;
+  @include border-bottom-radius(($panel-border-radius - 1));
   background-color: $panel-footer-bg;
   border-top: 1px solid $panel-inner-border;
-  @include border-bottom-radius(($panel-border-radius - 1));
+  padding: $panel-footer-padding;
 }
 
 .panel {
@@ -80,23 +82,23 @@ $panel-danger-heading-bg:     $state-danger-bg;
     margin-bottom: 0;
 
     .list-group-item {
-      border-width: 1px 0;
       border-radius: 0;
+      border-width: 1px 0;
     }
 
     // Add border top radius for first one
     &:first-child {
       .list-group-item:first-child {
-        border-top: 0;
         @include border-top-radius(($panel-border-radius - 1));
+        border-top: 0;
       }
     }
 
     // Add border bottom radius for last one
     &:last-child {
       .list-group-item:last-child {
-        border-bottom: 0;
         @include border-bottom-radius(($panel-border-radius - 1));
+        border-bottom: 0;
       }
     }
   }
@@ -112,6 +114,7 @@ $panel-danger-heading-bg:     $state-danger-bg;
     border-top-width: 0;
   }
 }
+
 .list-group + .panel-footer {
   border-top-width: 0;
 }
@@ -127,7 +130,7 @@ $panel-danger-heading-bg:     $state-danger-bg;
       padding-right: $panel-body-padding;
     }
   }
-  
+
   > .table:first-child,
   > .table-responsive:first-child > .table:first-child {
     @include border-top-radius(($panel-border-radius - 1));
@@ -149,7 +152,7 @@ $panel-danger-heading-bg:     $state-danger-bg;
       }
     }
   }
-  
+
   > .table:last-child,
   > .table-responsive:last-child > .table:last-child {
     @include border-bottom-radius(($panel-border-radius - 1));
@@ -171,16 +174,19 @@ $panel-danger-heading-bg:     $state-danger-bg;
       }
     }
   }
+
   > .panel-body + .table,
   > .panel-body + .table-responsive,
   > .table + .panel-body,
   > .table-responsive + .panel-body {
     border-top: 1px solid $table-border-color;
   }
+
   > .table > tbody:first-child > tr:first-child th,
   > .table > tbody:first-child > tr:first-child td {
     border-top: 0;
   }
+
   > .table-bordered,
   > .table-responsive > .table-bordered {
     border: 0;
@@ -198,6 +204,7 @@ $panel-danger-heading-bg:     $state-danger-bg;
         }
       }
     }
+
     > thead,
     > tbody {
       > tr:first-child {
@@ -207,6 +214,7 @@ $panel-danger-heading-bg:     $state-danger-bg;
         }
       }
     }
+
     > tbody,
     > tfoot {
       > tr:last-child {
@@ -217,6 +225,7 @@ $panel-danger-heading-bg:     $state-danger-bg;
       }
     }
   }
+
   > .table-responsive {
     border: 0;
     margin-bottom: 0;
@@ -228,8 +237,8 @@ $panel-danger-heading-bg:     $state-danger-bg;
 
   // Tighten up margin so it's only between panels
   .panel {
-    margin-bottom: 0;
     border-radius: $panel-border-radius;
+    margin-bottom: 0;
 
     + .panel {
       margin-top: 5px;
@@ -247,6 +256,7 @@ $panel-danger-heading-bg:     $state-danger-bg;
 
   .panel-footer {
     border-top: 0;
+
     + .panel-collapse .panel-body {
       border-bottom: 1px solid $panel-inner-border;
     }
@@ -264,11 +274,13 @@ $panel-danger-heading-bg:     $state-danger-bg;
     + .panel-collapse > .panel-body {
       border-top-color: $border;
     }
+
     .badge {
       color: $heading-bg-color;
       background-color: $heading-text-color;
     }
   }
+
   & > .panel-footer {
     + .panel-collapse > .panel-body {
       border-bottom-color: $border;
@@ -279,18 +291,23 @@ $panel-danger-heading-bg:     $state-danger-bg;
 .panel-default {
   @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
 }
+
 .panel-primary {
   @include panel-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
 }
+
 .panel-success {
   @include panel-variant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
 }
+
 .panel-info {
   @include panel-variant($panel-info-border, $panel-info-text, $panel-info-heading-bg, $panel-info-border);
 }
+
 .panel-warning {
   @include panel-variant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
 }
+
 .panel-danger {
   @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
 }

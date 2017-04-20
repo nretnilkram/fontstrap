@@ -1,25 +1,27 @@
+$white: #fff;
+
 .full-screen-bg {
-  width: 100vw;
-  height: 100vh;
+  background-attachment: scroll;
   background-color: transparent;
   background-position: center center;
-  background-attachment: scroll;
   background-size: cover;
+  height: 100vh;
   padding: 10vh 10vw;
+  width: 100vw;
 
   &.half {
-    width: 100vw;
     height: 50vh;
     padding: 5vh 10vw;
+    width: 100vw;
   }
 
   .title {
-    text-align: center;
     font-size: 50px;
+    text-align: center;
   }
 
   &.dark {
-    color: white;
+    color: $white;
   }
 
   @include media-breakpoint-up(sm) {
