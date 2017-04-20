@@ -4,6 +4,10 @@
 
 require 'fileutils'
 
+def combine(list_of_files = [], output_file = 'out.txt')
+  File.open(output_file, 'w') { |f| f.puts(list_of_files.map { |s| IO.read(s) }) }
+end
+
 namespace :sass do
   #####
   # This task will create the necessary directories should they not already exiest.  It initilizes with cleanup.
@@ -21,13 +25,15 @@ namespace :sass do
   task :move_static_content do
     FileUtils.copy_entry 'assets/fonts', 'dist/fonts/' if Dir.exist? 'assets/fonts'
     FileUtils.copy_entry 'assets/images', 'dist/img/' if Dir.exist? 'assets/images'
-    FileUtils.copy_entry 'assets/javascripts', 'dist/js/' if Dir.exist? 'assets/javascripts'
+    FileUtils.copy_entry 'assets/javascripts/fontstrap', 'dist/js/' if Dir.exist? 'assets/javascripts/fontstrap'
+    FileUtils.copy_entry 'assets/javascripts/third_party', 'dist/js/' if Dir.exist? 'assets/javascripts/third_party'
+    combine(['assets/javascripts/bootstrap/tether_header.txt', 'assets/javascripts/bootstrap/tether.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'dist/js/tether-bootstrap.min.js')
   end
 
   #####
   # This task combines create_dirs and move_static_content.
   #####
-  task setup: %i(create_dirs move_static_content)
+  task setup: %i[create_dirs move_static_content]
 
   #####
   # This task removes the dist directory.
@@ -39,14 +45,14 @@ namespace :sass do
   #####
   # This task combines cleanup, setup, and compile.
   #####
-  task reset: %i(cleanup setup compile)
+  task reset: %i[cleanup setup compile]
 
   #####
   # This task will create the minified version of the fontstrap css.  It initilizes with setup.
   #####
   task compile: :setup do
     system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.min.css --style compressed'
-    system 'sass assets/stylesheets/_full_square.scss dist/css/fontstrap_square.min.css --style compressed'
+    system 'sass assets/stylesheets/_full_square.scss dist/css/fontstrap-square.min.css --style compressed'
   end
 
   #####
@@ -54,7 +60,7 @@ namespace :sass do
   #####
   task compile_full: :setup do
     system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.css'
-    system 'sass assets/stylesheets/_full_square.scss dist/css/fontstrap_square.css'
+    system 'sass assets/stylesheets/_full_square.scss dist/css/fontstrap-square.css'
   end
 
   #####
@@ -68,6 +74,6 @@ namespace :sass do
   # This task will create the minified version of square fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task watch_square: :setup do
-    system 'sass --watch assets/stylesheets/_full_square.scss:dist/css/fontstrap_square.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_full_square.scss:dist/css/fontstrap-square.min.css --style compressed'
   end
 end
