@@ -95,5 +95,15 @@ rake sass:compile
 ...
 ```
 
+* $().alignBlocks({countPerRow: 4, block: '.list-item'}); - This will take a set of block and align them based on their height. The options and defaults are shown.
+
+```html
+...
+<script>
+	$('.uneven-list').alignBlocks({countPerRow: 4, block: '.list-item'});
+</script>
+...
+```
+
 ### Other Variations
 * Fontstrap Square can be found minified in dist directory.  This variation sets the default border-radius for all elements to 0 so they have square corners.

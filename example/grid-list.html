@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Fontstrap</title>
+	<link rel="icon" href="../dist/img/favicon.png">
+
+	<!-- fontstrap -->
+	<link type="text/css" href="../dist/css/fontstrap.min.css" rel="stylesheet">
+
+	<style>
+		body { padding-bottom: 80px; }
+
+		.uneven-list div:nth-child(6n+0) { background-color: red; }
+		.uneven-list div:nth-child(6n+1) { background-color: blue; }
+		.uneven-list div:nth-child(6n+2) { background-color: green; }
+		.uneven-list div:nth-child(6n+3) { background-color: magenta; }
+		.uneven-list div:nth-child(6n+4) { background-color: orange; }
+		.uneven-list div:nth-child(6n+5) { background-color: yellow; }
+
+		.footer { background: white; }
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-info">
+		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.0">Fontstrap</span></a>
+		<span class="navbar-text d-lg-inline d-none">
+			<strong>Contains: </strong>
+		</span>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="nav navbar-nav">
+				<li class="nav-item"><a class="nav-link" target="_blank" href="https://v4-alpha.getbootstrap.com"><span data-toggle="tooltip" data-placement="bottom" title="4.0.0-beta">Bootstrap</span></a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="http://fontawesome.io"><span data-toggle="tooltip" data-placement="bottom" title="4.7.0">FontAwesome</span></a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="http://jquery.com"><span data-toggle="tooltip" data-placement="bottom" title="3.2.0">JQuery</span></a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="https://lodash.com"><span data-toggle="tooltip" data-placement="bottom" title="4.17.4">Lodash.js</span></a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="http://tether.io"><span data-toggle="tooltip" data-placement="right" title="1.3.3">Tether.js</span></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<h1>Grid List</h1>
+		<div class="uneven-list row"></div>
+	</div>
+
+	<div class="text-center my-4"><button class="btn btn-success add">Add</button></div>
+
+	<div class="footer text-center my-4">&copy; Fontstrap, 2017</div>
+
+	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../dist/js/fontstrap.js"></script>
+	<script>
+		var randomInt = function (a = 0, b = 10) {
+			return a + Math.floor(Math.random() * b);
+		}
+
+		var createDiv = function () {
+			return $('<div>').css({ 'height': randomInt(50, 300) + 'px', 'margin-bottom': '5px' }).addClass('list-item');
+		}
+
+		$(window).on('load', function() {
+			for (i = 0; i < 25; i++) {
+				$('.uneven-list').append(createDiv());
+			}
+
+			var align = function () {
+				$('.uneven-list').alignBlocks({
+					countPerRow: 3,
+					block: '.list-item',
+					'x-margin': 20
+				});
+			};
+
+			align();
+
+			$('.add').click(function() {
+				$('.uneven-list').append(createDiv());
+				align();
+			})
+		});
+	</script>
+
+</body>
+</html>

@@ -95,3 +95,41 @@ jQuery.fn.keepOnScreen = function(settings){
 	});
 
 };
+
+jQuery.fn.alignBlocks = function(settings) {
+
+	var options = jQuery.extend({
+		countPerRow: 4,
+		block: '.list-item',
+		'x-margin': 0
+	}, settings);
+
+	var tracker = { 0: 0, 1: 0, 2: 0, 3: 0 },
+	$self = $(this),
+	fullWidth = $self.width(),
+	colWidth = fullWidth / options.countPerRow;
+
+	$self.find(options.block).each(function (x, item) {
+		var column = 0;
+		var low = tracker[0];
+		for (i = 0; i < options.countPerRow; i++) {
+			if (i === 0 || tracker[i] < low) {
+				low = tracker[i];
+				column = i;
+			}
+		}
+		var previousHeight = tracker[column];
+		tracker[column] = previousHeight + $(this).outerHeight( true );
+		$(this).css({ 'position': 'absolute', 'top': previousHeight + 'px', 'left': ( ( column * colWidth ) + ( options['x-margin'] / 2 ) ) + 'px', 'width': ( colWidth - options['x-margin'] ) });
+	});
+
+	var high = tracker[0];
+
+	for (i = 0; i < options.countPerRow; i++) {
+		if (tracker[i] > high) {
+			high = tracker[i];
+		}
+	}
+
+	$self.css({ 'position': 'relative', 'height': high + 'px' });
+};
