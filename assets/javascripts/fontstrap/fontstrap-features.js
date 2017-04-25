@@ -2,7 +2,18 @@ $('.js-trigger').click(function (event) {
 	event.preventDefault();
 });
 
+var elementMissing = function (sel, methodName) {
+	if ( sel.length === 0 ) {
+		console.log('Element does not exist. Did not execute ' + methodName + '. Please check the selector.');
+		return true;
+	} else {
+		return false;
+	}
+};
+
 jQuery.fn.fullScreenBackground = function(settings){
+
+	if (elementMissing($(this), "fullScreenBackground()")) { return false; }
 
 	var options = jQuery.extend({
 		dataImageVar: 'image'
@@ -18,6 +29,8 @@ jQuery.fn.fullScreenBackground = function(settings){
 };
 
 jQuery.fn.keepAtTop = function(settings){
+
+	if (elementMissing($(this), "keepAtTop()")) { return false; }
 
 	var $window = $(window),
 	$el = $(this),
@@ -45,6 +58,8 @@ jQuery.fn.keepAtTop = function(settings){
 };
 
 jQuery.fn.keepAtBottom = function(settings){
+
+	if (elementMissing($(this), "keepAtBottom()")) { return false; }
 
 	var $window = $(window),
 	$el = $(this),
@@ -75,6 +90,8 @@ jQuery.fn.keepAtBottom = function(settings){
 
 jQuery.fn.keepOnScreen = function(settings){
 
+	if (elementMissing($(this), "keepOnScreen()")) { return false; }
+
 	var $window = $(window),
 	$el = $(this);
 
@@ -96,7 +113,39 @@ jQuery.fn.keepOnScreen = function(settings){
 
 };
 
+var buildTracker = function (count) {
+	object = {};
+	for (i = 0; i < count; i++) {
+		object[i] = 0;
+	}
+	return object;
+};
+
+var newHeight = function (tracker) {
+	var high = 0;
+	_.each(tracker, function(a){
+		if (a > high) {
+			high = a;
+		}
+	});
+	return high;
+};
+
+var nextColumn = function (tracker) {
+	var column = 0;
+	var low = tracker[0];
+	_.each(tracker, function(a, b){
+		if (b === 0 || a < low) {
+			low = a;
+			column = b;
+		}
+	});
+	return column;
+};
+
 jQuery.fn.alignBlocks = function(settings) {
+
+	if (elementMissing($(this), "alignBlocks()")) { return false; }
 
 	var options = jQuery.extend({
 		countPerRow: 4,
@@ -104,32 +153,17 @@ jQuery.fn.alignBlocks = function(settings) {
 		'x-margin': 0
 	}, settings);
 
-	var tracker = { 0: 0, 1: 0, 2: 0, 3: 0 },
+	var tracker = buildTracker(options.countPerRow),
 	$self = $(this),
 	fullWidth = $self.width(),
 	colWidth = fullWidth / options.countPerRow;
 
 	$self.find(options.block).each(function (x, item) {
-		var column = 0;
-		var low = tracker[0];
-		for (i = 0; i < options.countPerRow; i++) {
-			if (i === 0 || tracker[i] < low) {
-				low = tracker[i];
-				column = i;
-			}
-		}
+		var column = nextColumn(tracker);
 		var previousHeight = tracker[column];
 		tracker[column] = previousHeight + $(this).outerHeight( true );
 		$(this).css({ 'position': 'absolute', 'top': previousHeight + 'px', 'left': ( ( column * colWidth ) + ( options['x-margin'] / 2 ) ) + 'px', 'width': ( colWidth - options['x-margin'] ) });
 	});
 
-	var high = tracker[0];
-
-	for (i = 0; i < options.countPerRow; i++) {
-		if (tracker[i] > high) {
-			high = tracker[i];
-		}
-	}
-
-	$self.css({ 'position': 'relative', 'height': high + 'px' });
+	$self.css({ 'position': 'relative', 'height': newHeight(tracker) + 'px' });
 };
