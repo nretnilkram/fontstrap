@@ -95,12 +95,16 @@ rake sass:compile
 ...
 ```
 
-* $().alignBlocks({countPerRow: 4, block: '.list-item'}); - This will take a set of block and align them based on their height. The options and defaults are shown.
+* $().alignBlocks({countPerRow: 4, block: '.list-item', spaceBetween: 0}); - This will take a set of block and align them based on their height. The options and defaults are shown.
 
 ```html
 ...
 <script>
-	$('.uneven-list').alignBlocks({countPerRow: 4, block: '.list-item'});
+	$('.uneven-list').alignBlocks({
+		countPerRow: 4,
+		block: '.list-item',
+		spaceBetween: 0
+	});
 </script>
 ...
 ```

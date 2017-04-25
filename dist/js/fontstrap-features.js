@@ -150,19 +150,22 @@ jQuery.fn.alignBlocks = function(settings) {
 	var options = jQuery.extend({
 		countPerRow: 4,
 		block: '.list-item',
-		'x-margin': 0
+		spaceBetween: 0
 	}, settings);
 
 	var tracker = buildTracker(options.countPerRow),
 	$self = $(this),
 	fullWidth = $self.width(),
-	colWidth = fullWidth / options.countPerRow;
+	colWidth = _.floor(fullWidth / options.countPerRow),
+	blockWidth = _.floor(colWidth - ((2 * options.spaceBetween) / (options.countPerRow - 1)));
 
 	$self.find(options.block).each(function (x, item) {
-		var column = nextColumn(tracker);
-		var previousHeight = tracker[column];
+		var column = nextColumn(tracker),
+		previousHeight = tracker[column],
+		left = column === 0 ? 0 : _.floor((column * blockWidth) + (options.spaceBetween * column));
+
 		tracker[column] = previousHeight + $(this).outerHeight( true );
-		$(this).css({ 'position': 'absolute', 'top': previousHeight + 'px', 'left': ( ( column * colWidth ) + ( options['x-margin'] / 2 ) ) + 'px', 'width': ( colWidth - options['x-margin'] ) });
+		$(this).css({ 'position': 'absolute', 'top': previousHeight + 'px', 'left': left + 'px', 'width': blockWidth + 'px' });
 	});
 
 	$self.css({ 'position': 'relative', 'height': newHeight(tracker) + 'px' });
