@@ -2,6 +2,10 @@ $('.js-trigger').click(function (event) {
 	event.preventDefault();
 });
 
+/*
+* Global helpers for jQuery plugins.
+*/
+
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
 		console.log('Element does not exist. Did not execute ' + methodName + '. Please check the selector.');
@@ -10,6 +14,10 @@ var elementMissing = function (sel, methodName) {
 		return false;
 	}
 };
+
+/*
+* fullScreenBackground will take the block and make it the full viewing window along with CSS that accomanies.
+*/
 
 jQuery.fn.fullScreenBackground = function(settings){
 
@@ -27,6 +35,10 @@ jQuery.fn.fullScreenBackground = function(settings){
 	});
 
 };
+
+/*
+* keepAtTop will keep the block, like a navbar, on the top of the screen when scrolling down past the block.  Or if the block is above the screen when page is loaded.
+*/
 
 jQuery.fn.keepAtTop = function(settings){
 
@@ -56,6 +68,10 @@ jQuery.fn.keepAtTop = function(settings){
 	options.test();
 
 };
+
+/*
+* keepAtBottom will keep the block, like a navbar, on the bottom of the screen when scrolling up past the block.  Or if the block is below the screen when page is loaded.
+*/
 
 jQuery.fn.keepAtBottom = function(settings){
 
@@ -88,6 +104,10 @@ jQuery.fn.keepAtBottom = function(settings){
 
 };
 
+/*
+* keepOnScreen is a combination of keepAtTop and keepAtBottom. It will keep the block, like a navbar, on the top when scrolling down past the block and at the bottom when scrolling up past the block.
+*/
+
 jQuery.fn.keepOnScreen = function(settings){
 
 	if (elementMissing($(this), "keepOnScreen()")) { return false; }
@@ -112,6 +132,10 @@ jQuery.fn.keepOnScreen = function(settings){
 	});
 
 };
+
+/*
+* Helpers for alignBlocks
+*/
 
 var buildTracker = function (count) {
 	object = {};
@@ -143,6 +167,17 @@ var nextColumn = function (tracker) {
 	return column;
 };
 
+var cleanSettings = function (settings) {
+	if (settings.spaceBetween !== undefined && typeof settings.spaceBetween == 'string' ) {
+		settings.spaceBetween = parseInt(settings.spaceBetween.trim('px').trim('em').trim('rem'));
+	}
+	return settings;
+};
+
+/*
+* alignBlocks takes a set of blocks, divs, and aligns them in a container so that no space is wasted.
+*/
+
 jQuery.fn.alignBlocks = function(settings) {
 
 	if (elementMissing($(this), "alignBlocks()")) { return false; }
@@ -151,7 +186,7 @@ jQuery.fn.alignBlocks = function(settings) {
 		countPerRow: 4,
 		block: '.list-item',
 		spaceBetween: 0
-	}, settings);
+	}, cleanSettings(settings));
 
 	var tracker = buildTracker(options.countPerRow),
 	$self = $(this),

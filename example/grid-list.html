@@ -62,15 +62,15 @@
 		}
 
 		var createDiv = function () {
-			return $('<div>').css({ 'height': randomInt(50, 300) + 'px', 'margin-bottom': '5px' }).addClass('list-item');
+			return $('<div>').css({ 'height': randomInt(50, 300) + 'px', 'margin-bottom': '10px' }).addClass('list-item');
 		}
 
-		$(window).on('load', function() {
+		$(window).on('load', function () {
 			$('.navbar').keepAtTop();
 
-			for (i = 0; i < 15; i++) {
+			_.times(20, function () {
 				$('.uneven-list').append(createDiv());
-			}
+			});
 
 			var align = function () {
 				$('.uneven-list').alignBlocks({
@@ -82,9 +82,15 @@
 
 			align();
 
+			var add = function (count = 1) {
+				_.times(count, function () {
+					$('.uneven-list').append(createDiv());
+					align();
+				});
+			};
+
 			$('.add').click(function() {
-				$('.uneven-list').append(createDiv());
-				align();
+				add(10);
 			})
 		});
 	</script>
