@@ -12,7 +12,10 @@
 	<link type="text/css" href="../dist/css/fontstrap.min.css" rel="stylesheet">
 
 	<style>
-
+		.block { min-height: 100px; padding: 1em 2em; }
+		.red { background-color: red; }
+		.blue { background-color: blue; }
+		.green { background-color: green; }
 	</style>
 </head>
 <body>
@@ -104,6 +107,15 @@
 	</div>  <!-- container -->
 
 	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-smile-o fa-fw"></i> Default Panel Title</h3>
+			</div>
+			<div class="panel-body">
+				Default Panel Body
+			</div>
+		</div>
+
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title"><i class="fa fa-thumbs-up fa-fw"></i> Success Panel Title</h3>
@@ -122,6 +134,15 @@
 			</div>
 		</div>
 
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-exclamation fa-fw"></i> Danger Panel Title</h3>
+			</div>
+			<div class="panel-body">
+				Danger Panel Body
+			</div>
+		</div>
+
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h3 class="panel-title"><i class="fa fa-info-circle fa-fw"></i> Info Panel Title</h3>
@@ -131,6 +152,50 @@
 			</div>
 		</div>
 	</div>  <!-- container -->
+
+	<div class="full-screen-bg dark" data-image="img/boot.jpg">
+		<div class="title">Grid</div>
+		<div class="container py-4">
+			<div class="row">
+				<div class="col-sm-9 block red">
+					<div class="row">
+						<div class="col-sm-6 block green"></div>
+						<div class="col-sm-6 block blue"></div>
+					</div>
+				</div>
+				<div class="col-sm-3 block blue"></div>
+				<div class="col-sm-6 block green">
+					<div class="row">
+						<div class="col-sm-6 block red"></div>
+						<div class="col-sm-6 block blue"></div>
+					</div>
+				</div>
+				<div class="col-sm-6 block green">
+					<div class="row">
+						<div class="col-sm-4 block red"></div>
+						<div class="col-sm-4 block blue"></div>
+						<div class="col-sm-4 block red"></div>
+					</div>
+				</div>
+				<div class="col-sm-12 block blue">
+					<div class="row">
+						<div class="col-sm-1 block red"></div>
+						<div class="col-sm-1 block green"></div>
+						<div class="col-sm-1 block red"></div>
+						<div class="col-sm-1 block green"></div>
+						<div class="col-sm-1 block red"></div>
+						<div class="col-sm-1 block green"></div>
+						<div class="col-sm-1 block red"></div>
+						<div class="col-sm-1 block green"></div>
+						<div class="col-sm-1 block red"></div>
+						<div class="col-sm-1 block green"></div>
+						<div class="col-sm-1 block red"></div>
+						<div class="col-sm-1 block green"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="footer text-center my-4">&copy; Fontstrap, 2017</div>
 
