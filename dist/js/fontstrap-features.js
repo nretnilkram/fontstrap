@@ -37,11 +37,11 @@ jQuery.fn.fullScreenBackground = function(settings){
 		dataImageVar: 'image'
 	}, settings);
 
-	var backgrounds = $(this);
+	var divs = $(this);
 
-	_.each(backgrounds, function () {
-		var img = $(this).data(options.dataImageVar);
-		$(this).css({'background-image': "url('" + img + "')"});
+	_.each(divs, function (div) {
+		var img = $(div).data(options.dataImageVar);
+		$(div).css({'background-image': "url('" + img + "')"});
 	});
 
 };
