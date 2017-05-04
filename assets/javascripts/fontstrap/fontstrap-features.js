@@ -1,3 +1,8 @@
+if ( typeof _  != "function" ) {
+	console.log('Lodash was not found and is required by the fontstrap jQuery plugins.');
+	var no_lodash = true;
+}
+
 $('.js-trigger').click(function (event) {
 	event.preventDefault();
 });
@@ -21,6 +26,11 @@ var elementMissing = function (sel, methodName) {
 
 jQuery.fn.fullScreenBackground = function(settings){
 
+	if ( no_lodash ) {
+		console.log('Lodash was not found and is required by the fullScreenBackground plugin.');
+		return false;
+	}
+
 	if (elementMissing($(this), "fullScreenBackground()")) { return false; }
 
 	var options = jQuery.extend({
@@ -29,7 +39,7 @@ jQuery.fn.fullScreenBackground = function(settings){
 
 	var backgrounds = $(this);
 
-	backgrounds.each(function () {
+	_.each(backgrounds, function () {
 		var img = $(this).data(options.dataImageVar);
 		$(this).css({'background-image': "url('" + img + "')"});
 	});
@@ -139,9 +149,9 @@ jQuery.fn.keepOnScreen = function(settings){
 
 var buildTracker = function (count) {
 	object = {};
-	for (i = 0; i < count; i++) {
+	_.times(count, function (i) {
 		object[i] = 0;
-	}
+	});
 	return object;
 };
 
@@ -168,7 +178,7 @@ var nextColumn = function (tracker) {
 };
 
 var cleanSettings = function (settings) {
-	if (settings.spaceBetween !== undefined && typeof settings.spaceBetween == 'string' ) {
+	if ( !_.isUndefined(settings.spaceBetween) && _.isString(settings.spaceBetween) ) {
 		settings.spaceBetween = parseInt(settings.spaceBetween.trim('px').trim('em').trim('rem'));
 	}
 	return settings;
@@ -179,6 +189,11 @@ var cleanSettings = function (settings) {
 */
 
 jQuery.fn.alignBlocks = function(settings) {
+
+	if ( no_lodash ) {
+		console.log('Lodash was not found and is required by the alignBlocks plugin.');
+		return false;
+	}
 
 	if (elementMissing($(this), "alignBlocks()")) { return false; }
 
@@ -204,4 +219,5 @@ jQuery.fn.alignBlocks = function(settings) {
 	});
 
 	$self.css({ 'position': 'relative', 'height': newHeight(tracker) + 'px' });
+
 };
