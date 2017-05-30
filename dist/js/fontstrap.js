@@ -30,7 +30,7 @@ var currSrc = document.currentScript.src,
     jsPath = currSrc.substr(0, currSrc.lastIndexOf("/")) + '/'; // "dist/js/";
 
 var loadRequirements = function () {
-    loadScript(jsPath + "tether-bootstrap.min.js", function(){
+    loadScript(jsPath + "popper-bootstrap.min.js", function(){
       $('[data-toggle="tooltip"]').tooltip();
     });
     loadScript(jsPath + "lodash.min.js", function(){
