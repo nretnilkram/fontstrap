@@ -2,10 +2,16 @@
 # encoding: utf-8
 # frozen_string_literal: true
 
+require 'bundler/setup'
 require 'fileutils'
+require 'uglifier'
 
 def combine(list_of_files = [], output_file = 'out.txt')
   File.open(output_file, 'w') { |f| f.puts(list_of_files.map { |s| IO.read(s) }) }
+end
+
+def minify_js(source, output)
+  File.open(output, 'w') { |file| file.write(Uglifier.compile(File.read(source))) }
 end
 
 namespace :sass do
@@ -13,33 +19,28 @@ namespace :sass do
   # This task will create the necessary directories should they not already exiest.  It initilizes with cleanup.
   #####
   task create_dirs: :cleanup do
-    FileUtils.mkdir_p('dist/fonts') unless Dir.exist? 'dist/fonts'
-    FileUtils.mkdir_p('dist/img') unless Dir.exist? 'dist/img'
-    FileUtils.mkdir_p('dist/js') unless Dir.exist? 'dist/js'
     FileUtils.mkdir_p('dist/css') unless Dir.exist? 'dist/css'
   end
 
   #####
   # This task will move fonts, images, and javascript files from assets to their respective dist directory locations.
   #####
-  task :move_static_content do
-    FileUtils.copy_entry 'assets/fonts', 'dist/fonts/' if Dir.exist? 'assets/fonts'
-    FileUtils.copy_entry 'assets/images', 'dist/img/' if Dir.exist? 'assets/images'
+  task :create_js_files do
     FileUtils.copy_entry 'assets/javascripts/fontstrap', 'dist/js/' if Dir.exist? 'assets/javascripts/fontstrap'
-    FileUtils.copy_entry 'assets/javascripts/third_party', 'dist/js/' if Dir.exist? 'assets/javascripts/third_party'
+    minify_js('assets/javascripts/fontstrap/fontstrap-features.js', 'dist/js/fontstrap-features.min.js')
     combine(['assets/javascripts/bootstrap/tether_header.txt', 'assets/javascripts/bootstrap/tether.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'dist/js/tether-bootstrap.min.js')
   end
 
   #####
   # This task combines create_dirs and move_static_content.
   #####
-  task setup: %i[create_dirs move_static_content]
+  task setup: %i[create_dirs create_js_files]
 
   #####
   # This task removes the dist directory.
   #####
   task :cleanup do
-    FileUtils.remove_dir 'dist' if Dir.exist? 'dist'
+    FileUtils.remove_dir 'dist/css' if Dir.exist? 'dist/css'
   end
 
   #####

@@ -18,7 +18,8 @@
 2. Customize
 3. Compile CSS
 ```
-rake sass:compile
+bundle install
+bundle exec rake sass:compile
 ```
 
 ### How to use:

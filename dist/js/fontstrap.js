@@ -1,3 +1,8 @@
+/*!
+ * Fontstrap v1.2.0 (https://github.com/nretnilkram/fontstrap)
+ * Copyright 2017 Mark Lintern
+ * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
+ */
 function loadScript(url, callback){
 
     var script = document.createElement("script");
@@ -29,7 +34,7 @@ var loadRequirements = function () {
       $('[data-toggle="tooltip"]').tooltip();
     });
     loadScript(jsPath + "lodash.min.js", function(){
-      loadScript(jsPath + "fontstrap-features.js", function(){ });
+      loadScript(jsPath + "fontstrap-features.min.js", function(){ });
     });
 };
 
