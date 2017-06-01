@@ -14,6 +14,8 @@
 	<style>
 		body { padding-bottom: 80px; }
 
+		nav { border-bottom: 10px white solid; }
+
 		.uneven-list div:nth-child(8n+0) { background-color: #d9534f; }
 		.uneven-list div:nth-child(8n+1) { background-color: #0275d8; }
 		.uneven-list div:nth-child(8n+2) { background-color: #5cb85c; }
@@ -70,10 +72,6 @@
 		$(window).on('load', function () {
 			$('.navbar').keepAtTop();
 
-			_.times(20, function () {
-				$('.uneven-list').append(createDiv());
-			});
-
 			var align = function () {
 				$('.uneven-list').alignBlocks({
 					countPerRow: 4,
@@ -82,14 +80,14 @@
 				});
 			};
 
-			align();
-
 			var add = function (count = 1) {
 				_.times(count, function () {
 					$('.uneven-list').append(createDiv());
 					align();
 				});
 			};
+
+			add(20);
 
 			$('.add').click(function() {
 				add(10);
