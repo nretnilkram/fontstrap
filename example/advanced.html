@@ -11,11 +11,8 @@
 	<!-- fontstrap -->
 	<link type="text/css" href="../dist/css/fontstrap.min.css" rel="stylesheet">
 
-	<style>
+	<style type="text/css">
 		.block { min-height: 100px; padding: 1em 2em; }
-		.red { background-color: #d9534f; }
-		.blue { background-color: #5bc0de; }
-		.green { background-color: #5cb85c; }
 	</style>
 </head>
 <body>
@@ -23,7 +20,7 @@
 		<div class="title">Full Screen Dark Background Title</div>
 	</div>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-info">
+	<div class="navbar navbar-expand-lg navbar-light bg-info">
 		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.0">Fontstrap</span></a>
 		<span class="navbar-text d-lg-inline d-none">
 			<strong>Contains: </strong>
@@ -40,7 +37,7 @@
 				<li class="nav-item"><a class="nav-link" target="_blank" href="https://popper.js.org"><span data-toggle="tooltip" data-placement="right" title="1.9.9">Popper.js</span></a></li>
 			</ul>
 		</div>
-	</nav>
+	</div>
 
 	<div class="container">
 		<h1 class="page-header">Directory Structure</h1>
@@ -157,40 +154,40 @@
 		<div class="title">Grid</div>
 		<div class="container py-4">
 			<div class="row">
-				<div class="col-sm-9 block red">
+				<div class="col-sm-9 block bg-danger">
 					<div class="row">
-						<div class="col-sm-6 block green"></div>
-						<div class="col-sm-6 block blue"></div>
+						<div class="col-sm-6 block bg-success"></div>
+						<div class="col-sm-6 block bg-primary"></div>
 					</div>
 				</div>
-				<div class="col-sm-3 block blue"></div>
-				<div class="col-sm-6 block green">
+				<div class="col-sm-3 block bg-primary"></div>
+				<div class="col-sm-6 block bg-success">
 					<div class="row">
-						<div class="col-sm-6 block red"></div>
-						<div class="col-sm-6 block blue"></div>
+						<div class="col-sm-6 block bg-danger"></div>
+						<div class="col-sm-6 block bg-primary"></div>
 					</div>
 				</div>
-				<div class="col-sm-6 block green">
+				<div class="col-sm-6 block bg-success">
 					<div class="row">
-						<div class="col-sm-4 block red"></div>
-						<div class="col-sm-4 block blue"></div>
-						<div class="col-sm-4 block red"></div>
+						<div class="col-sm-4 block bg-danger"></div>
+						<div class="col-sm-4 block bg-primary"></div>
+						<div class="col-sm-4 block bg-danger"></div>
 					</div>
 				</div>
-				<div class="col-sm-12 block blue">
+				<div class="col-sm-12 block bg-primary">
 					<div class="row">
-						<div class="col-sm-1 block red"></div>
-						<div class="col-sm-1 block green"></div>
-						<div class="col-sm-1 block red"></div>
-						<div class="col-sm-1 block green"></div>
-						<div class="col-sm-1 block red"></div>
-						<div class="col-sm-1 block green"></div>
-						<div class="col-sm-1 block red"></div>
-						<div class="col-sm-1 block green"></div>
-						<div class="col-sm-1 block red"></div>
-						<div class="col-sm-1 block green"></div>
-						<div class="col-sm-1 block red"></div>
-						<div class="col-sm-1 block green"></div>
+						<div class="col-sm-1 block bg-danger"></div>
+						<div class="col-sm-1 block bg-success"></div>
+						<div class="col-sm-1 block bg-danger"></div>
+						<div class="col-sm-1 block bg-success"></div>
+						<div class="col-sm-1 block bg-danger"></div>
+						<div class="col-sm-1 block bg-success"></div>
+						<div class="col-sm-1 block bg-danger"></div>
+						<div class="col-sm-1 block bg-success"></div>
+						<div class="col-sm-1 block bg-danger"></div>
+						<div class="col-sm-1 block bg-success"></div>
+						<div class="col-sm-1 block bg-danger"></div>
+						<div class="col-sm-1 block bg-success"></div>
 					</div>
 				</div>
 			</div>
@@ -201,7 +198,7 @@
 
 	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../dist/js/fontstrap.js"></script>
-	<script>
+	<script type="text/javascript">
 		$(window).on('load', function() {
 			$('.full-screen-bg').fullScreenBackground();
 			$('.navbar').keepOnScreen(); // Which is a combination of $('.navbar').keepAtTop(); and $('.navbar').keepAtBottom();
