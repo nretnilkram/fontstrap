@@ -14,7 +14,9 @@
 	<style type="text/css">
 		body { padding-bottom: 80px; }
 
-		nav { border-bottom: 10px white solid; }
+		.full-screen-bg .large-title { font-size: 20vw; }
+
+		.navbar { border-bottom: 10px white solid; }
 
 		.uneven-list div:nth-child(8n+0) { background-color: #d9534f; }
 		.uneven-list div:nth-child(8n+1) { background-color: #0275d8; }
@@ -29,6 +31,9 @@
 	</style>
 </head>
 <body>
+	<div class="full-screen-bg dark" data-image="img/boot.jpg">
+		<div class="title large-title">Grid List</div>
+	</div>
 
 	<div class="navbar navbar-expand-lg navbar-light bg-warning">
 		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.0">Fontstrap</span></a>
@@ -49,8 +54,7 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<h1 class="page-header">Grid List</h1>
+	<div class="p-4">
 		<div class="uneven-list"></div>
 	</div>
 
@@ -70,7 +74,8 @@
 		}
 
 		$(window).on('load', function () {
-			$('.navbar').keepAtTop();
+			$('.full-screen-bg').fullScreenBackground();
+			$('.navbar').keepOnScreen(); // Which is a combination of $('.navbar').keepAtTop(); and $('.navbar').keepAtBottom();
 
 			var align = function () {
 				$('.uneven-list').alignBlocks({
