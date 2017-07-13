@@ -28,7 +28,7 @@ namespace :sass do
   task :create_js_files do
     FileUtils.copy_entry 'assets/javascripts/fontstrap', 'dist/js/' if Dir.exist? 'assets/javascripts/fontstrap'
     minify_js('assets/javascripts/fontstrap/fontstrap-features.js', 'dist/js/fontstrap-features.min.js')
-    combine(['assets/javascripts/bootstrap/popper_header.txt', 'assets/javascripts/bootstrap/popper.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'dist/js/popper-bootstrap.min.js')
+    combine(['assets/javascripts/bootstrap/popper.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'dist/js/popper-bootstrap.min.js')
   end
 
   #####
