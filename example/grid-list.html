@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Fontstrap</title>
+	<link rel="icon" href="../dist/img/favicon.png">
+
+	<!-- fontstrap -->
+	<link type="text/css" href="../dist/css/fontstrap.min.css" rel="stylesheet">
+
+	<style type="text/css">
+		body { padding-bottom: 80px; }
+
+		.full-screen-bg .large-title { font-size: 20vw; }
+
+		.navbar { border-bottom: 10px white solid; }
+
+		.uneven-list div:nth-child(8n+0) { background-color: #d9534f; }
+		.uneven-list div:nth-child(8n+1) { background-color: #0275d8; }
+		.uneven-list div:nth-child(8n+2) { background-color: #5cb85c; }
+		.uneven-list div:nth-child(8n+3) { background-color: #613d7c; }
+		.uneven-list div:nth-child(8n+4) { background-color: #f0ad4e; }
+		.uneven-list div:nth-child(8n+5) { background-color: #ffd500; }
+		.uneven-list div:nth-child(8n+6) { background-color: #5bc0de; }
+		.uneven-list div:nth-child(8n+7) { background-color: #ff5b77; }
+
+		.footer { background: white; }
+	</style>
+</head>
+<body>
+	<div class="full-screen-bg dark" data-image="img/boot.jpg">
+		<div class="title large-title">Grid List</div>
+	</div>
+
+	<div class="navbar navbar-expand-lg navbar-light bg-warning">
+		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.0">Fontstrap</span></a>
+		<span class="navbar-text d-lg-inline d-none">
+			<strong>Contains: </strong>
+		</span>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="nav navbar-nav">
+				<li class="nav-item"><a class="nav-link" target="_blank" href="https://v4-alpha.getbootstrap.com"><span data-toggle="tooltip" data-placement="bottom" title="4.0.0-beta">Bootstrap</span></a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="http://fontawesome.io"><span data-toggle="tooltip" data-placement="bottom" title="4.7.0">Font Awesome</span></a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="http://jquery.com"><span data-toggle="tooltip" data-placement="bottom" title="3.2.1">jQuery</span></a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="https://lodash.com"><span data-toggle="tooltip" data-placement="bottom" title="4.17.4">Lodash.js</span></a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="https://popper.js.org"><span data-toggle="tooltip" data-placement="right" title="1.10.8">Popper.js</span></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="p-4">
+		<div class="uneven-list"></div>
+	</div>
+
+	<div class="text-center my-4"><button class="btn btn-success add">Add</button></div>
+
+	<div class="footer text-center my-4">&copy; Fontstrap, 2017</div>
+
+	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../dist/js/fontstrap.js"></script>
+	<script type="text/javascript">
+		var randomInt = function (a = 0, b = 10) {
+			return a + Math.floor(Math.random() * b);
+		}
+
+		var createDiv = function () {
+			return $('<div>').css({ 'height': randomInt(50, 300) + 'px', 'margin-bottom': '10px' }).addClass('list-item');
+		}
+
+		$(window).on('load', function () {
+			$('.full-screen-bg').fullScreenBackground();
+			$('.navbar').keepOnScreen(); // Which is a combination of $('.navbar').keepAtTop(); and $('.navbar').keepAtBottom();
+
+			var align = function () {
+				$('.uneven-list').alignBlocks({
+					countPerRow: 4,
+					block: '.list-item',
+					spaceBetween: 10
+				});
+			};
+
+			var add = function (count = 1) {
+				_.times(count, function () {
+					$('.uneven-list').append(createDiv());
+					align();
+				});
+			};
+
+			add(20);
+
+			$('.add').click(function() {
+				add(10);
+			})
+		});
+	</script>
+
+</body>
+</html>

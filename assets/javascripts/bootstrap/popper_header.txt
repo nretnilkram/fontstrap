@@ -1,0 +1,5 @@
+/*!
+ * popper 1.10.8
+ * Copyright &copy; 2016 Federico Zivolo and contributors - (https://github.com/FezVrasta/popper.js)
+ * Licensed under MIT (https://github.com/FezVrasta/popper.js/blob/master/LICENSE.md)
+ */

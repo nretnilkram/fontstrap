@@ -2,13 +2,13 @@
 .stick-to-top {
   position: fixed;
   top: 0;
-  z-index: 1000;
   width: 100vw;
+  z-index: 1000;
 }
 
 .stick-to-bottom {
-  position: fixed;
   bottom: 0;
-  z-index: 1000;
+  position: fixed;
   width: 100vw;
+  z-index: 1000;
 }

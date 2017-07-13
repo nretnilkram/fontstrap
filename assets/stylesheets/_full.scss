@@ -1,8 +1,14 @@
-// Font Awesome CSS
-@import "font-awesome/font-awesome";
+/*!
+ * Fontstrap v1.2.0 (https://github.com/nretnilkram/fontstrap)
+ * Copyright 2017 Mark Lintern
+ * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
+ */
 
-// Bootstrap CSS with Ala Styles
-@import "bootstrap/bootstrap-flex";
+// Font Awesome CSS
+@import 'font-awesome/font-awesome';
+
+// Bootstrap CSS
+@import 'bootstrap/bootstrap';
 
 // Application CSS
-@import "application/application"
+@import 'application/application';
