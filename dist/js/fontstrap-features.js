@@ -202,17 +202,51 @@ jQuery.fn.alignBlocks = function(settings) {
 
 	if (elementMissing($(this), "alignBlocks()")) { return false; }
 
+	var breakPoints = jQuery.extend({
+		sm: 576,
+		md: 768,
+		lg: 992,
+		xl: 1200
+	});
+
 	var options = jQuery.extend({
 		countPerRow: 4,
+		countPerRowXs: 1,
+		countPerRowSm: 2,
+		countPerRowMd: 3,
+		countPerRowLg: 4,
+		countPerRowXl: 5,
+		responsive: true,
 		block: '.list-item',
 		spaceBetween: 0
 	}, cleanSettings(settings));
 
-	var tracker = buildTracker(options.countPerRow),
+	var columns = options.countPerRow;
+	if (options.responsive){
+		var windowWidth = $(window).width();
+		switch(true) {
+			case windowWidth < breakPoints.sm:
+				columns = options.countPerRowXs;
+				break;
+			case windowWidth < breakPoints.md:
+				columns = options.countPerRowSm;
+				break;
+			case windowWidth < breakPoints.lg:
+				columns = options.countPerRowMd;
+				break;
+			case windowWidth < breakPoints.xl:
+				columns = options.countPerRowLg;
+				break;
+			default:
+				columns = options.countPerRowXl;
+		}
+	}
+
+	var tracker = buildTracker(columns),
 	$self = $(this),
 	fullWidth = $self.width(),
-	colWidth = _.floor(fullWidth / options.countPerRow),
-	blockWidth = _.floor(colWidth - ((2 * options.spaceBetween) / (options.countPerRow - 1)));
+	colWidth = _.floor(fullWidth / columns),
+	blockWidth = (columns > 1) ? _.floor(colWidth - ((options.spaceBetween * (columns - 1)) / columns)) : colWidth;
 
 	$self.find(options.block).each(function (x, item) {
 		var column = nextColumn(tracker),
