@@ -6,7 +6,7 @@ require 'bundler/setup'
 require 'fileutils'
 require 'uglifier'
 
-def combine(list_of_files = [], output_file = 'out.txt')
+def combine(list_of_files, output_file = 'out.txt')
   File.open(output_file, 'w') { |f| f.puts(list_of_files.map { |s| IO.read(s) }) }
 end
 
@@ -26,8 +26,8 @@ namespace :sass do
   # This task will move fonts, images, and javascript files from assets to their respective dist directory locations.
   #####
   task :create_js_files do
-    FileUtils.copy_entry 'assets/javascripts/fontstrap', 'dist/js/' if Dir.exist? 'assets/javascripts/fontstrap'
-    minify_js('assets/javascripts/fontstrap/fontstrap-features.js', 'dist/js/fontstrap-features.min.js')
+    combine(['assets/javascripts/fontstrap/fontstrap-utilities.js', 'assets/javascripts/fontstrap/alignBlocks.jquery.js', 'assets/javascripts/fontstrap/fullScreenBackground.jquery.js', 'assets/javascripts/fontstrap/keepOnScreen.jquery.js'], 'dist/js/fontstrap-features.js')
+    minify_js('dist/js/fontstrap-features.js', 'dist/js/fontstrap-features.min.js')
     combine(['assets/javascripts/bootstrap/popper.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'dist/js/popper-bootstrap.min.js')
   end
 
