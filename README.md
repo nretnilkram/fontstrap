@@ -8,7 +8,7 @@
 ### Some necessary and useful javascript files are also loaded from a single file. Those versions are:
 
 * jQuery: 3.2.1
-* popper-bootstrap.js - generated combination of popper.js version 1.10.8 and bootstrap.js from the 4.0.0-beta build
+* popper-bootstrap.js - generated combination of popper.js version 1.11.0 and bootstrap.js from the 4.0.0-beta build
 * Lodash.js: 4.17.4
 * fontstrap-features.min.js - functionality added for fontstrap suite
 
