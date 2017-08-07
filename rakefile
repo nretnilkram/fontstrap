@@ -8,6 +8,7 @@ require 'uglifier'
 
 def combine(list_of_files, output_file = 'out.txt')
   File.open(output_file, 'w') { |f| f.puts(list_of_files.map { |s| IO.read(s) }) }
+  system "sed -i '' '/sourceMappingURL/d' ./#{output_file}"
 end
 
 def minify_js(source, output)
