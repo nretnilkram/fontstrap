@@ -164,8 +164,9 @@ bundle exec rake sass:compile
 
 
 ### Examples
-Four examples can be located in the examples directory.
+Examples can be found in the examples directory.
 * advanced.html - A large compilation of features and functionality that are included in fontstrap.
-* square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.
 * basic.html - A very small starter site of fontstrap.
+* blog.html - An example of crude 2 column blog layout, which was built with fontstrap.
 * grid-list.html - An example of the alignBlocks() query function which can be found in fontstrap.
+* square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.
