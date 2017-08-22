@@ -1,4 +1,4 @@
-# fontstrap v1.2.1
+# fontstrap v1.2.2
 
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
@@ -169,4 +169,5 @@ Examples can be found in the examples directory.
 * basic.html - A very small starter site of fontstrap.
 * blog.html - An example of crude 2 column blog layout, which was built with fontstrap.
 * grid-list.html - An example of the alignBlocks() query function which can be found in fontstrap.
+* offcanvas.html - An example of the offCanvas Menu feature in action.
 * square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.
