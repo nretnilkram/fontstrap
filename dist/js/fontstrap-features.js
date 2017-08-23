@@ -314,10 +314,10 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		}
 	});
 
-	self.find(options.submenuTrigger).click(function (e) {
+	self.find(options.submenuTrigger + ' > a').click(function (e) {
 		e.preventDefault(e);
-		$(this).siblings().find(options.submenuEl).removeClass('open');
-		$(this).find(options.submenuEl).toggleClass('open');
+		$(this).parent().siblings().find(options.submenuEl).removeClass('open');
+		$(this).parent().find(options.submenuEl).toggleClass('open');
 	});
 
 };
