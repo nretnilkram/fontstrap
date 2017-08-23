@@ -23,10 +23,27 @@
       background-color: $gray-700;
     }
   }
+
+  .submenu {
+    display: none;
+
+    a {
+      padding-left: $spacer * 3;
+    }
+
+    &.open {
+      display: block;
+    }
+  }
 }
 
 .offcanvas-main-content {
-  transition: margin-left .5s;
+  transition: margin-left .5s, left .5s;
+
+  &.push {
+    position: absolute;
+    width: 100vw;
+  }
 }
 
 .offcanvas-menu-toggle {

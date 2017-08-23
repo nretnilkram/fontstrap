@@ -1,4 +1,4 @@
-# fontstrap v1.2.2
+# fontstrap v1.2.3
 
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
@@ -156,6 +156,33 @@ bundle exec rake sass:compile
 		spaceBetween: 0
 	});
 </script>
+...
+```
+
+* $().offcanvasMenu({width: 20, responsive: false, mainBlock: '.offcanvas-main-content', triggerEl: '.offcanvas-menu-toggle', submenuTrigger: '.submenu-toggle', submenuEl: '.submenu'}); - This will take amenu and turn it into an offcanvas menu.  It has many customizable elements and can be set for different widths based on screen size with the standard break points.
+
+```html
+...
+<div class="offcanvas-menu bg-secondary">
+	<div class="offcanvas-menu-header clearfix">
+		<button class="pull-right offcanvas-menu-toggle p-3 text-white"><i class="fa fa-times"></i></button>
+	</div>
+	<ul>
+		<li><a href="#"><i class="fa fa-home fa-fw mr-2"></i> Home</a></li>
+		<li class='submenu-toggle'>
+			<a href='#'><i class="fa fa-text fa-fw mr-2">WS</i> With Sub</a>
+			<ul class="submenu">
+				<li><a target="_blank" href="#"><i class="fa fa-text fa-fw mr-2">1</i> One</a></li>
+				<li><a target="_blank" href="#"><i class="fa fa-text fa-fw mr-2">2</i> Two</a></li>
+			</ul>
+		</li>
+		<li><a href="#"><i class="fa fa-text fa-fw mr-2">A</i> About</a></li>
+	</ul>
+</div>
+
+<div class="offcanvas-main-content">
+...
+</div>
 ...
 ```
 

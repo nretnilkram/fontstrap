@@ -1,6 +1,16 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .page-header {
   border-bottom: solid 1px;
   margin-bottom: 10px;
   padding-bottom: 10px;
   padding-top: 30px;
+}
+
+.fa-text {
+  font-family: $font-family-base;
 }
