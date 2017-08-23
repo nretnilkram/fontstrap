@@ -296,6 +296,7 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		if ( self.hasClass('menu-open') ) {
 			self.css({ width: 0 });
 		  $(options.mainBlock).css({ 'margin-left': 0 });
+			$('.fixed-top, .fixed-bottom').css({ 'left': 0 }); // Fix for items that are fixed to the top or bottom of page
 			self.removeClass('menu-open');
 			$(options.mainBlock).removeClass('menu-open');
 			if ( options.push ) {
@@ -304,6 +305,7 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		} else {
 			self.css({ width: menuWidth + "%" });
 		  $(options.mainBlock).css({ 'margin-left': menuWidth + "%" });
+			$('.fixed-top, .fixed-bottom').css({ 'left': menuWidth + "%" }); // Fix for items that are fixed to the top or bottom of page
 			self.addClass('menu-open');
 			$(options.mainBlock).addClass('menu-open');
 			if ( options.push ) {

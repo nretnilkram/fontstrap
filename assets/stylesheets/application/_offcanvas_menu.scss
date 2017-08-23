@@ -38,7 +38,7 @@
 }
 
 .offcanvas-main-content {
-  transition: margin-left .5s, left .5s;
+  transition: .5s;
 
   &.push {
     position: absolute;
@@ -54,4 +54,9 @@
   line-height: 1;
   opacity: .5;
   padding: 0;
+}
+
+.fixed-top,
+.fixed-bottom {
+  transition: left .5s;
 }
