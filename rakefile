@@ -27,7 +27,8 @@ namespace :sass do
   # This task will move fonts, images, and javascript files from assets to their respective dist directory locations.
   #####
   task :create_js_files do
-    combine(['assets/javascripts/fontstrap/fontstrap-utilities.js',
+    combine(['assets/javascripts/fontstrap/storage.js',
+             'assets/javascripts/fontstrap/fontstrap-utilities.js',
              'assets/javascripts/fontstrap/alignBlocks.jquery.js',
              'assets/javascripts/fontstrap/fullScreenBackground.jquery.js',
              'assets/javascripts/fontstrap/offcanvasMenu.jquery.js',

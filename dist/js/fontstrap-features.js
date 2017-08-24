@@ -3,6 +3,65 @@
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
+
+var storage;
+
+function BrowserStorage(session){
+
+  this.session = session || false;
+
+  this.save = function (name, value){
+    if ( this.session ) {
+      sessionStorage.setItem(name, value);
+    } else {
+      localStorage.setItem(name, value);
+    }
+  };
+
+  this.get = function (name) {
+    if ( this.session ) {
+      return sessionStorage.getItem(name);
+    } else {
+      return localStorage.getItem(name);
+    }
+  };
+
+  this.delete = function (name){
+    if ( this.session ) {
+      return sessionStorage.removeItem(name);
+    } else {
+      return localStorage.removeItem(name);
+    }
+  };
+}
+
+
+function CookieStorage(){
+
+  this.save = function (name, value){
+
+  };
+
+  this.get = function (name){
+
+  };
+
+  this.delete = function (name){
+
+  };
+}
+
+if (typeof(Storage) !== "undefined") {
+  storage = new BrowserStorage;
+} else {
+  // No Web Storage support.  Use Cookies instead.
+  storage = new CookieStorage;
+}
+/*!
+ * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
+ * Copyright 2017 Mark Lintern
+ * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
+ */
 $('.js-trigger').click(function (event) {
 	event.preventDefault();
 });
@@ -256,7 +315,8 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		mainBlock: '.offcanvas-main-content',
 		triggerEl: '.offcanvas-menu-toggle',
 		submenuTrigger: '.submenu-toggle',
-		submenuEl: '.submenu'
+		submenuEl: '.submenu',
+		lockToggle: '.menu-lock-toggle'
 	}, settings);
 
 	if ( options.width  > 100 || options.width < 0 ) {
@@ -291,26 +351,35 @@ jQuery.fn.offcanvasMenu = function(settings) {
 
 	var self = $(this)
 
-	$(options.triggerEl).click(function () {
+	var open = function () {
 		var menuWidth = calculateMenuWidth();
+		self.css({ width: menuWidth + "%" });
+		$(options.mainBlock).css({ 'margin-left': menuWidth + "%" });
+		$('.fixed-top, .fixed-bottom').css({ 'left': menuWidth + "%" }); // Fix for items that are fixed to the top or bottom of page
+		self.addClass('menu-open');
+		$(options.mainBlock).addClass('menu-open');
+		if ( options.push ) {
+			$(options.mainBlock).addClass('push');
+		}
+	}
+
+	var close = function () {
+		var menuWidth = calculateMenuWidth();
+		self.css({ width: 0 });
+		$(options.mainBlock).css({ 'margin-left': 0 });
+		$('.fixed-top, .fixed-bottom').css({ 'left': 0 }); // Fix for items that are fixed to the top or bottom of page
+		self.removeClass('menu-open');
+		$(options.mainBlock).removeClass('menu-open');
+		if ( options.push ) {
+			$(options.mainBlock).removeClass('push');
+		}
+	}
+
+	$(options.triggerEl).click(function () {
 		if ( self.hasClass('menu-open') ) {
-			self.css({ width: 0 });
-		  $(options.mainBlock).css({ 'margin-left': 0 });
-			$('.fixed-top, .fixed-bottom').css({ 'left': 0 }); // Fix for items that are fixed to the top or bottom of page
-			self.removeClass('menu-open');
-			$(options.mainBlock).removeClass('menu-open');
-			if ( options.push ) {
-				$(options.mainBlock).removeClass('push');
-			}
+			close();
 		} else {
-			self.css({ width: menuWidth + "%" });
-		  $(options.mainBlock).css({ 'margin-left': menuWidth + "%" });
-			$('.fixed-top, .fixed-bottom').css({ 'left': menuWidth + "%" }); // Fix for items that are fixed to the top or bottom of page
-			self.addClass('menu-open');
-			$(options.mainBlock).addClass('menu-open');
-			if ( options.push ) {
-				$(options.mainBlock).addClass('push');
-			}
+			open();
 		}
 	});
 
@@ -319,6 +388,28 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		$(this).parent().siblings().find(options.submenuEl).removeClass('open');
 		$(this).parent().find(options.submenuEl).toggleClass('open');
 	});
+
+	self.find(options.lockToggle).click(function (e) {
+		e.preventDefault(e);
+		if ($(this).hasClass('locked')) {
+			$(this).removeClass('locked');
+			$(this).find('.fa').addClass('fa-unlock');
+			$(this).find('.fa').removeClass('fa-lock');
+			storage.save('menu-locked', false);
+		} else {
+			$(this).addClass('locked');
+			$(this).find('.fa').addClass('fa-lock');
+			$(this).find('.fa').removeClass('fa-unlock');
+			storage.save('menu-locked', true);
+		}
+	});
+
+	if (storage.get('menu-locked') == 'true') {
+		$(options.lockToggle).addClass('locked');
+		$(options.lockToggle).find('.fa').addClass('fa-lock');
+		$(options.lockToggle).find('.fa').removeClass('fa-unlock');
+		open();
+	}
 
 };
 /*!

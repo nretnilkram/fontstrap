@@ -38,6 +38,7 @@ var loadRequirements = function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
   loadScript(jsPath + "lodash.min.js", function(){
+    loadScript(assetJsPath + "storage.js", function(){ });
     loadScript(assetJsPath + "alignBlocks.jquery.js", function(){ });
     loadScript(assetJsPath + "fontstrap-utilities.js", function(){ });
     loadScript(assetJsPath + "fullScreenBackground.jquery.js", function(){ });

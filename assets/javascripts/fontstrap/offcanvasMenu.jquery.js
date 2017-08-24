@@ -53,7 +53,8 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		mainBlock: '.offcanvas-main-content',
 		triggerEl: '.offcanvas-menu-toggle',
 		submenuTrigger: '.submenu-toggle',
-		submenuEl: '.submenu'
+		submenuEl: '.submenu',
+		lockToggle: '.menu-lock-toggle'
 	}, settings);
 
 	if ( options.width  > 100 || options.width < 0 ) {
@@ -88,26 +89,36 @@ jQuery.fn.offcanvasMenu = function(settings) {
 
 	var self = $(this)
 
-	$(options.triggerEl).click(function () {
+	var open = function (duration) {
+		console.log(duration);
 		var menuWidth = calculateMenuWidth();
+		self.animate({ width: menuWidth + "%" }, duration);
+		$(options.mainBlock).animate({ 'margin-left': menuWidth + "%" }, duration);
+		$('.fixed-top, .fixed-bottom').animate({ 'left': menuWidth + "%" }, duration); // Fix for items that are fixed to the top or bottom of page
+		self.addClass('menu-open');
+		$(options.mainBlock).addClass('menu-open');
+		if ( options.push ) {
+			$(options.mainBlock).addClass('push');
+		}
+	}
+
+	var close = function (duration) {
+		var menuWidth = calculateMenuWidth();
+		$(options.mainBlock).animate({ 'margin-left': 0 }, duration);
+		$('.fixed-top, .fixed-bottom').animate({ 'left': 0 }, duration); // Fix for items that are fixed to the top or bottom of page
+		self.animate({ width: 0 }, duration);
+		self.removeClass('menu-open');
+		$(options.mainBlock).removeClass('menu-open');
+		if ( options.push ) {
+			$(options.mainBlock).removeClass('push');
+		}
+	}
+
+	$(options.triggerEl).click(function () {
 		if ( self.hasClass('menu-open') ) {
-			self.css({ width: 0 });
-		  $(options.mainBlock).css({ 'margin-left': 0 });
-			$('.fixed-top, .fixed-bottom').css({ 'left': 0 }); // Fix for items that are fixed to the top or bottom of page
-			self.removeClass('menu-open');
-			$(options.mainBlock).removeClass('menu-open');
-			if ( options.push ) {
-				$(options.mainBlock).removeClass('push');
-			}
+			close();
 		} else {
-			self.css({ width: menuWidth + "%" });
-		  $(options.mainBlock).css({ 'margin-left': menuWidth + "%" });
-			$('.fixed-top, .fixed-bottom').css({ 'left': menuWidth + "%" }); // Fix for items that are fixed to the top or bottom of page
-			self.addClass('menu-open');
-			$(options.mainBlock).addClass('menu-open');
-			if ( options.push ) {
-				$(options.mainBlock).addClass('push');
-			}
+			open();
 		}
 	});
 
@@ -116,5 +127,27 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		$(this).parent().siblings().find(options.submenuEl).removeClass('open');
 		$(this).parent().find(options.submenuEl).toggleClass('open');
 	});
+
+	self.find(options.lockToggle).click(function (e) {
+		e.preventDefault(e);
+		if ($(this).hasClass('locked')) {
+			$(this).removeClass('locked');
+			$(this).find('.fa').addClass('fa-unlock');
+			$(this).find('.fa').removeClass('fa-lock');
+			storage.save('menu-locked', false);
+		} else {
+			$(this).addClass('locked');
+			$(this).find('.fa').addClass('fa-lock');
+			$(this).find('.fa').removeClass('fa-unlock');
+			storage.save('menu-locked', true);
+		}
+	});
+
+	if (storage.get('menu-locked') == 'true') {
+		$(options.lockToggle).addClass('locked');
+		$(options.lockToggle).find('.fa').addClass('fa-lock');
+		$(options.lockToggle).find('.fa').removeClass('fa-unlock');
+		open(0);
+	}
 
 };

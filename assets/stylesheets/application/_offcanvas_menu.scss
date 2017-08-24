@@ -4,7 +4,7 @@
   overflow-x: hidden;
   position: fixed;
   top: 0;
-  transition: .5s;
+  // transition: .5s;
   width: 0;
   z-index: 1;
 
@@ -38,7 +38,7 @@
 }
 
 .offcanvas-main-content {
-  transition: .5s;
+  // transition: .5s;
 
   &.push {
     position: absolute;
@@ -46,6 +46,7 @@
   }
 }
 
+.menu-lock-toggle,
 .offcanvas-menu-toggle {
   background: transparent;
   border: 0;
@@ -54,9 +55,14 @@
   line-height: 1;
   opacity: .5;
   padding: 0;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
 }
 
 .fixed-top,
 .fixed-bottom {
-  transition: left .5s;
+  // transition: left .5s;
 }
