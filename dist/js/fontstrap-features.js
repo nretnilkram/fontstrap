@@ -1,10 +1,14 @@
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
 
 var storage;
+
+/*
+ * Store values using local storgae
+ */
 
 function BrowserStorage(session){
 
@@ -35,29 +39,45 @@ function BrowserStorage(session){
   };
 }
 
+/*
+ * Store Values using Cookies
+ */
 
 function CookieStorage(){
 
-  this.save = function (name, value){
-
+  this.save = function (cname, cvalue){
+    document.cookie = cname + "=" + cvalue;
   };
 
-  this.get = function (name){
-
+  this.get = function (cname){
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
   };
 
-  this.delete = function (name){
-
+  this.delete = function (cname){
+    document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
   };
 }
 
 if (typeof(Storage) !== "undefined") {
-  storage = new BrowserStorage;
+  storage = new BrowserStorage();
 } else {
   // No Web Storage support.  Use Cookies instead.
-  storage = new CookieStorage;
+  console.log('Your browser does not support local storage. Going to try cookies instead.');
+  storage = new CookieStorage();
 }
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -67,8 +87,8 @@ $('.js-trigger').click(function (event) {
 });
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -78,7 +98,7 @@ var elementMissing = function (sel, methodName) {
 		return false;
 	}
 };
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -89,8 +109,8 @@ if ( typeof _  != "function" ) {
 }
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -102,8 +122,8 @@ var elementMissing = function (sel, methodName) {
 };
 
 /*
-* Helpers for alignBlocks
-*/
+ * Helpers for alignBlocks
+ */
 
 var buildTracker = function (count) {
 	object = {};
@@ -143,8 +163,8 @@ var cleanSettings = function (settings) {
 };
 
 /*
-* alignBlocks takes a set of blocks, divs, and aligns them in a container so that no space is wasted.
-*/
+ * alignBlocks takes a set of blocks, divs, and aligns them in a container so that no space is wasted.
+ */
 
 jQuery.fn.alignBlocks = function(settings) {
 
@@ -212,7 +232,7 @@ jQuery.fn.alignBlocks = function(settings) {
 
 	$self.css({ 'position': 'relative', 'height': newHeight(tracker) + 'px' });
 };
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -223,8 +243,8 @@ if ( typeof _  != "function" ) {
 }
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -236,8 +256,8 @@ var elementMissing = function (sel, methodName) {
 };
 
 /*
-* fullScreenBackground will take the block and make it the full viewing window along with CSS that accomanies.
-*/
+ * fullScreenBackground will take the block and make it the full viewing window along with CSS that accomanies.
+ */
 
 jQuery.fn.fullScreenBackground = function(settings){
 
@@ -260,7 +280,7 @@ jQuery.fn.fullScreenBackground = function(settings){
 	});
 
 };
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -271,8 +291,8 @@ if ( typeof _  != "function" ) {
 }
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -284,8 +304,8 @@ var elementMissing = function (sel, methodName) {
 };
 
 /*
-* offcanvasMenu takes a menu and turns it into an offcanvas menu.
-*/
+ * offcanvasMenu takes a menu and turns it into an offcanvas menu.
+ */
 
 jQuery.fn.offcanvasMenu = function(settings) {
 
@@ -316,7 +336,8 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		triggerEl: '.offcanvas-menu-toggle',
 		submenuTrigger: '.submenu-toggle',
 		submenuEl: '.submenu',
-		lockToggle: '.menu-lock-toggle'
+		lockToggle: '.menu-lock-toggle',
+		cookieName: 'menuLocked'
 	}, settings);
 
 	if ( options.width  > 100 || options.width < 0 ) {
@@ -351,11 +372,11 @@ jQuery.fn.offcanvasMenu = function(settings) {
 
 	var self = $(this)
 
-	var open = function () {
+	var open = function (duration) {
 		var menuWidth = calculateMenuWidth();
-		self.css({ width: menuWidth + "%" });
-		$(options.mainBlock).css({ 'margin-left': menuWidth + "%" });
-		$('.fixed-top, .fixed-bottom').css({ 'left': menuWidth + "%" }); // Fix for items that are fixed to the top or bottom of page
+		self.animate({ width: menuWidth + "%" }, duration);
+		$(options.mainBlock).animate({ 'margin-left': menuWidth + "%" }, duration);
+		$('.fixed-top, .fixed-bottom').animate({ 'left': menuWidth + "%" }, duration); // Fix for items that are fixed to the top or bottom of page
 		self.addClass('menu-open');
 		$(options.mainBlock).addClass('menu-open');
 		if ( options.push ) {
@@ -363,11 +384,11 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		}
 	}
 
-	var close = function () {
+	var close = function (duration) {
 		var menuWidth = calculateMenuWidth();
-		self.css({ width: 0 });
-		$(options.mainBlock).css({ 'margin-left': 0 });
-		$('.fixed-top, .fixed-bottom').css({ 'left': 0 }); // Fix for items that are fixed to the top or bottom of page
+		$(options.mainBlock).animate({ 'margin-left': 0 }, duration);
+		$('.fixed-top, .fixed-bottom').animate({ 'left': 0 }, duration); // Fix for items that are fixed to the top or bottom of page
+		self.animate({ width: 0 }, duration);
 		self.removeClass('menu-open');
 		$(options.mainBlock).removeClass('menu-open');
 		if ( options.push ) {
@@ -395,24 +416,24 @@ jQuery.fn.offcanvasMenu = function(settings) {
 			$(this).removeClass('locked');
 			$(this).find('.fa').addClass('fa-unlock');
 			$(this).find('.fa').removeClass('fa-lock');
-			storage.save('menu-locked', false);
+			storage.save(options.cookieName, false);
 		} else {
 			$(this).addClass('locked');
 			$(this).find('.fa').addClass('fa-lock');
 			$(this).find('.fa').removeClass('fa-unlock');
-			storage.save('menu-locked', true);
+			storage.save(options.cookieName, true);
 		}
 	});
 
-	if (storage.get('menu-locked') == 'true') {
+	if (storage.get(options.cookieName) == 'true') {
 		$(options.lockToggle).addClass('locked');
 		$(options.lockToggle).find('.fa').addClass('fa-lock');
 		$(options.lockToggle).find('.fa').removeClass('fa-unlock');
-		open();
+		open(0);
 	}
 
 };
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -423,8 +444,8 @@ if ( typeof _  != "function" ) {
 }
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -436,8 +457,8 @@ var elementMissing = function (sel, methodName) {
 };
 
 /*
-* keepAtTop will keep the block, like a navbar, on the top of the screen when scrolling down past the block.  Or if the block is above the screen when page is loaded.
-*/
+ * keepAtTop will keep the block, like a navbar, on the top of the screen when scrolling down past the block.  Or if the block is above the screen when page is loaded.
+ */
 
 jQuery.fn.keepAtTop = function(settings){
 
@@ -469,8 +490,8 @@ jQuery.fn.keepAtTop = function(settings){
 };
 
 /*
-* keepAtBottom will keep the block, like a navbar, on the bottom of the screen when scrolling up past the block.  Or if the block is below the screen when page is loaded.
-*/
+ * keepAtBottom will keep the block, like a navbar, on the bottom of the screen when scrolling up past the block.  Or if the block is below the screen when page is loaded.
+ */
 
 jQuery.fn.keepAtBottom = function(settings){
 
@@ -504,8 +525,8 @@ jQuery.fn.keepAtBottom = function(settings){
 };
 
 /*
-* keepOnScreen is a combination of keepAtTop and keepAtBottom. It will keep the block, like a navbar, on the top when scrolling down past the block and at the bottom when scrolling up past the block.
-*/
+ * keepOnScreen is a combination of keepAtTop and keepAtBottom. It will keep the block, like a navbar, on the top when scrolling down past the block and at the bottom when scrolling up past the block.
+ */
 
 jQuery.fn.keepOnScreen = function(settings){
 

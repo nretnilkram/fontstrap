@@ -1,4 +1,4 @@
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -9,8 +9,8 @@ if ( typeof _  != "function" ) {
 }
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -22,8 +22,8 @@ var elementMissing = function (sel, methodName) {
 };
 
 /*
-* offcanvasMenu takes a menu and turns it into an offcanvas menu.
-*/
+ * offcanvasMenu takes a menu and turns it into an offcanvas menu.
+ */
 
 jQuery.fn.offcanvasMenu = function(settings) {
 
@@ -54,7 +54,8 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		triggerEl: '.offcanvas-menu-toggle',
 		submenuTrigger: '.submenu-toggle',
 		submenuEl: '.submenu',
-		lockToggle: '.menu-lock-toggle'
+		lockToggle: '.menu-lock-toggle',
+		cookieName: 'menuLocked'
 	}, settings);
 
 	if ( options.width  > 100 || options.width < 0 ) {
@@ -90,7 +91,6 @@ jQuery.fn.offcanvasMenu = function(settings) {
 	var self = $(this)
 
 	var open = function (duration) {
-		console.log(duration);
 		var menuWidth = calculateMenuWidth();
 		self.animate({ width: menuWidth + "%" }, duration);
 		$(options.mainBlock).animate({ 'margin-left': menuWidth + "%" }, duration);
@@ -134,16 +134,16 @@ jQuery.fn.offcanvasMenu = function(settings) {
 			$(this).removeClass('locked');
 			$(this).find('.fa').addClass('fa-unlock');
 			$(this).find('.fa').removeClass('fa-lock');
-			storage.save('menu-locked', false);
+			storage.save(options.cookieName, false);
 		} else {
 			$(this).addClass('locked');
 			$(this).find('.fa').addClass('fa-lock');
 			$(this).find('.fa').removeClass('fa-unlock');
-			storage.save('menu-locked', true);
+			storage.save(options.cookieName, true);
 		}
 	});
 
-	if (storage.get('menu-locked') == 'true') {
+	if (storage.get(options.cookieName) == 'true') {
 		$(options.lockToggle).addClass('locked');
 		$(options.lockToggle).find('.fa').addClass('fa-lock');
 		$(options.lockToggle).find('.fa').removeClass('fa-unlock');

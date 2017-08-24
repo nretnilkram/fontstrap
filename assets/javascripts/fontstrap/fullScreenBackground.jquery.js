@@ -1,4 +1,4 @@
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -9,8 +9,8 @@ if ( typeof _  != "function" ) {
 }
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -22,8 +22,8 @@ var elementMissing = function (sel, methodName) {
 };
 
 /*
-* fullScreenBackground will take the block and make it the full viewing window along with CSS that accomanies.
-*/
+ * fullScreenBackground will take the block and make it the full viewing window along with CSS that accomanies.
+ */
 
 jQuery.fn.fullScreenBackground = function(settings){
 

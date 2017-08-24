@@ -1,4 +1,4 @@
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -9,8 +9,8 @@ if ( typeof _  != "function" ) {
 }
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -22,8 +22,8 @@ var elementMissing = function (sel, methodName) {
 };
 
 /*
-* Helpers for alignBlocks
-*/
+ * Helpers for alignBlocks
+ */
 
 var buildTracker = function (count) {
 	object = {};
@@ -63,8 +63,8 @@ var cleanSettings = function (settings) {
 };
 
 /*
-* alignBlocks takes a set of blocks, divs, and aligns them in a container so that no space is wasted.
-*/
+ * alignBlocks takes a set of blocks, divs, and aligns them in a container so that no space is wasted.
+ */
 
 jQuery.fn.alignBlocks = function(settings) {
 

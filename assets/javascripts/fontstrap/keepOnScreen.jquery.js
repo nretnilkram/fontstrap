@@ -1,4 +1,4 @@
-/*!
+/*
  * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
@@ -9,8 +9,8 @@ if ( typeof _  != "function" ) {
 }
 
 /*
-* Global helpers for jQuery plugins.
-*/
+ * Global helpers for jQuery plugins.
+ */
 
 var elementMissing = function (sel, methodName) {
 	if ( sel.length === 0 ) {
@@ -22,8 +22,8 @@ var elementMissing = function (sel, methodName) {
 };
 
 /*
-* keepAtTop will keep the block, like a navbar, on the top of the screen when scrolling down past the block.  Or if the block is above the screen when page is loaded.
-*/
+ * keepAtTop will keep the block, like a navbar, on the top of the screen when scrolling down past the block.  Or if the block is above the screen when page is loaded.
+ */
 
 jQuery.fn.keepAtTop = function(settings){
 
@@ -55,8 +55,8 @@ jQuery.fn.keepAtTop = function(settings){
 };
 
 /*
-* keepAtBottom will keep the block, like a navbar, on the bottom of the screen when scrolling up past the block.  Or if the block is below the screen when page is loaded.
-*/
+ * keepAtBottom will keep the block, like a navbar, on the bottom of the screen when scrolling up past the block.  Or if the block is below the screen when page is loaded.
+ */
 
 jQuery.fn.keepAtBottom = function(settings){
 
@@ -90,8 +90,8 @@ jQuery.fn.keepAtBottom = function(settings){
 };
 
 /*
-* keepOnScreen is a combination of keepAtTop and keepAtBottom. It will keep the block, like a navbar, on the top when scrolling down past the block and at the bottom when scrolling up past the block.
-*/
+ * keepOnScreen is a combination of keepAtTop and keepAtBottom. It will keep the block, like a navbar, on the top when scrolling down past the block and at the bottom when scrolling up past the block.
+ */
 
 jQuery.fn.keepOnScreen = function(settings){
 
