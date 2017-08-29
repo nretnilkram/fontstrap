@@ -21,10 +21,6 @@ $white: #fff;
     text-align: center;
   }
 
-  &.dark {
-    color: $white;
-  }
-
   @include media-breakpoint-up(sm) {
     background-attachment: fixed;
   }
