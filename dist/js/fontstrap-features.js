@@ -1,5 +1,5 @@
 /*
- * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -78,7 +78,7 @@ if (typeof(Storage) !== "undefined") {
   storage = new CookieStorage();
 }
 /*
- * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -99,7 +99,7 @@ var elementMissing = function (sel, methodName) {
 	}
 };
 /*
- * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -233,7 +233,7 @@ jQuery.fn.alignBlocks = function(settings) {
 	$self.css({ 'position': 'relative', 'height': newHeight(tracker) + 'px' });
 };
 /*
- * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -281,7 +281,7 @@ jQuery.fn.fullScreenBackground = function(settings){
 
 };
 /*
- * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -434,7 +434,7 @@ jQuery.fn.offcanvasMenu = function(settings) {
 
 };
 /*
- * Fontstrap v1.2.3 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
