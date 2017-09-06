@@ -1,10 +1,34 @@
 /*
- * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.5 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
 
 var storage;
+
+/*
+ * Storage Helpers
+ */
+
+function whatIsIt(object) {
+	var stringConstructor = "test".constructor;
+	var arrayConstructor = [].constructor;
+	var objectConstructor = {}.constructor;
+
+	if (object === null) {
+		return "null";
+	} else if (object === undefined) {
+		return "undefined";
+	} else if (object.constructor === stringConstructor) {
+		return "string";
+	} else if (object.constructor === arrayConstructor) {
+		return "array";
+	} else if (object.constructor === objectConstructor) {
+		return "object";
+	} else {
+	return "don't know";
+	}
+}
 
 /*
  * Store values using local storgae
@@ -16,9 +40,17 @@ function BrowserStorage(session){
 
   this.save = function (name, value){
     if ( this.session ) {
-      sessionStorage.setItem(name, value);
+      if (whatIsIt(value) == 'object') {
+        sessionStorage.setItem(name, JSON.stringify(value));
+      } else {
+        sessionStorage.setItem(name, value);
+      }
     } else {
-      localStorage.setItem(name, value);
+      if (whatIsIt(value) == 'object') {
+        localStorage.setItem(name, JSON.stringify(value));
+      } else {
+        localStorage.setItem(name, value);
+      }
     }
   };
 
@@ -78,7 +110,7 @@ if (typeof(Storage) !== "undefined") {
   storage = new CookieStorage();
 }
 /*
- * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.5 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -99,7 +131,7 @@ var elementMissing = function (sel, methodName) {
 	}
 };
 /*
- * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.5 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -233,7 +265,7 @@ jQuery.fn.alignBlocks = function(settings) {
 	$self.css({ 'position': 'relative', 'height': newHeight(tracker) + 'px' });
 };
 /*
- * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.5 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -281,7 +313,7 @@ jQuery.fn.fullScreenBackground = function(settings){
 
 };
 /*
- * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.5 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -434,7 +466,7 @@ jQuery.fn.offcanvasMenu = function(settings) {
 
 };
 /*
- * Fontstrap v1.2.4 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.5 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
