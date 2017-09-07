@@ -3,23 +3,6 @@
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
-if ( typeof _  != "function" ) {
-	console.log('Lodash was not found and is required by the fontstrap jQuery plugins.');
-	var no_lodash = true;
-}
-
-/*
- * Global helpers for jQuery plugins.
- */
-
-var elementMissing = function (sel, methodName) {
-	if ( sel.length === 0 ) {
-		console.log('Element does not exist. Did not execute ' + methodName + '. Please check the selector.');
-		return true;
-	} else {
-		return false;
-	}
-};
 
 /*
  * offcanvasMenu takes a menu and turns it into an offcanvas menu.
@@ -126,6 +109,8 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		e.preventDefault(e);
 		$(this).parent().siblings().find(options.submenuEl).removeClass('open');
 		$(this).parent().find(options.submenuEl).toggleClass('open');
+		$(this).parent().siblings().find('a').removeClass('active');
+		$(this).toggleClass('active');
 	});
 
 	self.find(options.lockToggle).click(function (e) {
@@ -143,11 +128,19 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		}
 	});
 
-	if (storage.get(options.cookieName) == 'true') {
+	if (storage.get(options.cookieName)) {
 		$(options.lockToggle).addClass('locked');
 		$(options.lockToggle).find('.fa').addClass('fa-lock');
 		$(options.lockToggle).find('.fa').removeClass('fa-unlock');
 		open(0);
 	}
+
+	var throttled_open = _.throttle(open, 250);
+
+	$(window).resize(function () {
+		if (self.hasClass('menu-open')) {
+			throttled_open(0);
+		}
+	});
 
 };

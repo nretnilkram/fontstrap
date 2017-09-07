@@ -34,6 +34,7 @@ namespace :sass do
              'assets/javascripts/fontstrap/offcanvasMenu.jquery.js',
              'assets/javascripts/fontstrap/keepOnScreen.jquery.js'], 'dist/js/fontstrap-features.js')
     minify_js('dist/js/fontstrap-features.js', 'dist/js/fontstrap-features.min.js')
+    minify_js('dist/js/fontstrap.js', 'dist/js/fontstrap.min.js')
     combine(['assets/javascripts/bootstrap/popper.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'dist/js/popper-bootstrap.min.js')
   end
 

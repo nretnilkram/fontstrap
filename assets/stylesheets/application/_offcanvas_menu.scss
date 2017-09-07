@@ -15,12 +15,19 @@
   }
 
   a {
+    border-left: solid 4px transparent;
     color: $white;
     display: block;
     padding: 15px;
 
+    &.active {
+      background-color: $gray-500;
+      border-color: $gray-800;
+    }
+
     &:hover {
       background-color: $gray-700;
+      border-color: $black;
     }
   }
 

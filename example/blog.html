@@ -63,22 +63,34 @@
 						<p>Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor. Vel volutpat, sed vel imperdiet, vehicula auctor purus in, eu non tempor amet euismod ligula dictumst, massa orci posuere cras varius suscipit ac. Erat dui. Vitae purus suspendisse facilisi vivamus, ligula placerat pede lorem amet, sociosqu mauris, hendrerit mollis nulla in, sed at ante imperdiet. Nulla nonummy, purus pede at id sem morbi, pariatur aliquet massa donec suspendisse mi, integer malesuada velit aenean.</p>
 						<p>Wisi nulla at ut ornare, risus elit convallis orci volutpat quam scelerisque. Vestibulum pretium scelerisque. Pulvinar placerat id dictum eros a, sed facilisi vulputate ut integer, nec lacinia magna dolore dolor lacus, sed scelerisque vel dolor adipiscing sagittis. Natus urna a faucibus eu iaculis consectetuer, vivamus massa sed, vel et, morbi rhoncus nibh, etiam wisi iaculis amet dolor pharetra nisl. Amet ante rhoncus leo vel dictum, morbi duis massa, pretium amet vitae, eleifend laoreet mattis id imperdiet integer.</p>
 					</div>
+					<div>
+						<h4 class="mb-3 mt-4">Comments</h4>
+						<div class="card mb-3">
+							<div class="card-header bg-secondary text-white">
+								<span class="commenter">John Smith</span>
+								<span class="comment-date pull-right">7 September 2017</span>
+							</div>
+							<div class="card-body">
+								<p class="card-text">This post helped me out greatly. Thank you</p>
+							</div>
+						</div>
+					</div>
 					<div class="post-comment">
 						<h4 class="mb-3 mt-4">Leave a Comment</h4>
 						<form>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label class="col-form-label">Name</label>
-									<input type="email" class="form-control" placeholder="Name">
+									<input type="text" name="name" class="form-control" placeholder="Name">
 								</div>
 								<div class="form-group col-md-6">
 									<label class="col-form-label">Email</label>
-									<input type="password" class="form-control" placeholder="Email">
+									<input type="email" name="email" class="form-control" placeholder="Email">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="exampleFormControlTextarea1">Comment</label>
-								<textarea class="form-control" rows="3"></textarea>
+								<textarea class="form-control" name="comment" rows="3"></textarea>
 							</div>
 							<button type="submit" class="btn btn-dark pull-right">Submit</button>
 						</form>
@@ -163,7 +175,7 @@
 
 	<div class="footer text-center my-4">&copy; Fontstrap, 2017</div>
 
-	<script type="text/javascript" src="../dist/js/fontstrap.js"></script>
+	<script type="text/javascript" src="../dist/js/fontstrap.min.js"></script>
 
 </body>
 </html>

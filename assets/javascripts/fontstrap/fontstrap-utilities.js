@@ -3,6 +3,12 @@
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
+ 
+ if ( typeof _  != "function" ) {
+ 	console.log('Lodash was not found and is required by the fontstrap jQuery plugins.');
+ 	var no_lodash = true;
+ }
+
 $('.js-trigger').click(function (event) {
 	event.preventDefault();
 });

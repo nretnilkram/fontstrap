@@ -30,45 +30,65 @@ function whatIsIt(object) {
 	}
 }
 
+function isJson(str) {
+	try {
+		JSON.parse(str);
+	} catch (e) {
+		return false;
+	}
+	return true;
+}
+
 /*
  * Store values using local storgae
  */
 
 function BrowserStorage(session){
 
-  this.session = session || false;
+	this.session = session || false;
 
-  this.save = function (name, value){
-    if ( this.session ) {
-      if (whatIsIt(value) == 'object') {
-        sessionStorage.setItem(name, JSON.stringify(value));
-      } else {
-        sessionStorage.setItem(name, value);
-      }
-    } else {
-      if (whatIsIt(value) == 'object') {
-        localStorage.setItem(name, JSON.stringify(value));
-      } else {
-        localStorage.setItem(name, value);
-      }
-    }
-  };
+	this.save = function (name, value){
+		if ( this.session ) {
+			if (whatIsIt(value) == 'object' || whatIsIt(value) == 'array') {
+				sessionStorage.setItem(name, JSON.stringify(value));
+			} else {
+				sessionStorage.setItem(name, value);
+			}
+		} else {
+			if (whatIsIt(value) == 'object' || whatIsIt(value) == 'array') {
+				localStorage.setItem(name, JSON.stringify(value));
+			} else {
+				localStorage.setItem(name, value);
+			}
+		}
+	};
 
-  this.get = function (name) {
-    if ( this.session ) {
-      return sessionStorage.getItem(name);
-    } else {
-      return localStorage.getItem(name);
-    }
-  };
+	this.get = function (name) {
+		var value;
+		if ( this.session ) {
+			value = sessionStorage.getItem(name);
+			if (isJson(value)) {
+				return JSON.parse(value);
+			} else {
+				return value;
+			}
+		} else {
+			value = localStorage.getItem(name);
+			if (isJson(value)) {
+				return JSON.parse(value);
+			} else {
+				return value;
+			}
+		}
+	};
 
-  this.delete = function (name){
-    if ( this.session ) {
-      return sessionStorage.removeItem(name);
-    } else {
-      return localStorage.removeItem(name);
-    }
-  };
+	this.delete = function (name){
+		if ( this.session ) {
+			return sessionStorage.removeItem(name);
+		} else {
+			return localStorage.removeItem(name);
+		}
+	};
 }
 
 /*
@@ -77,43 +97,49 @@ function BrowserStorage(session){
 
 function CookieStorage(){
 
-  this.save = function (cname, cvalue){
-    document.cookie = cname + "=" + cvalue;
-  };
+	this.save = function (cname, cvalue){
+		document.cookie = cname + "=" + cvalue;
+	};
 
-  this.get = function (cname){
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-  };
+	this.get = function (cname){
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+				}
+		}
+		return "";
+	};
 
-  this.delete = function (cname){
-    document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-  };
+	this.delete = function (cname){
+		document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+	};
 }
 
 if (typeof(Storage) !== "undefined") {
-  storage = new BrowserStorage();
+	storage = new BrowserStorage();
 } else {
-  // No Web Storage support.  Use Cookies instead.
-  console.log('Your browser does not support local storage. Going to try cookies instead.');
-  storage = new CookieStorage();
+	// No Web Storage support.	Use Cookies instead.
+	console.log('Your browser does not support local storage. Going to try cookies instead.');
+	storage = new CookieStorage();
 }
 /*
  * Fontstrap v1.2.5 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
+ 
+ if ( typeof _  != "function" ) {
+ 	console.log('Lodash was not found and is required by the fontstrap jQuery plugins.');
+ 	var no_lodash = true;
+ }
+
 $('.js-trigger').click(function (event) {
 	event.preventDefault();
 });
@@ -135,23 +161,6 @@ var elementMissing = function (sel, methodName) {
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
-if ( typeof _  != "function" ) {
-	console.log('Lodash was not found and is required by the fontstrap jQuery plugins.');
-	var no_lodash = true;
-}
-
-/*
- * Global helpers for jQuery plugins.
- */
-
-var elementMissing = function (sel, methodName) {
-	if ( sel.length === 0 ) {
-		console.log('Element does not exist. Did not execute ' + methodName + '. Please check the selector.');
-		return true;
-	} else {
-		return false;
-	}
-};
 
 /*
  * Helpers for alignBlocks
@@ -269,23 +278,6 @@ jQuery.fn.alignBlocks = function(settings) {
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
-if ( typeof _  != "function" ) {
-	console.log('Lodash was not found and is required by the fontstrap jQuery plugins.');
-	var no_lodash = true;
-}
-
-/*
- * Global helpers for jQuery plugins.
- */
-
-var elementMissing = function (sel, methodName) {
-	if ( sel.length === 0 ) {
-		console.log('Element does not exist. Did not execute ' + methodName + '. Please check the selector.');
-		return true;
-	} else {
-		return false;
-	}
-};
 
 /*
  * fullScreenBackground will take the block and make it the full viewing window along with CSS that accomanies.
@@ -317,23 +309,6 @@ jQuery.fn.fullScreenBackground = function(settings){
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
-if ( typeof _  != "function" ) {
-	console.log('Lodash was not found and is required by the fontstrap jQuery plugins.');
-	var no_lodash = true;
-}
-
-/*
- * Global helpers for jQuery plugins.
- */
-
-var elementMissing = function (sel, methodName) {
-	if ( sel.length === 0 ) {
-		console.log('Element does not exist. Did not execute ' + methodName + '. Please check the selector.');
-		return true;
-	} else {
-		return false;
-	}
-};
 
 /*
  * offcanvasMenu takes a menu and turns it into an offcanvas menu.
@@ -440,6 +415,8 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		e.preventDefault(e);
 		$(this).parent().siblings().find(options.submenuEl).removeClass('open');
 		$(this).parent().find(options.submenuEl).toggleClass('open');
+		$(this).parent().siblings().find('a').removeClass('active');
+		$(this).toggleClass('active');
 	});
 
 	self.find(options.lockToggle).click(function (e) {
@@ -457,12 +434,20 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		}
 	});
 
-	if (storage.get(options.cookieName) == 'true') {
+	if (storage.get(options.cookieName)) {
 		$(options.lockToggle).addClass('locked');
 		$(options.lockToggle).find('.fa').addClass('fa-lock');
 		$(options.lockToggle).find('.fa').removeClass('fa-unlock');
 		open(0);
 	}
+
+	var throttled_open = _.throttle(open, 250);
+
+	$(window).resize(function () {
+		if (self.hasClass('menu-open')) {
+			throttled_open(0);
+		}
+	});
 
 };
 /*
@@ -470,23 +455,6 @@ jQuery.fn.offcanvasMenu = function(settings) {
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
-if ( typeof _  != "function" ) {
-	console.log('Lodash was not found and is required by the fontstrap jQuery plugins.');
-	var no_lodash = true;
-}
-
-/*
- * Global helpers for jQuery plugins.
- */
-
-var elementMissing = function (sel, methodName) {
-	if ( sel.length === 0 ) {
-		console.log('Element does not exist. Did not execute ' + methodName + '. Please check the selector.');
-		return true;
-	} else {
-		return false;
-	}
-};
 
 /*
  * keepAtTop will keep the block, like a navbar, on the top of the screen when scrolling down past the block.  Or if the block is above the screen when page is loaded.

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<title>Fontstrap Basic</title>
+	<title>Fontstrap Offcanvas</title>
 	<link rel="icon" href="../dist/img/favicon.png">
 
 	<!-- fontstrap -->
@@ -13,6 +13,9 @@
 
 	<style type="text/css">
 		body { padding-top: 56px; }
+		.offcanvas-menu a:hover {
+
+		}
 	</style>
 
 </head>
@@ -20,27 +23,27 @@
 
 	<div class="offcanvas-menu bg-secondary">
 		<div class="offcanvas-menu-header clearfix">
-			<button class="p-3 text-white menu-lock-toggle"><i class="fa fa-unlock"></i></button>
-			<button class="pull-right offcanvas-menu-toggle p-3 text-white"><i class="fa fa-times"></i></button>
+			<button class="py-3 px-4 text-white menu-lock-toggle"><i class="fa fa-unlock"></i></button>
+			<button class="pull-right offcanvas-menu-toggle py-3 px-4 text-white"><i class="fa fa-times"></i></button>
 		</div>
 		<ul>
-			<li><a href="#"><i class="fa fa-home fa-fw mr-2"></i> Home</a></li>
+			<li><a href="#"><i class="fa fa-home fa-fw fa-lg mr-2"></i> Home</a></li>
 			<li class='submenu-toggle'>
-				<a href='#'><i class="fa fa-medium fa-fw mr-2"></i> Main</a>
+				<a href='#'><i class="fa fa-medium fa-fw fa-lg mr-2"></i> Main</a>
 				<ul class="submenu">
-					<li><a target="_blank" href="https://v4-alpha.getbootstrap.com"><span data-toggle="tooltip" data-placement="right" title="4.0.0-beta"><i class="fa fa-text fa-fw mr-2">B</i> Bootstrap</span></a></li>
-					<li><a target="_blank" href="http://fontawesome.io"><span data-toggle="tooltip" data-placement="right" title="4.7.0"><i class="fa fa-font-awesome fa-fw mr-2"></i> Font Awesome</span></a></li>
+					<li><a target="_blank" href="https://v4-alpha.getbootstrap.com"><span data-toggle="tooltip" data-placement="right" title="4.0.0-beta"><i class="fa fa-text fa-fw fa-lg mr-2">B</i> Bootstrap</span></a></li>
+					<li><a target="_blank" href="http://fontawesome.io"><span data-toggle="tooltip" data-placement="right" title="4.7.0"><i class="fa fa-font-awesome fa-fw fa-lg mr-2"></i> Font Awesome</span></a></li>
 				</ul>
 			</li>
 			<li class='submenu-toggle'>
 				<a href='#'><i class="fa fa-text-width fa-fw mr-2"></i> Third Party</a>
 				<ul class="submenu">
-					<li><a target="_blank" href="http://jquery.com"><span data-toggle="tooltip" data-placement="right" title="3.2.1"><i class="fa fa-text fa-fw mr-2">JQ</i> jQuery</span></a></li>
-					<li><a target="_blank" href="https://lodash.com"><span data-toggle="tooltip" data-placement="right" title="4.17.4"><i class="fa fa-text fa-fw mr-2">L</i> Lodash.js</span></a></li>
-					<li><a target="_blank" href="https://popper.js.org"><span data-toggle="tooltip" data-placement="right" title="1.12.5"><i class="fa fa-text fa-fw mr-2">P</i> Popper.js</span></a></li>
+					<li><a target="_blank" href="http://jquery.com"><span data-toggle="tooltip" data-placement="right" title="3.2.1"><i class="fa fa-text fa-fw fa-lg mr-2">JQ</i> jQuery</span></a></li>
+					<li><a target="_blank" href="https://lodash.com"><span data-toggle="tooltip" data-placement="right" title="4.17.4"><i class="fa fa-text fa-fw fa-lg mr-2">L</i> Lodash.js</span></a></li>
+					<li><a target="_blank" href="https://popper.js.org"><span data-toggle="tooltip" data-placement="right" title="1.12.5"><i class="fa fa-text fa-fw fa-lg mr-2">P</i> Popper.js</span></a></li>
 				</ul>
 			</li>
-			<li><a href="#"><i class="fa fa-text fa-fw mr-2">A</i> About</a></li>
+			<li><a href="#"><i class="fa fa-text fa-fw fa-lg mr-2">A</i> About</a></li>
 		</ul>
 	</div>
 
@@ -85,6 +88,7 @@
 						<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-features.js</li>
 						<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-features.min.js</li>
 						<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.js</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.min.js</li>
 						<li><i class="fa-li fa fa-file-code-o"></i>jquery.min.js</li>
 						<li><i class="fa-li fa fa-file-code-o"></i>lodash.min.js</li>
 						<li><i class="fa-li fa fa-file-code-o"></i>popper-bootstrap.min.js</li>
@@ -98,7 +102,7 @@
 	</div> <!-- .offcanvas-main-content -->
 
 	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../dist/js/fontstrap.js"></script>
+	<script type="text/javascript" src="../dist/js/fontstrap.min.js"></script>
 	<script>
 		$(window).on('load', function() {
 			$('.offcanvas-menu').offcanvasMenu();
