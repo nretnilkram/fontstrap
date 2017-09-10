@@ -15,6 +15,14 @@ def minify_js(source, output)
   File.open(output, 'w') { |file| file.write(Uglifier.compile(File.read(source))) }
 end
 
+namespace :test do
+  task :html do
+    system 'open example/*.html'
+  end
+
+  task all: :html
+end
+
 namespace :sass do
   #####
   # This task will create the necessary directories should they not already exiest.  It initilizes with cleanup.
@@ -53,7 +61,7 @@ namespace :sass do
   #####
   # This task combines cleanup, setup, and compile.
   #####
-  task reset: %i[cleanup setup compile]
+  task reset: %i[cleanup compile]
 
   #####
   # This task will create the minified version of the fontstrap css.  It initilizes with setup.
