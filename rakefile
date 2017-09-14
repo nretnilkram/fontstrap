@@ -36,7 +36,6 @@ namespace :sass do
   #####
   task :create_js_files do
     FileUtils.mkdir_p('tmp') unless Dir.exist? 'tmp'
-    FileUtils.mkdir_p('tmp/js') unless Dir.exist? 'tmp/js'
     combine(['assets/javascripts/fontstrap/fontstrap_header.txt',
              'assets/javascripts/fontstrap/storage.js',
              'assets/javascripts/fontstrap/fontstrap-utilities.js',

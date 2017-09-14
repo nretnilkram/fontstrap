@@ -160,7 +160,7 @@ bundle exec rake sass:compile
 ...
 ```
 
-* $().offcanvasMenu({width: 20, responsive: false, mainBlock: '.offcanvas-main-content', triggerEl: '.offcanvas-menu-toggle', submenuTrigger: '.submenu-toggle', submenuEl: '.submenu'}); - This will take amenu and turn it into an offcanvas menu.  It has many customizable elements and can be set for different widths based on screen size with the standard break points.
+* $().offcanvasMenu({width: 20, responsive: false, mainBlock: '.offcanvas-main-content', triggerEl: '.offcanvas-menu-toggle', submenuTrigger: '.submenu-toggle', submenuEl: '.submenu'}); - This will take a menu and turn it into an offcanvas menu.  It has many customizable elements and can be set for different widths based on screen size with the standard break points.
 
 ```html
 ...
