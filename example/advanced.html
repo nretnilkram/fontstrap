@@ -25,7 +25,7 @@
 	</div>
 
 	<div class="navbar navbar-expand-lg navbar-light bg-info">
-		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.5">Fontstrap</span></a>
+		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.6">Fontstrap</span></a>
 		<span class="navbar-text d-lg-inline d-none">
 			<strong>Contains: </strong>
 		</span>
@@ -85,14 +85,9 @@
 				</ul>
 				<li><i class="fa-li fa fa-folder-open-o"></i>js</li>
 				<ul class="fa-ul">
-					<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-dev.js</li>
-					<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-features.js</li>
-					<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-features.min.js</li>
-					<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.js</li>
+					<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.dev.js</li>
 					<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.min.js</li>
 					<li><i class="fa-li fa fa-file-code-o"></i>jquery.min.js</li>
-					<li><i class="fa-li fa fa-file-code-o"></i>lodash.min.js</li>
-					<li><i class="fa-li fa fa-file-code-o"></i>popper-bootstrap.min.js</li>
 				</ul>
 			</ul>
 		</ul>
@@ -173,9 +168,10 @@
 	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../dist/js/fontstrap.min.js"></script>
 	<script type="text/javascript">
-		$(window).on('load', function() {
+		$(document).ready(function() {
 			$('.full-screen-bg').fullScreenBackground();
 			$('.navbar').keepOnScreen(); // Which is a combination of $('.navbar').keepAtTop(); and $('.navbar').keepAtBottom();
+			$('[data-toggle="tooltip"]').tooltip();
 		});
 	</script>
 

@@ -32,11 +32,11 @@
 </head>
 <body>
 	<div class="full-screen-bg dark" data-image="img/boot.jpg">
-		<div class="title large-title">Grid List</div>
+		<div class="title large-title text-white">Grid List</div>
 	</div>
 
 	<div class="navbar navbar-expand-lg navbar-light bg-warning">
-		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.5">Fontstrap</span></a>
+		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.6">Fontstrap</span></a>
 		<span class="navbar-text d-lg-inline d-none">
 			<strong>Contains: </strong>
 		</span>
@@ -73,9 +73,10 @@
 			return $('<div>').css({ 'height': randomInt(50, 300) + 'px', 'margin-bottom': '10px' }).addClass('list-item');
 		}
 
-		$(window).on('load', function () {
+		$(document).ready(function() {
 			$('.full-screen-bg').fullScreenBackground();
 			$('.navbar').keepOnScreen(); // Which is a combination of $('.navbar').keepAtTop(); and $('.navbar').keepAtBottom();
+			$('[data-toggle="tooltip"]').tooltip();
 
 			var align = function () {
 				$('.uneven-list').alignBlocks({

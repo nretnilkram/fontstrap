@@ -25,7 +25,7 @@ end
 
 namespace :sass do
   #####
-  # This task will create the necessary directories should they not already exiest.  It initilizes with cleanup.
+  # This task will create the necessary directories should they not already exist.  It initilizes with cleanup.
   #####
   task create_dirs: :cleanup do
     FileUtils.mkdir_p('dist/css') unless Dir.exist? 'dist/css'
@@ -35,15 +35,18 @@ namespace :sass do
   # This task will move fonts, images, and javascript files from assets to their respective dist directory locations.
   #####
   task :create_js_files do
-    combine(['assets/javascripts/fontstrap/storage.js',
+    FileUtils.mkdir_p('tmp') unless Dir.exist? 'tmp'
+    FileUtils.mkdir_p('tmp/js') unless Dir.exist? 'tmp/js'
+    combine(['assets/javascripts/fontstrap/fontstrap_header.txt',
+             'assets/javascripts/fontstrap/storage.js',
              'assets/javascripts/fontstrap/fontstrap-utilities.js',
              'assets/javascripts/fontstrap/alignBlocks.jquery.js',
              'assets/javascripts/fontstrap/fullScreenBackground.jquery.js',
              'assets/javascripts/fontstrap/offcanvasMenu.jquery.js',
-             'assets/javascripts/fontstrap/keepOnScreen.jquery.js'], 'dist/js/fontstrap-features.js')
-    minify_js('dist/js/fontstrap-features.js', 'dist/js/fontstrap-features.min.js')
-    minify_js('dist/js/fontstrap.js', 'dist/js/fontstrap.min.js')
-    combine(['assets/javascripts/bootstrap/popper.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'dist/js/popper-bootstrap.min.js')
+             'assets/javascripts/fontstrap/keepOnScreen.jquery.js'], 'tmp/fontstrap-features.js')
+    minify_js('tmp/fontstrap-features.js', 'tmp/fontstrap-features.min.js')
+    combine(['assets/javascripts/bootstrap/popper.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'tmp/popper-bootstrap.min.js')
+    combine(['tmp/popper-bootstrap.min.js', 'assets/javascripts/third_party/lodash.min.js', 'tmp/fontstrap-features.min.js'], 'dist/js/fontstrap.min.js')
   end
 
   #####

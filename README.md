@@ -1,4 +1,4 @@
-# fontstrap v1.2.5
+# fontstrap v1.2.6
 
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
@@ -17,6 +17,7 @@
 1. Download
 2. Customize SASS files in assets directory
 3. Compile CSS
+
 ```
 bundle install
 bundle exec rake sass:compile
@@ -40,9 +41,9 @@ bundle exec rake sass:compile
 <body>
 	<!-- Insert HTML code here. -->
 	<script type="text/javascript" src="dist/js/jquery.min.js"></script> <!-- optional jQuery load if needed -->
-	<script type="text/javascript" src="dist/js/fontstrap.js"></script>
+	<script type="text/javascript" src="dist/js/fontstrap.min.js"></script>
 	<script>
-		$(window).on('load', function() {
+		$(document).ready(function() {
 			// Additional JS Here
 		});
 	</script>
@@ -187,7 +188,7 @@ bundle exec rake sass:compile
 ```
 
 ### Other Variations
-* Fontstrap Square can be found minified in dist directory.  This variation sets the default border-radius for all elements to 0 so they have square corners.
+* Fontstrap Square can be found minified in dist/css directory.  This variation sets the default border-radius for all elements to 0 so they have square corners. fonstrap-square.min.css
 
 
 ### Examples
@@ -198,3 +199,7 @@ Examples can be found in the examples directory.
 * grid-list.html - An example of the alignBlocks() query function which can be found in fontstrap.
 * offcanvas.html - An example of the offCanvas Menu feature in action.
 * square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.
+
+
+### Troubleshooting/Development
+* fontstrap.dev.js - This will pull in all the fontstrap js files individually from the assets directory so that you can work directly with the un minified files.  You will likely need to update your `$(document).ready(function() {` to `$(window).on('load', function() {` so you are sure that all of the js files are loaded before envoking a function.

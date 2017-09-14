@@ -1,10 +1,4 @@
 /*
- * Fontstrap v1.2.5 (https://github.com/nretnilkram/fontstrap)
- * Copyright 2017 Mark Lintern
- * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
- */
-
-/*
  * keepAtTop will keep the block, like a navbar, on the top of the screen when scrolling down past the block.  Or if the block is above the screen when page is loaded.
  */
 
@@ -82,6 +76,10 @@ jQuery.fn.keepOnScreen = function(settings){
 
 	var $window = $(window),
 	$el = $(this);
+
+	$window.on('beforeunload', function() {
+		$(window).scrollTop(0);
+	});
 
 	var options = jQuery.extend({
 		reset: function () {
