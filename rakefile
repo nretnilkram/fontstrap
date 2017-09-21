@@ -69,29 +69,38 @@ namespace :sass do
   # This task will create the minified version of the fontstrap css.  It initilizes with setup.
   #####
   task compile: :setup do
-    system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.min.css --style compressed'
-    system 'sass assets/stylesheets/_full_square.scss dist/css/fontstrap-square.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap.scss dist/css/fontstrap.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/fontstrap-square.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/fontstrap-ice-cream.min.css --style compressed'
   end
 
   #####
   # This task will create the non minified version of the fontstrap css.  It initilizes with setup.
   #####
   task compile_full: :setup do
-    system 'sass assets/stylesheets/_full.scss dist/css/fontstrap.css'
-    system 'sass assets/stylesheets/_full_square.scss dist/css/fontstrap-square.css'
+    system 'sass assets/stylesheets/_fontstrap.scss dist/css/fontstrap.css'
+    system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/fontstrap-square.css'
+    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/fontstrap-ice-cream.min.css'
   end
 
   #####
   # This task will create the minified version of fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task watch: :setup do
-    system 'sass --watch assets/stylesheets/_full.scss:dist/css/fontstrap.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_fontstrap.scss:dist/css/fontstrap.min.css --style compressed'
   end
 
   #####
   # This task will create the minified version of square fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task watch_square: :setup do
-    system 'sass --watch assets/stylesheets/_full_square.scss:dist/css/fontstrap-square.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_fontstrap_square.scss:dist/css/fontstrap-square.min.css --style compressed'
+  end
+
+  #####
+  # This task will create the minified version of ice cream fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
+  #####
+  task watch_ice_cream: :setup do
+    system 'sass --watch assets/stylesheets/_fontstrap_ice-cream.scss:dist/css/fontstrap-ice-cream.min.css --style compressed'
   end
 end
