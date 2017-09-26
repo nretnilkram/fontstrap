@@ -187,6 +187,19 @@ bundle exec rake sass:compile
 ...
 ```
 
+### Local Storage
+
+I created a jquery helper that is used by the offcanvas menu, but can also be used for other local storage needs.  You can initialize a new storage helper as follows.  The BrowserStorage class has an optional boolean variable for whether or not to use session instead of local storage, which defaults to false.
+
+```javascript
+var storage = new BrowserStorage(true);
+```
+
+* storage.get(id) - get data from storage with id.
+* storage.save(id, data) - save data to storage with id and data to save.
+* storage.delete(id) - delete data from storage with id.
+* storage.exists(id) - check if data exist with given id.
+
 ### Other Variations
 * Fontstrap Square can be found minified in dist/css directory.  This variation sets the default border-radius for all elements to 0 so they have square corners. fonstrap-square.min.css
 
