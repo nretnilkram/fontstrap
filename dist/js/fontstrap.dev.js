@@ -46,6 +46,7 @@ var loadRequirements = function () {
     loadScript(fontstrapAssetJsPath + "fullScreenBackground.jquery.js", function(){ });
     loadScript(fontstrapAssetJsPath + "keepOnScreen.jquery.js", function(){ });
     loadScript(fontstrapAssetJsPath + "offcanvasMenu.jquery.js", function(){ });
+    loadScript(fontstrapAssetJsPath + "imagePopOut.jquery.js", function(){ });
   });
 };
 
