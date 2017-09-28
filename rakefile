@@ -41,6 +41,7 @@ namespace :sass do
              'assets/javascripts/fontstrap/fontstrap-utilities.js',
              'assets/javascripts/fontstrap/alignBlocks.jquery.js',
              'assets/javascripts/fontstrap/fullScreenBackground.jquery.js',
+             'assets/javascripts/fontstrap/imagePopOut.jquery.js',
              'assets/javascripts/fontstrap/offcanvasMenu.jquery.js',
              'assets/javascripts/fontstrap/keepOnScreen.jquery.js'], 'tmp/fontstrap-features.js')
     minify_js('tmp/fontstrap-features.js', 'tmp/fontstrap-features.min.js')

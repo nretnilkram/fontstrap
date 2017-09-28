@@ -51,7 +51,7 @@ jQuery.fn.imagePopOut = function(settings){
 			image.src = $(this).attr("src");
 
 			// Add the image
-			$(options.imgContainerEl).html($('<div>').addClass('image-pop-out-wrapper').append($('<img>').attr('src', image.src)).append(closeIcon));
+			$(options.imgContainerEl).html($('<div>').addClass('image-pop-out-wrapper').append($('<img>').addClass('pop-out-image').attr('src', image.src)).append(closeIcon));
 
 			// Show the pop out
 			$(options.backdropEl).addClass('open');
@@ -63,6 +63,8 @@ jQuery.fn.imagePopOut = function(settings){
 			if ( diff > 0 ){
 				var padding = diff / 2;
 				$('.image-pop-out-wrapper').css({'margin-top': padding});
+			} else {
+				$('.pop-out-image').css({'height': wHeight});
 			}
 
 			// Do not hide on image click

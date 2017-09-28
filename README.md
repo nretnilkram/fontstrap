@@ -187,6 +187,24 @@ bundle exec rake sass:compile
 ...
 ```
 
+* $().imagePopOut(); - This will take an image or set of images and setup events so that when you click on the images they will show you a full screen view of that image.
+
+```html
+...
+<div class="card">
+	<img class="card-img-top" src="img/example.jpg" alt="Image">
+	<div class="card-body">
+		<p class="card-text">Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor.</p>
+	</div>
+</div>
+...
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.card-img-top').imagePopOut();
+	});
+</script>
+```
+
 ### Local Storage
 
 I created a jquery helper that is used by the offcanvas menu, but can also be used for other local storage needs.  You can initialize a new storage helper as follows.  The BrowserStorage class has an optional boolean variable for whether or not to use session instead of local storage, which defaults to false.
@@ -209,6 +227,8 @@ Examples can be found in the examples directory.
 * advanced.html - A large compilation of features and functionality that are included in fontstrap.
 * basic.html - A very small starter site of fontstrap.
 * blog.html - An example of crude 2 column blog layout, which was built with fontstrap.
+* ice-cream.html - An example of the ice-cream color theme found in dist/css.
+* image-pop-over.html - An example of the imagePopOver jquery functionality.
 * grid-list.html - An example of the alignBlocks() query function which can be found in fontstrap.
 * offcanvas.html - An example of the offCanvas Menu feature in action.
 * square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.
