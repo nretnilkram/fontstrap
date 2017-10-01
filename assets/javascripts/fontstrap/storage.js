@@ -76,6 +76,15 @@ function BrowserStorage(session){
 		}
 	};
 
+	this.exists = function (name) {
+		var value;
+		if ( this.session ) {
+			return sessionStorage.getItem(name) !== null;
+		} else {
+			return localStorage.getItem(name) !== null;
+		}
+	};
+
 	this.delete = function (name){
 		if ( this.session ) {
 			return sessionStorage.removeItem(name);
@@ -109,6 +118,22 @@ function CookieStorage(){
 				}
 		}
 		return "";
+	};
+
+	this.exists = function (cname){
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+						return true;
+				}
+		}
+		return false;
 	};
 
 	this.delete = function (cname){

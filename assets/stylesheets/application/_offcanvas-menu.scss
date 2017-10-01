@@ -20,9 +20,25 @@
     display: block;
     padding: 15px;
 
+    .offcanvas-menu-secondary-open {
+      display: none;
+    }
+
+    .offcanvas-menu-secondary-closed {
+      display: inline-block;
+    }
+
     &.active {
       background-color: $gray-500;
       border-color: $gray-800;
+
+      .offcanvas-menu-secondary-open {
+        display: inline-block;
+      }
+
+      .offcanvas-menu-secondary-closed {
+        display: none;
+      }
     }
 
     &:hover {

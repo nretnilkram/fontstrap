@@ -20,8 +20,8 @@
 	</style>
 </head>
 <body>
-	<div class="full-screen-bg dark text-center" data-image="img/boot.jpg">
-		<div class="title text-white">Full Screen Dark Background Title</div>
+	<div class="full-screen-bg text-center" data-image="img/ice-cream.jpg">
+		<div class="title font-weight-bold">Full Screen Background Title</div>
 		<h2 class="container p-3 my-3 bg-primary text-white">Primary</h2>
 		<h2 class="container p-3 mb-3 bg-warning">Warning</h2>
 		<h2 class="container p-3 mb-3 bg-danger text-white">Danger</h2>
@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="navbar navbar-expand-lg navbar-light bg-info">
-		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.7">Fontstrap</span></a>
+		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.8">Fontstrap</span></a>
 		<span class="navbar-text d-lg-inline d-none">
 			<strong>Contains: </strong>
 		</span>
@@ -104,36 +104,67 @@
 	</div> <!-- container -->
 
 	<div class="full-screen-bg half" data-image="img/7-scoop.jpg">
-		<div class="title">Half Screen Light Background Title</div>
+		<div class="title font-weight-bold">Half Screen Background Title</div>
 		<div class="container">
 			<p>Sed viverra augue tellus nulla sollicitudin scelerisque, <a href="#">scelerisque</a> rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor. <a href="#">Vel volutpat</a>, sed vel imperdiet, vehicula auctor purus in, eu non tempor amet euismod ligula <a href="#">dictumst</a>, massa orci posuere cras varius suscipit ac. Erat dui.</p>
 		</div>
 	</div>
 
-	<div class="container pt-4 mb-4">
+	<div class="py-4 bg-warning">
 		<div class="row justify-content-center">
 			<div class="col-8">
-				<div class="card bg-light p-4">
-					<form action="#login">
-						<div class="form-group row">
-							<label class="col-4 text-right">Username</label>
-							<div class="col-8"><input class="form-control" type="text" placeholder="fontstrap"/></div>
+				<div class="card bg-success p-4">
+					<form>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label class="col-form-label">Email</label>
+								<input type="email" class="form-control" placeholder="Email">
+							</div>
+							<div class="form-group col-md-6">
+								<label class="col-form-label">Password</label>
+								<input type="password" class="form-control" placeholder="Password">
+							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-4 text-right">Password</label>
-							<div class="col-8"><input class="form-control" type="password" placeholder=""/></div>
+						<div class="form-group">
+							<label class="col-form-label">Address</label>
+							<input type="text" class="form-control" placeholder="1234 Main St">
 						</div>
-						<div class="form-group mb-0 text-right">
-							<input class="btn btn-success" type="submit" value="Login"/>
+						<div class="form-group">
+							<label class="col-form-label">Address 2</label>
+							<input type="text" class="form-control" placeholder="Apartment, studio, or floor">
 						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label class="col-form-label">City</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="form-group col-md-4">
+								<label class="col-form-label">State</label>
+								<select class="form-control">
+									<option>Choose</option>
+								</select>
+							</div>
+							<div class="form-group col-md-2">
+								<label class="col-form-label">Zip</label>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox"> Check me out
+								</label>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Sign in</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>  <!-- container -->
 
-	<div class="full-screen-bg dark" data-image="img/boot.jpg">
-		<div class="title text-white">Grid</div>
+	<div class="full-screen-bg dark" data-image="img/ice-cream.jpg">
+		<div class="title font-weight-bold">Grid</div>
 		<div class="container py-4">
 			<div class="row">
 				<div class="col-sm-9 block bg-danger">
@@ -143,7 +174,7 @@
 					</div>
 				</div>
 				<div class="col-sm-3 block bg-warning"></div>
-				<div class="col-sm-6 block bg-success">
+				<div class="col-sm-6 block bg-warning">
 					<div class="row">
 						<div class="col-sm-6 block bg-danger"></div>
 						<div class="col-sm-6 block bg-primary"></div>
