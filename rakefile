@@ -29,6 +29,7 @@ namespace :sass do
   #####
   task create_dirs: :cleanup do
     FileUtils.mkdir_p('dist/css') unless Dir.exist? 'dist/css'
+    FileUtils.mkdir_p('dist/css/theme') unless Dir.exist? 'dist/css/theme'
   end
 
   #####
@@ -70,8 +71,8 @@ namespace :sass do
   #####
   task compile: :setup do
     system 'sass assets/stylesheets/_fontstrap.scss dist/css/fontstrap.min.css --style compressed'
-    system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/fontstrap-square.min.css --style compressed'
-    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/fontstrap-ice-cream.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/theme/fontstrap-square.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/theme/fontstrap-ice-cream.min.css --style compressed'
   end
 
   #####
@@ -79,8 +80,8 @@ namespace :sass do
   #####
   task compile_full: :setup do
     system 'sass assets/stylesheets/_fontstrap.scss dist/css/fontstrap.css'
-    system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/fontstrap-square.css'
-    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/fontstrap-ice-cream.min.css'
+    system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/theme/fontstrap-square.css'
+    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/theme/fontstrap-ice-cream.min.css'
   end
 
   #####
@@ -101,6 +102,6 @@ namespace :sass do
   # This task will create the minified version of ice cream fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task watch_ice_cream: :setup do
-    system 'sass --watch assets/stylesheets/_fontstrap_ice-cream.scss:dist/css/fontstrap-ice-cream.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_fontstrap_ice-cream.scss:dist/css/theme/fontstrap-ice-cream.min.css --style compressed'
   end
 end
