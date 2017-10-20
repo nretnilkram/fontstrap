@@ -1,5 +1,5 @@
 /*
- * Fontstrap v1.2.8 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v1.2.9 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2017 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
