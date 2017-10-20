@@ -46,6 +46,7 @@ namespace :sass do
              'assets/javascripts/fontstrap/offcanvasMenu.jquery.js',
              'assets/javascripts/fontstrap/keepOnScreen.jquery.js'], 'tmp/fontstrap-features.js')
     minify_js('tmp/fontstrap-features.js', 'tmp/fontstrap-features.min.js')
+    FileUtils.mkdir_p('dist/js') unless Dir.exist? 'dist/js'
     combine(['assets/javascripts/bootstrap/popper.min.js', 'assets/javascripts/bootstrap/bootstrap.min.js'], 'tmp/popper-bootstrap.min.js')
     combine(['tmp/popper-bootstrap.min.js', 'assets/javascripts/third_party/lodash.min.js', 'tmp/fontstrap-features.min.js'], 'dist/js/fontstrap.min.js')
   end
