@@ -19,6 +19,10 @@ namespace :test do
     system 'open example/*.html'
   end
 
+  task :sass do
+    system 'sass-lint'
+  end
+
   task all: :html
 end
 
