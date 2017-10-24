@@ -1,21 +1,22 @@
-# fontstrap v1.2.9
+# Fontstrap v1.2.9
 
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
 * Bootstrap: 4.0.0-beta.2
 * Font Awesome: 4.7.0
 
-### Some necessary and useful javascript files are also loaded from a single file. Those versions are:
+### Additionally some necessary and useful javascript files are also combined and loaded from a single file. Those tools and versions are:
 
 * jQuery: 3.2.1
-* popper-bootstrap.js - generated combination of popper.js version 1.12.5 and bootstrap.js from the 4.0.0-beta.2 build
+* popper.js: 1.12.5
+* bootstrap.js: 4.0.0-beta.2
 * Lodash.js: 4.17.4
-* fontstrap-features.min.js - functionality added for fontstrap suite
+* fontstrap-features.min.js - functionality added for the Fontstrap suite
 
 ### How to Customize:
 
 1. Download
-2. Customize SASS files in assets directory
+2. Customize / Add SASS files in assets directory
 3. Compile CSS
 
 ```
@@ -25,7 +26,7 @@ bundle exec rake sass:compile
 
 ### How to use:
 
-* Copy over entire dist directory to root of site. The fontstrap.js file will pull in all other required javascript files from dist/js.
+* Copy over entire dist directory to root of site. Then include the css file (or theme) and js files (indcluding jquery) to your project.
 
 ```html
 <!DOCTYPE html>
@@ -51,7 +52,7 @@ bundle exec rake sass:compile
 </html>
 ```
 
-### Additional jQuery Features:
+### Additional Fontstrap Features:
 
 * $().fullScreenBackground()
 
@@ -224,15 +225,15 @@ var storage = new BrowserStorage(true);
 
 ### Examples
 Examples can be found in the examples directory.
-* advanced.html - A large compilation of features and functionality that are included in fontstrap.
-* basic.html - A very small starter site of fontstrap.
-* blog.html - An example of crude 2 column blog layout, which was built with fontstrap.
-* ice-cream.html - An example of the ice-cream color theme found in dist/css.
-* image-pop-over.html - An example of the imagePopOver jquery functionality.
-* grid-list.html - An example of the alignBlocks() query function which can be found in fontstrap.
+* advanced.html - A large compilation of features and functionality that are included in Fontstrap.
+* basic.html - A very small starter site of Fontstrap.
+* blog.html - An example of crude 2 column blog layout, which was built with Fontstrap.
+* ice-cream.html - An example of the ice-cream color theme found in `dist/css/theme`.
+* image-pop-out.html - An example of the imagePopOut jquery functionality.
+* grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap.
 * offcanvas.html - An example of the offCanvas Menu feature in action.
-* square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.
+* square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.  This can be found in `dist/css/theme`.
 
 
 ### Troubleshooting/Development
-* fontstrap.dev.js - This will pull in all the fontstrap js files individually from the assets directory so that you can work directly with the un minified files.  You will likely need to update your `$(document).ready(function() {` to `$(window).on('load', function() {` so you are sure that all of the js files are loaded before envoking a function.
+* fontstrap.dev.js - This will pull in all the Fontstrap js files individually from the assets directory so that you can work directly with the un minified files.  You will likely need to update your `$(document).ready(function() {` to `$(window).on('load', function() {` so you are sure that all of the js files are loaded before envoking a function.
