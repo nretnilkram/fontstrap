@@ -24,7 +24,7 @@ bundle install
 bundle exec rake sass:compile
 ```
 
-### How to use:
+### How To Use:
 
 * Copy over entire dist directory to root of site. Then include the css file (or theme) and js files (indcluding jquery) to your project.
 
@@ -206,7 +206,7 @@ bundle exec rake sass:compile
 </script>
 ```
 
-### Local Storage
+### Local Storage:
 
 I created a jquery helper that is used by the offcanvas menu, but can also be used for other local storage needs.  You can initialize a new storage helper as follows.  The BrowserStorage class has an optional boolean variable for whether or not to use session instead of local storage, which defaults to false.
 
@@ -219,11 +219,14 @@ var storage = new BrowserStorage(true);
 * storage.delete(id) - delete data from storage with id.
 * storage.exists(id) - check if data exist with given id.
 
-### Other Variations
-* Fontstrap Square can be found minified in dist/css directory.  This variation sets the default border-radius for all elements to 0 so they have square corners. fonstrap-square.min.css
+### Other CSS Default Variations:
+
+* Fontstrap Square can be found minified in `dist/css/theme` directory.  This variation sets the default border-radius for all elements to 0 so they have square corners. fonstrap-square.min.css
+* Fonstrap Ice Cream can be found minified in `dist/css/theme` directory.  This variation sets the default color scheme to yummy ice cream looking colors like chocolate, vanilla, and strawberry. fonstrap-ice-cream.min.css
 
 
-### Examples
+### Examples:
+
 Examples can be found in the examples directory.
 * advanced.html - A large compilation of features and functionality that are included in Fontstrap.
 * basic.html - A very small starter site of Fontstrap.
@@ -235,5 +238,6 @@ Examples can be found in the examples directory.
 * square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.  This can be found in `dist/css/theme`.
 
 
-### Troubleshooting/Development
+### Troubleshooting/Development:
+
 * fontstrap.dev.js - This will pull in all the Fontstrap js files individually from the assets directory so that you can work directly with the un minified files.  You will likely need to update your `$(document).ready(function() {` to `$(window).on('load', function() {` so you are sure that all of the js files are loaded before envoking a function.
