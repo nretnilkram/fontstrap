@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Fontstrap Kitchen Sink</title>
+	<link rel="icon" href="../dist/img/favicon.png">
+
+	<!-- fontstrap -->
+	<link type="text/css" href="../dist/css/fontstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="" theme="true">
+
+	<style type="text/css">
+		.grid .block { min-height: 100px; padding: 1em 2em; }
+		.fa-stack .fa-twitter { color: #4696D1; }
+		.fa-stack .fa-pinterest { color: #C62421; }
+		.fa-stack .fa-circle { color: #e4e4e4; }
+		.fa-xl { font-size: 20px; }
+
+		.uneven-list div:nth-child(8n+0) { background-color: #d9534f; }
+		.uneven-list div:nth-child(8n+1) { background-color: #0275d8; }
+		.uneven-list div:nth-child(8n+2) { background-color: #5cb85c; }
+		.uneven-list div:nth-child(8n+3) { background-color: #613d7c; }
+		.uneven-list div:nth-child(8n+4) { background-color: #f0ad4e; }
+		.uneven-list div:nth-child(8n+5) { background-color: #ffd500; }
+		.uneven-list div:nth-child(8n+6) { background-color: #5bc0de; }
+		.uneven-list div:nth-child(8n+7) { background-color: #ff5b77; }
+	</style>
+</head>
+<body>
+	<div class="offcanvas-menu bg-secondary">
+		<div class="offcanvas-menu-header clearfix">
+			<button class="py-3 px-4 text-white menu-lock-toggle"><i class="fa fa-unlock"></i></button>
+			<button class="pull-right offcanvas-menu-toggle py-3 px-4 text-white"><i class="fa fa-times"></i></button>
+		</div>
+		<ul>
+			<li><a href="#"><i class="fa fa-home fa-fw fa-lg mr-2"></i> Home</a></li>
+			<li class='submenu-toggle'>
+				<a href='#'><i class="fa fa-medium fa-fw fa-lg mr-2"></i>Main<i class="offcanvas-menu-secondary-closed fa fa-caret-right float-right"></i><i class="offcanvas-menu-secondary-open fa fa-caret-down float-right"></i></a>
+				<ul class="submenu">
+					<li><a target="_blank" href="https://getbootstrap.com"><span data-toggle="tooltip" data-placement="right" title="4.0.0-beta.2"><i class="fa fa-text fa-fw fa-lg mr-2">B</i> Bootstrap</span></a></li>
+					<li><a target="_blank" href="http://fontawesome.io"><span data-toggle="tooltip" data-placement="right" title="4.7.0"><i class="fa fa-font-awesome fa-fw fa-lg mr-2"></i> Font Awesome</span></a></li>
+				</ul>
+			</li>
+			<li class='submenu-toggle'>
+				<a href='#'><i class="fa fa-text-width fa-fw mr-2"></i> Third Party <i class="offcanvas-menu-secondary-closed fa fa-caret-right float-right"></i><i class="offcanvas-menu-secondary-open fa fa-caret-down float-right"></i></a>
+				<ul class="submenu">
+					<li><a target="_blank" href="http://jquery.com"><span data-toggle="tooltip" data-placement="right" title="3.2.1"><i class="fa fa-text fa-fw fa-lg mr-2">JQ</i> jQuery</span></a></li>
+					<li><a target="_blank" href="https://lodash.com"><span data-toggle="tooltip" data-placement="right" title="4.17.4"><i class="fa fa-text fa-fw fa-lg mr-2">L</i> Lodash.js</span></a></li>
+					<li><a target="_blank" href="https://popper.js.org"><span data-toggle="tooltip" data-placement="right" title="1.12.5"><i class="fa fa-text fa-fw fa-lg mr-2">P</i> Popper.js</span></a></li>
+				</ul>
+			</li>
+			<li><a href="#"><i class="fa fa-text fa-fw fa-lg mr-2">A</i> About</a></li>
+		</ul>
+	</div>
+
+	<div class="offcanvas-main-content">
+		<div class="full-screen-bg dark" data-image="img/boot.jpg">
+			<div class="title text-white">Full Screen Dark Background Title</div>
+		</div>
+
+		<div class="navbar navbar-expand-lg navbar-dark bg-secondary">
+			<span class="navbar-text p-0 mr-3">
+				<i class="offcanvas-menu-toggle fa fa-bars fa-lg"></i>
+			</span>
+			<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="1.2.9">Fontstrap</span></a>
+			<span class="navbar-text d-lg-inline d-none">
+				<strong>Contains: </strong>
+			</span>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="nav navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" target="_blank" href="https://getbootstrap.com"><span data-toggle="tooltip" data-placement="bottom" title="4.0.0-beta.2">Bootstrap</span></a></li>
+					<li class="nav-item"><a class="nav-link" target="_blank" href="http://fontawesome.io"><span data-toggle="tooltip" data-placement="bottom" title="4.7.0">Font Awesome</span></a></li>
+					<li class="nav-item"><a class="nav-link" target="_blank" href="http://jquery.com"><span data-toggle="tooltip" data-placement="bottom" title="3.2.1">jQuery</span></a></li>
+					<li class="nav-item"><a class="nav-link" target="_blank" href="https://lodash.com"><span data-toggle="tooltip" data-placement="bottom" title="4.17.4">Lodash.js</span></a></li>
+					<li class="nav-item"><a class="nav-link" target="_blank" href="https://popper.js.org"><span data-toggle="tooltip" data-placement="right" title="1.12.5">Popper.js</span></a></li>
+				</ul>
+
+				<ul class="nav navbar-nav mx-auto">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Themes <span class="caret"></span></a>
+						<ul class="dropdown-menu theme-menu bg-secondary">
+							<li class="dropdown-header text-white">Pick a Theme</li>
+							<li role="separator" class="divider"></li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul class="navbar-nav mr-2">
+					<li><a target="_blank" href="https://twitter.com">
+						<span class="fa-stack fa-xl">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x"></i>
+						</span>
+					</a></li>
+					<li><a target="_blank" href="https://www.pinterest.com">
+						<span class="fa-stack fa-xl">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-pinterest fa-stack-1x"></i>
+						</span>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container mb-5">
+			<h1 class="page-header">Directory Structure</h1>
+
+			<ul class="fa-ul">
+				<li><i class="fa-li fa fa-folder-open-o"></i>dist</li>
+				<ul class="fa-ul">
+					<li><i class="fa-li fa fa-folder-open-o"></i>css</li>
+					<ul class="fa-ul">
+						<li><i class="fa-li fa fa-folder-open-o"></i>theme</li>
+						<ul class="fa-ul">
+							<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-ice-cream.min.css</li>
+							<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-ice-cream.min.css.map</li>
+							<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-square.min.css</li>
+							<li><i class="fa-li fa fa-file-code-o"></i>fontstrap-square.min.css.map</li>
+						</ul>
+						<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.min.css</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.min.css.map</li>
+					</ul>
+					<li><i class="fa-li fa fa-folder-open-o"></i>fonts</li>
+					<ul class="fa-ul">
+						<li><i class="fa-li fa fa-file-code-o"></i>fontawesome-webfont.eot</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>fontawesome-webfont.svg</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>fontawesome-webfont.ttf</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>fontawesome-webfont.woff</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>fontawesome-webfont.woff2</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>FontAwesome.otf</li>
+					</ul>
+					<li><i class="fa-li fa fa-folder-open-o"></i>img</li>
+					<ul class="fa-ul">
+						<li><i class="fa-li fa fa-file-image-o"></i>favicon.png</li>
+					</ul>
+					<li><i class="fa-li fa fa-folder-open-o"></i>js</li>
+					<ul class="fa-ul">
+						<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.dev.js</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>fontstrap.min.js</li>
+						<li><i class="fa-li fa fa-file-code-o"></i>jquery.min.js</li>
+					</ul>
+				</ul>
+			</ul>
+		</div> <!-- container -->
+
+		<div class="full-screen-bg dark" data-image="img/boot.jpg">
+			<div class="title text-white">Grid</div>
+			<div class="container grid py-4">
+				<div class="row">
+					<div class="col-sm-9 block bg-danger">
+						<div class="row">
+							<div class="col-sm-6 block bg-success"></div>
+							<div class="col-sm-6 block bg-primary"></div>
+						</div>
+					</div>
+					<div class="col-sm-3 block bg-primary"></div>
+					<div class="col-sm-6 block bg-success">
+						<div class="row">
+							<div class="col-sm-6 block bg-danger"></div>
+							<div class="col-sm-6 block bg-info"></div>
+						</div>
+					</div>
+					<div class="col-sm-6 block bg-success">
+						<div class="row">
+							<div class="col-sm-4 block bg-danger"></div>
+							<div class="col-sm-4 block bg-primary"></div>
+							<div class="col-sm-4 block bg-danger"></div>
+						</div>
+					</div>
+					<div class="col-sm-12 block bg-primary">
+						<div class="row">
+							<div class="col-sm-1 block bg-danger"></div>
+							<div class="col-sm-1 block bg-success"></div>
+							<div class="col-sm-1 block bg-danger"></div>
+							<div class="col-sm-1 block bg-success"></div>
+							<div class="col-sm-1 block bg-danger"></div>
+							<div class="col-sm-1 block bg-success"></div>
+							<div class="col-sm-1 block bg-danger"></div>
+							<div class="col-sm-1 block bg-success"></div>
+							<div class="col-sm-1 block bg-danger"></div>
+							<div class="col-sm-1 block bg-success"></div>
+							<div class="col-sm-1 block bg-danger"></div>
+							<div class="col-sm-1 block bg-success"></div>
+						</div>
+					</div>
+					<div class="col-sm-12 block bg-info">
+						<div class="row">
+							<div class="col-5 ml-auto block bg-warning"></div>
+							<div class="col-5 block bg-danger"></div>
+						</div>
+					</div>
+					<div class="col-sm-12 block bg-warning">
+						<div class="row">
+							<div class="col-5 block bg-danger"></div>
+							<div class="col-5 block bg-primary"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="full-screen-bg half" data-image="img/wood.jpg">
+			<div class="title">Half Screen Light Background Title</div>
+			<div class="container pt-4 mb-4">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<div class="card bg-light p-4">
+							<form action="#login">
+								<div class="form-group row">
+									<label class="col-4 text-right">Username</label>
+									<div class="col-8"><input class="form-control" type="text" placeholder="fontstrap"/></div>
+								</div>
+								<div class="form-group row">
+									<label class="col-4 text-right">Password</label>
+									<div class="col-8"><input class="form-control" type="password" placeholder=""/></div>
+								</div>
+								<div class="form-group mb-0 text-right">
+									<input class="btn btn-success" type="submit" value="Login"/>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>  <!-- container -->
+		</div>
+
+		<div>
+			<h1 class="text-center pt-3">AlignBlocks</h1>
+			<div class="py-4">
+				<div class="uneven-list"></div>
+			</div>
+
+			<div class="text-center my-4"><button class="btn btn-success add cursor-pointer">Add</button></div>
+		</div>
+
+		<div class="full-screen-bg dark" data-image="img/boot.jpg">
+			<div class="title text-white">Image Popout</div>
+			<div class="container py-5">
+				<div class="row">
+					<div class="col-sm-3 p-2">
+						<div class="card p-2"><img class="card-img-top" src="http://www.nretnil.com/logo/na-logo-bw.jpg" alt="Black"></div>
+					</div>
+					<div class="col-sm-3 p-2">
+						<div class="card p-2"><img class="card-img-top" src="http://www.nretnil.com/logo/na-logo-g.jpg" alt="Green"></div>
+					</div>
+					<div class="col-sm-3 p-2">
+						<div class="card p-2"><img class="card-img-top" src="http://www.nretnil.com/logo/na-logo-b.jpg" alt="Blue"></div>
+					</div>
+					<div class="col-sm-3 p-2">
+						<div class="card p-2"><img class="card-img-top" src="http://www.nretnil.com/logo/na-logo-r.jpg" alt="Red"></div>
+					</div>
+					<div class="col-sm-3 p-2">
+						<div class="card">
+							<img class="card-img-top" src="img/ice-cream.jpg" alt="Black">
+							<div class="card-body">
+								<p class="card-text">Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 p-2">
+						<div class="card">
+							<img class="card-img-top" src="img/landscape.jpg" alt="Green">
+							<div class="card-body">
+								<p class="card-text">Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 p-2">
+						<div class="card">
+							<img class="card-img-top" src="img/boot.jpg" alt="Blue">
+							<div class="card-body">
+								<p class="card-text">Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 p-2">
+						<div class="card">
+							<img class="card-img-top" src="img/7-scoop.jpg" alt="Red">
+							<div class="card-body">
+								<p class="card-text">Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- container -->
+		</div>
+
+		<div class="footer text-center my-4">&copy; Fontstrap, 2017</div>
+	</div>
+
+	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../dist/js/fontstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.offcanvas-menu').offcanvasMenu();
+			$('.full-screen-bg').fullScreenBackground();
+			$('.navbar').keepOnScreen(); // Which is a combination of $('.navbar').keepAtTop(); and $('.navbar').keepAtBottom();
+			$('[data-toggle="tooltip"]').tooltip();
+			$('.card-img-top').imagePopOut();
+		});
+	</script>
+
+	<!-- GRID -->
+	<script type="text/javascript">
+		var randomInt = function (a = 0, b = 10) {
+			return a + Math.floor(Math.random() * b);
+		}
+
+		var createDiv = function () {
+			return $('<div>').css({ 'height': randomInt(50, 300) + 'px', 'margin-bottom': '10px' }).addClass('list-item');
+		}
+
+		$(document).ready(function() {
+			var align = function () {
+				$('.uneven-list').alignBlocks({
+					block: '.list-item',
+					responsive: true,
+					spaceBetween: 10
+				});
+			};
+
+			var add = function (count = 1) {
+				_.times(count, function () {
+					$('.uneven-list').append(createDiv());
+					align();
+				});
+			};
+
+			add(20);
+
+			$('.add').click(function() {
+				add(10);
+			})
+
+			$(window).resize(function () {
+				align();
+			});
+		});
+	</script>
+
+	<script>
+		var themes = [
+			{
+				"name":"No Theme",
+				"file":""
+			},
+			{
+				"name":"Ice Cream",
+				"file":"fontstrap-ice-cream.min.css"
+			},
+			{
+				"name":"Square",
+				"file":"fontstrap-square.min.css"
+			}
+		];
+
+		function createThemeDropdown(selector,themes) {
+			var count = 0
+			var html = "";
+			var middle = Math.floor(themes.count / 2);
+
+			_.each(themes, function(theme) {
+				var name = theme.name;
+				var file = theme.file;
+				html += '<li><a href="#" class="theme-option nav-link" data-theme-name="' + _(name).capitalize() + '" data-theme-file="' + file + '">' + _(name).capitalize() + '</a></li>';
+				html += '<li role="separator" class="divider"></li>';
+				count++;
+			});
+			$(selector).append(html);
+		}
+
+		createThemeDropdown(".theme-menu",themes);
+
+		$(document).ready(function () {
+			$(".theme-option").click( function (e) {
+				e.preventDefault();
+				$('head link[theme="true"]').remove();
+				var themeName = $(this).data("theme-name");
+				var themeFile = $(this).data("theme-file");
+				if ( themeFile !== null ) {
+					$('head').append('<link rel="stylesheet" href="../dist/css/theme/' + themeFile + '" type="text/css" theme="true"/>')
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>

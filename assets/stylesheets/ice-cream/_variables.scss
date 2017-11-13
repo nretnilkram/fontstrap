@@ -5,6 +5,7 @@ $gray-800: #343a40 !default;
 
 // Ice Cream Colors
 $chocolate: #6b3e26;
+$caramel: #b8860b;
 $blueberry: #d28fc8;
 $strawberry: #ffc5d9;
 $mint: #c2f2d0;
@@ -13,7 +14,7 @@ $orange: #ffcb85;
 
 $theme-colors: (
   primary: $chocolate,
-  secondary: $gray-600,
+  secondary: $caramel,
   success: $mint,
   info: $blueberry,
   warning: $vanilla,

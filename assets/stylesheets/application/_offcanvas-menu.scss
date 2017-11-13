@@ -61,11 +61,46 @@
 }
 
 .offcanvas-main-content {
-  // transition: .5s;
 
   &.push {
     position: absolute;
     width: 100vw;
+  }
+
+  &.menu-open-20 {
+
+    .stick-to-top,
+    .stick-to-bottom {
+      transition: width .5s;
+      width: 80%;
+    }
+  }
+
+  &.menu-open-25 {
+
+    .stick-to-top,
+    .stick-to-bottom {
+      transition: width .5s;
+      width: 75%;
+    }
+  }
+
+  &.menu-open-33 {
+
+    .stick-to-top,
+    .stick-to-bottom {
+      transition: width .5s;
+      width: 67%;
+    }
+  }
+
+  &.menu-open-50 {
+
+    .stick-to-top,
+    .stick-to-bottom {
+      transition: width .5s;
+      width: 50%;
+    }
   }
 }
 
@@ -83,9 +118,4 @@
     box-shadow: none;
     outline: none;
   }
-}
-
-.fixed-top,
-.fixed-bottom {
-  // transition: left .5s;
 }

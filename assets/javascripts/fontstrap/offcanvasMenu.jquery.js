@@ -73,7 +73,7 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		$(options.mainBlock).animate({ 'margin-left': menuWidth + "%" }, duration);
 		$('.fixed-top, .fixed-bottom').animate({ 'left': menuWidth + "%" }, duration); // Fix for items that are fixed to the top or bottom of page
 		self.addClass('menu-open');
-		$(options.mainBlock).addClass('menu-open');
+		$(options.mainBlock).addClass('menu-open menu-open-' + menuWidth);
 		if ( options.push ) {
 			$(options.mainBlock).addClass('push');
 		}
@@ -85,7 +85,7 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		$('.fixed-top, .fixed-bottom').animate({ 'left': 0 }, duration); // Fix for items that are fixed to the top or bottom of page
 		self.animate({ width: 0 }, duration);
 		self.removeClass('menu-open');
-		$(options.mainBlock).removeClass('menu-open');
+		$(options.mainBlock).removeClass('menu-open menu-open-' + menuWidth);
 		if ( options.push ) {
 			$(options.mainBlock).removeClass('push');
 		}
