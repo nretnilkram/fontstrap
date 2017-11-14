@@ -1,4 +1,4 @@
-# Fontstrap v1.3.0
+# Fontstrap v1.2.10
 
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
