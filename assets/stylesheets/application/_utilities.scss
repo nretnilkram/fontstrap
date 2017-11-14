@@ -1,14 +1,53 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
 // Used with keepAtTop jQuery function
 .stick-to-top {
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 1000;
 }
 
 .stick-to-bottom {
   bottom: 0;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   z-index: 1000;
+}
+
+// Fixed Location Boxes
+.fixed {
+  position: fixed;
+
+  &.top {
+    top: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+
+  &.middle {
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.center {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

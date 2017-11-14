@@ -42,7 +42,7 @@ jQuery.fn.imagePopOut = function(settings){
 
 	_.each($self, function (img) {
 		$img = $(img);
-		$img.addClass('cursor-poiner');
+		$img.addClass('cursor-pointer');
 		$img.click(function () {
 			var $window = $(window),
 			wHeight = $window.height(),
