@@ -8,10 +8,9 @@
 ### Additionally some necessary and useful javascript files are also combined and loaded from a single file. Those tools and versions are:
 
 * jQuery: 3.2.1
-* popper.js: 1.12.5
-* bootstrap.js: 4.0.0-beta.2
+* bootstrap.bundle.js: 4.0.0-beta.2 (contains Popper.js: 1.12.5)
 * Lodash.js: 4.17.4
-* fontstrap-features.min.js - functionality added for the Fontstrap suite
+* fontstrap-features.js - functionality added for the Fontstrap suite
 
 ### How to Customize:
 
@@ -230,12 +229,14 @@ var storage = new BrowserStorage(true);
 Examples can be found in the examples directory.
 * advanced.html - A large compilation of features and functionality that are included in Fontstrap.
 * basic.html - A very small starter site of Fontstrap.
-* blog.html - An example of crude 2 column blog layout, which was built with Fontstrap.
+* blog.html - An example of a crude 2 column blog layout, which was built with Fontstrap.
+* fixed.html - An example of the fixed position css utilities, which can be found in Fontstrap.
+* grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap.
 * ice-cream.html - An example of the ice-cream color theme found in `dist/css/theme`.
 * image-pop-out.html - An example of the imagePopOut jquery functionality.
-* grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap.
+* kitchen-sink.html - An example of all features and functionality added and found within Fontstrap.
 * offcanvas.html - An example of the offCanvas Menu feature in action.
-* square.html - Similar to advanced, but utilizes the fontstrap-square css which removes the border radius from elements.  This can be found in `dist/css/theme`.
+* square.html - An example of the square theme found in `dist/css/theme`, which removes all border radius css.
 
 
 ### Troubleshooting/Development:
