@@ -59,7 +59,6 @@ jQuery.fn.imagePopOut = function(settings){
 
 			// Center the image
 			var diff =  wHeight - $('.image-pop-out-wrapper').height();
-			console.log(diff);
 			if ( diff > 0 ){
 				var padding = diff / 2;
 				$('.image-pop-out-wrapper').css({'margin-top': padding});
