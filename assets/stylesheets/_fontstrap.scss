@@ -5,7 +5,11 @@
  */
 
 // Font Awesome CSS
-@import 'font-awesome/font-awesome';
+$fa-font-path: '../webfonts' !default;
+@import 'fontawesome/fontawesome';
+@import 'fontawesome/fa-solid';
+@import 'fontawesome/fa-regular';
+@import 'fontawesome/fa-brands';
 
 // Bootstrap CSS
 @import 'bootstrap/bootstrap';
