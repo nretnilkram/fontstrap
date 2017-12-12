@@ -14,12 +14,11 @@
 
 	<style type="text/css">
 		.grid .block { min-height: 90px; padding: 1em 2em; }
-		.fa-stack .fa-twitter { color: #4696D1; }
-		.fa-stack .fa-pinterest { color: #C62421; }
-		.fa-stack .fa-facebook { color: #3b5998; }
-		.fa-stack .fa-instagram { color: #9b6954; }
-		.fa-stack .fa-circle { color: #e4e4e4; }
-		.fa-xl { font-size: 20px; }
+		.fa-layers .fa-twitter { color: #4696D1; }
+		.fa-layers .fa-pinterest { color: #C62421; }
+		.fa-layers .fa-facebook { color: #3b5998; }
+		.fa-layers .fa-instagram { color: #9b6954; }
+		.fa-layers .fa-circle { color: #e4e4e4; }
 
 		.theme-name { z-index: 1001; }
 
@@ -34,6 +33,12 @@
 	</style>
 </head>
 <body>
+	<div class="p-3 m-3 card fixed middle left">
+		<h3><span class="fa-layers fa-fw">
+			<i class="fas fa-calendar"></i>
+			<span class="fa-layers-text fa-inverse" data-fa-transform="shrink-8 down-3" style="font-weight:900">27</span>
+		</span></h3>
+	</div>
 	<div class="p-3 m-3 card fixed middle right bg-primary text-white theme-name"><h3>No Theme</h3></div>
 	<div class="offcanvas-menu bg-secondary">
 		<div class="offcanvas-menu-header clearfix">
@@ -98,27 +103,27 @@
 
 				<ul class="navbar-nav">
 					<li><a target="_blank" href="https://www.instagram.com">
-						<span class="fa-stack fa-xl">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fab fa-instagram fa-stack-1x"></i>
+						<span class="fa-layers fa-3x">
+							<i class="fa fa-circle"></i>
+							<i class="fab fa-instagram" data-fa-transform="shrink-7"></i>
 						</span>
 					</a></li>
 					<li><a target="_blank" href="https://twitter.com">
-						<span class="fa-stack fa-xl">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fab fa-twitter fa-stack-1x"></i>
+						<span class="fa-layers fa-3x">
+							<i class="fa fa-circle"></i>
+							<i class="fab fa-twitter" data-fa-transform="shrink-7"></i>
 						</span>
 					</a></li>
 					<li><a target="_blank" href="https://www.facebook.com">
-						<span class="fa-stack fa-xl">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fab fa-facebook fa-stack-1x"></i>
+						<span class="fa-layers fa-3x">
+							<i class="fa fa-circle"></i>
+							<i class="fab fa-facebook" data-fa-transform="shrink-7"></i>
 						</span>
 					</a></li>
 					<li><a target="_blank" href="https://www.pinterest.com">
-						<span class="fa-stack fa-xl">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fab fa-pinterest fa-stack-1x"></i>
+						<span class="fa-layers fa-3x">
+							<i class="fa fa-circle"></i>
+							<i class="fab fa-pinterest" data-fa-transform="shrink-7"></i>
 						</span>
 					</a></li>
 				</ul>
@@ -142,10 +147,6 @@
 						</ul>
 						<li><i class="fa-li far fa-file-code"></i>fontstrap.min.css</li>
 						<li><i class="fa-li far fa-file-code"></i>fontstrap.min.css.map</li>
-					</ul>
-					<li><i class="fa-li far fa-folder-open"></i>webfonts</li>
-					<ul class="fa-ul">
-						<li>...</li>
 					</ul>
 					<li><i class="fa-li far fa-folder-open"></i>img</li>
 					<ul class="fa-ul">
