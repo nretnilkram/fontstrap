@@ -18,7 +18,8 @@ jQuery.fn.imagePopOut = function(settings){
 	}, settings);
 
 	var $self = $(this),
-	closeIcon = $('<i>').addClass('fa fa-times text-white bg-dark btn-sm image-pop-out-close-btn');
+	closeIcon = $('<i>').addClass('fa fa-times')
+	closeBtn = $('<button>').addClass('image-pop-out-close-btn btn-sm bg-dark text-white').append(closeIcon);
 
 	if ($('.image-pop-out-backdrop').length == 0) {
 		$('body').append($('<div>').addClass('fixed-full image-pop-out-backdrop'));
@@ -51,7 +52,7 @@ jQuery.fn.imagePopOut = function(settings){
 			image.src = $(this).attr("src");
 
 			// Add the image
-			$(options.imgContainerEl).html($('<div>').addClass('image-pop-out-wrapper').append($('<img>').addClass('pop-out-image').attr('src', image.src)).append(closeIcon));
+			$(options.imgContainerEl).html($('<div>').addClass('image-pop-out-wrapper').append($('<img>').addClass('pop-out-image').attr('src', image.src)).append(closeBtn));
 
 			// Show the pop out
 			$(options.backdropEl).addClass('open');
