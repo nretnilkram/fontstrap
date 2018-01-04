@@ -47,6 +47,7 @@ var loadRequirements = function () {
     loadScript(fontstrapAssetJsPath + "keepOnScreen.jquery.js", function(){ });
     loadScript(fontstrapAssetJsPath + "offcanvasMenu.jquery.js", function(){ });
     loadScript(fontstrapAssetJsPath + "imagePopOut.jquery.js", function(){ });
+    loadScript(fontstrapAssetJsPath + "zoomIn.jquery.js", function(){ });
   });
 };
 

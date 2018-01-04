@@ -205,6 +205,24 @@ bundle exec rake sass:compile
 </script>
 ```
 
+* $().zoomIn(); - This will take an image or set of images and setup events so that when you hover over the image it will become larger.
+
+```html
+...
+<div class="card">
+	<img class="card-img-top" src="img/example.jpg" data-magnification-times="3" data-magnification-direction="right" alt="Image">
+	<div class="card-body">
+		<p class="card-text">Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor.</p>
+	</div>
+</div>
+...
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.card-img-top').zoomIn();
+	});
+</script>
+```
+
 ### Local Storage:
 
 I created a jquery helper that is used by the offcanvas menu, but can also be used for other local storage needs.  You can initialize a new storage helper as follows.  The BrowserStorage class has an optional boolean variable for whether or not to use session instead of local storage, which defaults to false.
