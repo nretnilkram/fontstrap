@@ -1,0 +1,21 @@
+// Neon Colors
+$neon-yellow: #f3f315 !default;
+$neon-red: #f00 !default;
+$neon-blue: #0ff !default;
+$neon-green: #83f52c !default;
+$neon-pink: #f09 !default;
+$neon-orange: #f60 !default;
+$neon-purple: #9d00ff !default;
+
+$theme-colors: (
+  primary: $neon-blue,
+  secondary: $neon-orange,
+  success: $neon-green,
+  info: $neon-purple,
+  warning: $neon-yellow,
+  danger: $neon-red,
+  light: $neon-pink,
+  dark: $neon-purple
+) !default;
+
+$link-color: $neon-blue !default;

@@ -25,17 +25,16 @@
 			 var currHeight = parseInt($(this).height());
 			 var topMargin = ((currHeight * magnification) / 2) - (currHeight / 2);
 			 var leftMargin = ((currWidth * magnification) / 2) - (currWidth / 2);
+       var winTop = $(window).scrollTop();
 			 var position = $(this).offset();
+       var elWinTop = position.top - winTop;
 			 var styles = {
 				 'width': (currWidth * magnification) + 'px',
 				 'position': 'fixed',
 				 'left': position.left,
-				 'top': position.top,
+				 'top': elWinTop,
 				 'z-index': '1002'
 			 };
-
-			 console.log($(this));
-			 console.log($(this).offset());
 
 			 switch (direction) {
 				 case 'up':

@@ -314,6 +314,7 @@
 			$('.navbar').keepOnScreen(); // Which is a combination of $('.navbar').keepAtTop(); and $('.navbar').keepAtBottom();
 			$('[data-toggle="tooltip"]').tooltip();
 			$('.card-img-top').imagePopOut();
+			$('.card-img-top').zoomIn();
 		});
 	</script>
 
@@ -355,7 +356,8 @@
 		});
 	</script>
 
-	<script>
+	<!-- THEMES -->
+	<script type="text/javascript">
 		var themes = [
 			{
 				"name":"No Theme",
@@ -368,6 +370,10 @@
 			{
 				"name":"Square",
 				"file":"fontstrap-square.min.css"
+			},
+			{
+				"name":"Neon",
+				"file":"fontstrap-neon.min.css"
 			}
 		];
 

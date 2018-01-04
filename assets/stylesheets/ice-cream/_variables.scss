@@ -1,13 +1,13 @@
 // Ice Cream Colors
-$chocolate: #69340f;
-$dk-chocolate: #2a1506;
-$caramel: #b8860b;
-$blueberry: #d28fc8;
-$strawberry: #ffc5d9;
-$mint: #c2f2d0;
-$french-vanilla: #fdf5c9;
-$vanilla: #fffcf8;
-$orange: #ffcb85;
+$chocolate: #69340f !default;
+$dk-chocolate: #2a1506 !default;
+$caramel: #b8860b !default;
+$blueberry: #d28fc8 !default;
+$strawberry: #ffc5d9 !default;
+$mint: #c2f2d0 !default;
+$french-vanilla: #fdf5c9 !default;
+$vanilla: #fffcf8 !default;
+$orange: #ffcb85 !default;
 
 $theme-colors: (
   primary: $chocolate,
@@ -20,4 +20,4 @@ $theme-colors: (
   dark: $dk-chocolate
 ) !default;
 
-$link-color:            $orange !default;
+$link-color: $orange !default;
