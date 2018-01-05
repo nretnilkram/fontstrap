@@ -19,15 +19,6 @@
 		.fa-layers .fa-facebook { color: #3b5998; }
 		.fa-layers .fa-instagram { color: #9b6954; }
 		.fa-layers .fa-circle { color: #e4e4e4; }
-
-		.uneven-list div:nth-child(8n+0) { background-color: #d9534f; }
-		.uneven-list div:nth-child(8n+1) { background-color: #0275d8; }
-		.uneven-list div:nth-child(8n+2) { background-color: #5cb85c; }
-		.uneven-list div:nth-child(8n+3) { background-color: #613d7c; }
-		.uneven-list div:nth-child(8n+4) { background-color: #f0ad4e; }
-		.uneven-list div:nth-child(8n+5) { background-color: #ffd500; }
-		.uneven-list div:nth-child(8n+6) { background-color: #5bc0de; }
-		.uneven-list div:nth-child(8n+7) { background-color: #ff5b77; }
 	</style>
 </head>
 <body>
@@ -170,7 +161,7 @@
 							<div class="col-sm-6 block bg-primary"></div>
 						</div>
 					</div>
-					<div class="col-sm-3 block bg-primary"></div>
+					<div class="col-sm-3 block bg-dark"></div>
 					<div class="col-sm-6 block bg-success">
 						<div class="row">
 							<div class="col-sm-6 block bg-danger"></div>
@@ -324,8 +315,9 @@
 			return a + Math.floor(Math.random() * b);
 		}
 
-		var createDiv = function () {
-			return $('<div>').css({ 'height': randomInt(50, 300) + 'px', 'margin-bottom': '10px' }).addClass('list-item');
+		var createDiv = function (num = 0) {
+			var backgrounds = ['bg-primary','bg-secondary','bg-info','bg-light','bg-dark','bg-danger','bg-success','bg-warning'];
+			return $('<div>').css({ 'height': randomInt(50, 300) + 'px', 'margin-bottom': '10px' }).addClass('list-item ' + backgrounds[num % 8]);
 		}
 
 		$(document).ready(function() {
@@ -338,8 +330,8 @@
 			};
 
 			var add = function (count = 1) {
-				_.times(count, function () {
-					$('.uneven-list').append(createDiv());
+				_.times(count, function (i) {
+					$('.uneven-list').append(createDiv(i));
 					align();
 				});
 			};
