@@ -7,7 +7,7 @@
 
 ### Additionally some necessary and useful javascript files are also combined and loaded from a single file. Those tools and versions are:
 
-* jQuery: 3.2.1
+* jQuery: 3.3.1
 * bootstrap.bundle.js: 4.0.0 (contains Popper.js: 1.12.9)
 * Lodash.js: 4.17.4
 * fontstrap-features.js - functionality added for the Fontstrap suite
