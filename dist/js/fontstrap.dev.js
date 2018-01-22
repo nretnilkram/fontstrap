@@ -29,16 +29,18 @@ function loadScript(url, callback){
 var currSrc = document.currentScript.src,
     jsPath = currSrc.substr(0, currSrc.lastIndexOf("/")) + '/', // "dist/js/";
     fontstrapAssetJsPath = jsPath + '../../assets/javascripts/fontstrap/',
-    tmpJsPath = jsPath + '../../tmp/',
+    bootstrapJsPath = jsPath + '../../assets/javascripts/bootstrap/',
+    fontawesomeJsPath = jsPath + '../../assets/javascripts/fontawesome/',
     thirdPartyAssetJsPath = jsPath + '../../assets/javascripts/third_party/';
 
 var loadRequirements = function () {
   $(window).on('beforeunload', function() {
     $(window).scrollTop(0);
   });
-  loadScript(tmpJsPath + "popper-bootstrap.min.js", function(){
+  loadScript(bootstrapJsPath + "bootstrap.bundle.min.js", function(){
     $('[data-toggle="tooltip"]').tooltip();
   });
+  loadScript(fontawesomeJsPath + "fontawesome-all.min.js", function(){ });
   loadScript(thirdPartyAssetJsPath + "lodash.min.js", function(){
     loadScript(fontstrapAssetJsPath + "storage.js", function(){ });
     loadScript(fontstrapAssetJsPath + "alignBlocks.jquery.js", function(){ });

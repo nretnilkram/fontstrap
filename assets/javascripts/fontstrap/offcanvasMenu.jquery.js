@@ -109,23 +109,27 @@ jQuery.fn.offcanvasMenu = function(settings) {
 
 	self.find(options.lockToggle).click(function (e) {
 		e.preventDefault(e);
+		console.log($(this).hasClass('locked'));
 		if ($(this).hasClass('locked')) {
 			$(this).removeClass('locked');
-			$(this).find('.fa').addClass('fa-unlock');
-			$(this).find('.fa').removeClass('fa-lock');
+			var unlocked = $('<i>').addClass('fa fa-unlock');
+			$(this).find('.fa-lock').remove();
+			$(this).append(unlocked);
 			storage.save(options.cookieName, false);
 		} else {
 			$(this).addClass('locked');
-			$(this).find('.fa').addClass('fa-lock');
-			$(this).find('.fa').removeClass('fa-unlock');
+			var locked = $('<i>').addClass('fa fa-lock');
+			$(this).find('.fa-unlock').remove();
+			$(this).append(locked);
 			storage.save(options.cookieName, true);
 		}
 	});
 
 	if (storage.get(options.cookieName)) {
 		$(options.lockToggle).addClass('locked');
-		$(options.lockToggle).find('.fa').addClass('fa-lock');
-		$(options.lockToggle).find('.fa').removeClass('fa-unlock');
+		var locked = $('<i>').addClass('fa fa-lock');
+		$(options.lockToggle).find('.fa-unlock').remove();
+		$(options.lockToggle).append(locked);
 		open(0);
 	}
 
