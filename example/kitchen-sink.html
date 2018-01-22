@@ -23,12 +23,14 @@
 </head>
 <body>
 	<div class="p-3 m-3 card fixed middle left">
-		<h3><span class="fa-layers fa-fw">
+		<h3><span class="fa-layers fa-fw fa-2x">
 			<i class="fas fa-calendar"></i>
-			<span class="fa-layers-text fa-inverse" data-fa-transform="shrink-8 down-3" style="font-weight:900">27</span>
+			<span class="fa-layers-text fa-inverse todays-date" data-fa-transform="shrink-8 down-3" style="font-weight:900">27</span>
 		</span></h3>
 	</div>
+
 	<div class="p-3 m-3 card fixed middle right bg-primary text-white theme-name"><h3>No Theme</h3></div>
+
 	<div class="offcanvas-menu bg-secondary">
 		<div class="offcanvas-menu-header clearfix">
 			<button class="py-3 px-4 text-white menu-lock-toggle"><i class="fa fa-unlock"></i></button>
@@ -399,6 +401,8 @@
 					$('.theme-name h3').text(themeName + ' Theme');
 				}
 			});
+			var todaysDate = new Date;
+			$('.todays-date').html(todaysDate.getDate());
 		});
 	</script>
 
