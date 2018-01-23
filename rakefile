@@ -79,6 +79,7 @@ namespace :sass do
     system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/theme/fontstrap-square.min.css --style compressed'
     system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/theme/fontstrap-ice-cream.min.css --style compressed'
     system 'sass assets/stylesheets/_fontstrap_neon.scss dist/css/theme/fontstrap-neon.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_depth.scss dist/css/theme/fontstrap-depth.min.css --style compressed'
   end
 
   #####
@@ -89,6 +90,7 @@ namespace :sass do
     system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/theme/fontstrap-square.css'
     system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/theme/fontstrap-ice-cream.min.css'
     system 'sass assets/stylesheets/_fontstrap_neon.scss dist/css/theme/fontstrap-neon.min.css'
+    system 'sass assets/stylesheets/_fontstrap_depth.scss dist/css/theme/fontstrap-depth.min.css'
   end
 
   #####
@@ -117,5 +119,12 @@ namespace :sass do
   #####
   task :watch_neon do
     system 'sass --watch assets/stylesheets/_fontstrap_neon.scss:dist/css/theme/fontstrap-neon.min.css --style compressed'
+  end
+
+  #####
+  # This task will create the minified version of neon fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
+  #####
+  task :watch_depth do
+    system 'sass --watch assets/stylesheets/_fontstrap_depth.scss:dist/css/theme/fontstrap-depth.min.css --style compressed'
   end
 end
