@@ -47,6 +47,26 @@
     }
   }
 
+  @each $color, $value in $theme-colors {
+    &.bg-#{$color} {
+      a {
+        @if $color == 'light' {
+          color: $navbar-light-color;
+        }
+
+        &:hover {
+          background-color: darken($value, 15%);
+          border-color: darken($value, 30%);
+        }
+
+        &.active {
+          background-color: lighten($value, 25%);
+          border-color: darken($value, 30%);
+        }
+      }
+    }
+  }
+
   .submenu {
     display: none;
 

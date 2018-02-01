@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<div class="offcanvas-menu bg-secondary">
+	<div class="offcanvas-menu background-swap bg-secondary">
 		<div class="offcanvas-menu-header clearfix">
 			<button class="py-3 px-4 text-white menu-lock-toggle"><i class="fa fa-unlock"></i></button>
 			<button class="float-right offcanvas-menu-toggle py-3 px-4 text-white"><i class="fa fa-times"></i></button>
@@ -49,11 +49,21 @@
 
 	<div class="offcanvas-main-content">
 
-		<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-secondary">
+		<div class="navbar navbar-expand-lg fixed-top navbar-dark background-swap bg-secondary">
 			<span class="navbar-text p-0 mr-3">
 				<i class="offcanvas-menu-toggle fa fa-bars fa-lg"></i>
 			</span>
 			<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="2.2.1">Fontstrap</span></a>
+
+			<ul class="nav navbar-nav mx-auto">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Backgrounds <span class="caret"></span></a>
+					<ul class="dropdown-menu background-menu background-swap bg-secondary">
+						<li class="dropdown-header text-white">Pick a Backbround</li>
+						<li role="separator" class="divider"></li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 
 		<div class="container mb-5">
@@ -95,9 +105,44 @@
 	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../dist/js/fontstrap.min.js"></script>
 	<script>
+		var backgrounds = ['bg-primary', 'bg-secondary', 'bg-info', 'bg-light', 'bg-danger', 'bg-warning', 'bg-success', 'bg-dark'];
+
+		function createDropdown(selector, options) {
+			var count = 0
+			var html = "";
+
+			_.each(options, function(option) {
+				html += '<li><a href="#" class="bg-option nav-link" data-name="' + option + '">' + option + '</a></li>';
+				html += '<li role="separator" class="divider"></li>';
+				count++;
+			});
+			$(selector).append(html);
+		}
+
+		createDropdown(".background-menu", backgrounds);
+
 		$(document).ready(function() {
 			$('.offcanvas-menu').offcanvasMenu();
 			$('[data-toggle="tooltip"]').tooltip();
+
+			$(".bg-option").click( function (e) {
+				e.preventDefault();
+				$('head link[theme="true"]').remove();
+				var name = $(this).data("name");
+				if ( name !== null ) {
+					_.each(backgrounds, function(option) {
+						$('.background-swap').removeClass(option);
+					});
+					$('.background-swap').addClass(name);
+					if ( name == 'bg-light' ) {
+						$('.background-swap').removeClass('navbar-dark');
+						$('.background-swap').addClass('navbar-light');
+					} else {
+						$('.background-swap').removeClass('navbar-light');
+						$('.background-swap').addClass('navbar-dark');
+					}
+				}
+			});
 		});
 	</script>
 
