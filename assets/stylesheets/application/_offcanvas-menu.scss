@@ -12,56 +12,60 @@
     list-style: none;
     margin: 0;
     padding: 0;
-  }
 
-  a {
-    border-left: solid 4px transparent;
-    color: $white;
-    display: block;
-    padding: 15px;
-
-    .offcanvas-menu-secondary-open {
-      display: none;
-    }
-
-    .offcanvas-menu-secondary-closed {
-      display: inline-block;
-    }
-
-    &.active {
-      background-color: $gray-500;
-      border-color: $gray-800;
+    a {
+      border-left: solid 4px transparent;
+      color: $white;
+      display: block;
+      padding: 15px;
 
       .offcanvas-menu-secondary-open {
-        display: inline-block;
+        display: none;
       }
 
       .offcanvas-menu-secondary-closed {
-        display: none;
+        display: inline-block;
       }
-    }
 
-    &:hover {
-      background-color: $gray-700;
-      border-color: $black;
+      &.active {
+        background-color: $gray-500;
+        border-color: $gray-800;
+
+        .offcanvas-menu-secondary-open {
+          display: inline-block;
+        }
+
+        .offcanvas-menu-secondary-closed {
+          display: none;
+        }
+      }
+
+      &:hover {
+        background-color: $gray-700;
+        border-color: $black;
+      }
     }
   }
 
   @each $color, $value in $theme-colors {
     &.bg-#{$color} {
-      a {
-        @if $color == 'light' {
-          color: $navbar-light-color;
-        }
 
-        &:hover {
-          background-color: darken($value, 15%);
-          border-color: darken($value, 30%);
-        }
+      ul {
 
-        &.active {
-          background-color: lighten($value, 25%);
-          border-color: darken($value, 30%);
+        a {
+          @if $color == 'light' {
+            color: $navbar-light-color;
+          }
+
+          &:hover {
+            background-color: darken($value, 15%);
+            border-color: darken($value, 30%);
+          }
+
+          &.active {
+            background-color: lighten($value, 25%);
+            border-color: darken($value, 30%);
+          }
         }
       }
     }
