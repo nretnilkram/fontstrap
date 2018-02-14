@@ -9,7 +9,7 @@
 
 * jQuery: 3.3.1
 * bootstrap.bundle.js: 4.0.0 (contains Popper.js: 1.12.9)
-* Lodash.js: 4.17.4
+* Lodash.js: 4.17.5
 * fontstrap-features.js - functionality added for the Fontstrap suite
 
 ### How to Customize:
@@ -20,7 +20,7 @@
 
 ```
 bundle install
-bundle exec rake sass:compile
+bundle exec rake fs:compile
 ```
 
 ### How To Use:
@@ -251,6 +251,7 @@ Examples can be found in the examples directory.
 * fixed.html - An example of the fixed position css utilities, which can be found in Fontstrap.
 * grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap.
 * ice-cream.html - An example of the ice-cream color theme found in `dist/css/theme`.
+* icons.html - Displays current icons available from Font Awesome.
 * image-pop-out.html - An example of the imagePopOut jquery functionality.
 * kitchen-sink.html - An example of all features and functionality added and found within Fontstrap.
 * offcanvas.html - An example of the offCanvas Menu feature in action.

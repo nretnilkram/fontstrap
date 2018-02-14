@@ -26,7 +26,7 @@ namespace :test do
   task all: :html
 end
 
-namespace :sass do
+namespace :fs do
   #####
   # This task will create the necessary directories should they not already exist.  It initilizes with cleanup.
   #####
