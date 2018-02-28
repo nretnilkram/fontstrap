@@ -4,8 +4,10 @@
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
 
+@import 'fontstrap/variables';
+
 // Bootstrap CSS
 @import 'bootstrap/bootstrap';
 
 // Application CSS
-@import 'application/application';
+@import 'fontstrap/fontstrap';
