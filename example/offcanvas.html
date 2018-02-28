@@ -63,6 +63,13 @@
 						<li role="separator" class="divider"></li>
 					</ul>
 				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Themes <span class="caret"></span></a>
+					<ul class="dropdown-menu theme-menu background-swap bg-secondary">
+						<li class="dropdown-header text-white">Pick a Theme</li>
+						<li role="separator" class="divider"></li>
+					</ul>
+				</li>
 			</ul>
 		</div>
 
@@ -98,13 +105,53 @@
 			</ul>
 		</div> <!-- container -->
 
-		<div class="footer text-center my-4">&copy; Fontstrap, 2017</div>
+		<div class="footer text-center my-4">&copy; Fontstrap, 2018</div>
 
 	</div> <!-- .offcanvas-main-content -->
 
 	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../dist/js/fontstrap.min.js"></script>
 	<script>
+		var themes = [
+			{
+				"name":"No Theme",
+				"file":""
+			},
+			{
+				"name":"Ice Cream",
+				"file":"fontstrap-ice-cream.min.css"
+			},
+			{
+				"name":"Square",
+				"file":"fontstrap-square.min.css"
+			},
+			{
+				"name":"Neon",
+				"file":"fontstrap-neon.min.css"
+			},
+			{
+				"name":"Depth",
+				"file":"fontstrap-depth.min.css"
+			}
+		];
+
+		function createThemeDropdown(selector,themes) {
+			var count = 0
+			var html = "";
+			var middle = Math.floor(themes.count / 2);
+
+			_.each(themes, function(theme) {
+				var name = theme.name;
+				var file = theme.file;
+				html += '<li><a href="#" class="theme-option nav-link" data-theme-name="' + name + '" data-theme-file="' + file + '">' + name + '</a></li>';
+				html += '<li role="separator" class="divider"></li>';
+				count++;
+			});
+			$(selector).append(html);
+		}
+
+		createThemeDropdown(".theme-menu",themes);
+
 		var backgrounds = ['bg-primary', 'bg-secondary', 'bg-info', 'bg-light', 'bg-danger', 'bg-warning', 'bg-success', 'bg-dark'];
 
 		function createDropdown(selector, options) {
@@ -125,6 +172,7 @@
 			$('.offcanvas-menu').offcanvasMenu();
 			$('[data-toggle="tooltip"]').tooltip();
 
+			// Background Toggle
 			$(".bg-option").click( function (e) {
 				e.preventDefault();
 				$('head link[theme="true"]').remove();
@@ -141,6 +189,20 @@
 						$('.background-swap').removeClass('navbar-light');
 						$('.background-swap').addClass('navbar-dark');
 					}
+				}
+			});
+
+			// Theme Toggle
+			$(".theme-option").click( function (e) {
+				e.preventDefault();
+				$('head link[theme="true"]').remove();
+				var themeName = $(this).data("theme-name");
+				var themeFile = $(this).data("theme-file");
+				if ( themeFile !== null ) {
+					$('head').append('<link rel="stylesheet" href="../dist/css/theme/' + themeFile + '" type="text/css" theme="true"/>')
+				}
+				if ( themeName !== null ) {
+					$('.theme-name h3').text(themeName + ' Theme');
 				}
 			});
 		});

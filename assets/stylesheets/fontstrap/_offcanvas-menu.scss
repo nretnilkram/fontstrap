@@ -59,12 +59,12 @@
 
           &:hover {
             background-color: darken($value, 15%);
-            border-color: darken($value, 30%);
+            border-color: darken($value, 25%);
           }
 
           &.active {
-            background-color: lighten($value, 25%);
-            border-color: darken($value, 30%);
+            background-color: lighten($value, 10%);
+            border-color: darken($value, 25%);
           }
         }
       }
