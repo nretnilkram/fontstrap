@@ -19,7 +19,11 @@ jQuery.fn.fullScreenBackground = function(settings){
 
 	_.each(divs, function (div) {
 		var img = $(div).data(options.dataImageVar);
-		$(div).css({'background-image': "url('" + img + "')"});
+		if ( img === undefined ) {
+			console.log('fullScreenBackground: No image provided.');
+		} else {
+			$(div).css({'background-image': "url('" + img + "')"});
+		}
 	});
 
 };

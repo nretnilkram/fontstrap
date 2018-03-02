@@ -4,6 +4,10 @@ body {
   overflow-x: hidden;
 }
 
+.min-vh-100 {
+  min-height: 100vh;
+}
+
 .page-header {
   border-bottom: solid 1px;
   margin-bottom: 10px;

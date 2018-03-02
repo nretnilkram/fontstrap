@@ -1,0 +1,57 @@
+.multi-level {
+  max-height: 60vh;
+  min-width: 18rem;
+  overflow: visible;
+  padding: 0;
+
+  .sub-menu {
+    background-color: $white;
+    border: 1px solid $black;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25em;
+    left: 100%;
+    min-width: 18rem;
+    position: absolute;
+    top: -1px;
+    z-index: 1050;
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        padding: 10px 20px;
+      }
+
+      &:hover > ul {
+        display: block;
+      }
+
+      &:hover > a {
+
+        .fa-caret-right {
+          display: none;
+        }
+
+        .fa-caret-down {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  & > ul {
+    display: block;
+  }
+
+  .fa-caret-down {
+    display: none;
+  }
+}
