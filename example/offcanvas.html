@@ -175,7 +175,6 @@
 			// Background Toggle
 			$(".bg-option").click( function (e) {
 				e.preventDefault();
-				$('head link[theme="true"]').remove();
 				var name = $(this).data("name");
 				if ( name !== null ) {
 					_.each(backgrounds, function(option) {
