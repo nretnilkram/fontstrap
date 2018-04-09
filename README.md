@@ -248,14 +248,18 @@ Examples can be found in the examples directory.
 * advanced.html - A large compilation of features and functionality that are included in Fontstrap.
 * basic.html - A very small starter site of Fontstrap.
 * blog.html - An example of a crude 2 column blog layout, which was built with Fontstrap.
+* depth.html - Demonstrates the bg-gradient-* option available in fontstrap-depth css file.
 * fixed.html - An example of the fixed position css utilities, which can be found in Fontstrap.
 * grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap.
 * ice-cream.html - An example of the ice-cream color theme found in `dist/css/theme`.
 * icons.html - Displays current icons available from Font Awesome.
 * image-pop-out.html - An example of the imagePopOut jquery functionality.
 * kitchen-sink.html - An example of all features and functionality added and found within Fontstrap.
+* multi-level-dropdown.html - An example of the multi-level dropdowns, which was built with Fontstrap.
+* neon.html - An example of the neon color theme found in `dist/css/theme`.
 * offcanvas.html - An example of the offCanvas Menu feature in action.
 * square.html - An example of the square theme found in `dist/css/theme`, which removes all border radius css.
+* width.html - An example of the added widths w-*, which is included in Fontstrap.
 
 
 ### Troubleshooting/Development:
