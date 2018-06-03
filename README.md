@@ -1,15 +1,15 @@
-# Fontstrap v2.2.2
+# Fontstrap v2.3.3
 
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
-* Bootstrap: 4.0.0 - http://getbootstrap.com/
-* Font Awesome: 5.0.8 - https://fontawesome.com/
+* Bootstrap: 4.1.1 - http://getbootstrap.com/
+* Font Awesome: 5.0.12 - https://fontawesome.com/
 
 ### Additionally some necessary and useful javascript files are also combined and loaded from a single file. Those tools and versions are:
 
 * jQuery: 3.3.1
-* bootstrap.bundle.js: 4.0.0 (contains Popper.js: 1.12.9)
-* Lodash.js: 4.17.5
+* bootstrap.bundle.js: 4.1.1 (contains Popper.js: 1.14.0)
+* Lodash.js: 4.17.10
 * fontstrap-features.js - functionality added for the Fontstrap suite
 
 ### How to Customize:
@@ -248,14 +248,18 @@ Examples can be found in the examples directory.
 * advanced.html - A large compilation of features and functionality that are included in Fontstrap.
 * basic.html - A very small starter site of Fontstrap.
 * blog.html - An example of a crude 2 column blog layout, which was built with Fontstrap.
+* depth.html - Demonstrates the bg-gradient-* option available in fontstrap-depth css file.
 * fixed.html - An example of the fixed position css utilities, which can be found in Fontstrap.
 * grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap.
 * ice-cream.html - An example of the ice-cream color theme found in `dist/css/theme`.
 * icons.html - Displays current icons available from Font Awesome.
 * image-pop-out.html - An example of the imagePopOut jquery functionality.
 * kitchen-sink.html - An example of all features and functionality added and found within Fontstrap.
+* multi-level-dropdown.html - An example of the multi-level dropdowns, which was built with Fontstrap.
+* neon.html - An example of the neon color theme found in `dist/css/theme`.
 * offcanvas.html - An example of the offCanvas Menu feature in action.
 * square.html - An example of the square theme found in `dist/css/theme`, which removes all border radius css.
+* width.html - An example of the added widths w-*, which is included in Fontstrap.
 
 
 ### Troubleshooting/Development:
