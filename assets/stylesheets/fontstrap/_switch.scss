@@ -1,0 +1,104 @@
+//Switch - Pure CSS
+
+//Variables
+$switch-on-bg: $success;
+$switch-on-color: lighten($switch-on-bg, 20%);
+
+$switch-off-bg: $danger;
+$switch-off-color: lighten($switch-off-bg, 15%);
+
+$switch-height: 34px;
+$switch-font-size: 18px;
+$switch-width: 80px;
+
+$shadow-color: #d3d3d3;
+
+// Container
+.checkbox-switch {
+  display: inline-block;
+
+  .switch {
+    display: inline-block;
+    height: $switch-height;
+    position: relative;
+    width: $switch-width;
+
+    input {
+      cursor: pointer;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 100;
+
+      &:checked~label {
+        background: $switch-on-bg;
+        color: $switch-on-color;
+
+        div {
+          left: 40px;
+        }
+      }
+    }
+
+    label {
+      background: $switch-off-bg;
+      color: $switch-off-color;
+      display: block;
+      height: 100%;
+      position: relative;
+      transition: all .15s ease;
+      width: 100%;
+
+      div {
+        background: $white;
+        display: block;
+        height: $switch-height - 8;
+        left: 4px;
+        position: absolute;
+        top: 4px;
+        transition: all .15s ease;
+        width: 36px;
+        z-index: 3;
+      }
+
+      div:before {
+        background: $shadow-color;
+        bottom: 0;
+        box-shadow: -6px 0 0 0 $shadow-color, 6px 0 0 0 $shadow-color;
+        content: '';
+        display: block;
+        height: 15px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: all .15s ease;
+        width: 3px;
+      }
+    }
+
+    .fa-ok,
+    .fa-check {
+      font-size: $switch-font-size;
+      left: 12px;
+      position: relative;
+      top: 6px;
+      z-index: 2;
+    }
+
+    .fa-times {
+      font-size: $switch-font-size;
+      left: 31px;
+      position: relative;
+      top: 6px;
+      z-index: 2;
+    }
+  }
+
+  &> label {
+    position: relative;
+    top: 6px;
+  }
+}
