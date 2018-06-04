@@ -1,0 +1,67 @@
+//Radio Button - Pure CSS
+
+//Variables
+$radio-color: $gray-300;
+$radio-check-color: $success;
+$radio-hover-color: $gray-400;
+
+$label-font-size: 25px;
+$radio-circumfrence: 40px;
+
+$shadow-color: #d3d3d3;
+
+.fs-radio {
+  border-radius: 50%;
+  height: $radio-circumfrence;
+  position: relative;
+  width: $radio-circumfrence;
+
+  .fs-radio-input {
+    -moz-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: $radio-color;
+    border: 0;
+    border-radius: 50%;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    height: $radio-circumfrence;
+    margin-right: .5rem;
+    outline: none;
+    position: relative;
+    width: $radio-circumfrence;
+    z-index: 10;
+
+    &:hover {
+      background: $radio-hover-color;
+    }
+
+    &:checked {
+      background: $radio-check-color;
+
+      &::before {
+        display: inline-block;
+        font-size: $label-font-size;
+        height: $radio-circumfrence;
+        line-height: $radio-circumfrence;
+        position: absolute;
+        text-align: center;
+        width: $radio-circumfrence;
+      }
+    }
+
+    &~label {
+      color: $white;
+      cursor: pointer;
+      font-size: $label-font-size;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: $radio-circumfrence;
+      z-index: 11;
+    }
+  }
+}
