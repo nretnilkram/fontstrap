@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<title>Fontstrap | Widths</title>
+	<title>Fontstrap | Switch</title>
 	<link rel="icon" href="../dist/img/favicon.png">
 
 	<!-- fontstrap -->
@@ -15,7 +15,7 @@
 <body>
 
 	<div class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="2.3.3">Fontstrap</span></a>
+		<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="2.3.4">Fontstrap</span></a>
 		<span class="navbar-text d-lg-inline d-none">
 			<strong>Contains: </strong>
 		</span>
@@ -34,21 +34,55 @@
 	</div>
 
 	<div class="container mt-5">
-		<div class="checkbox-switch mr-4">
-			<div class="switch">
-				<input type="checkbox" name="enabled" value="user" checked>
-				<label class="switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></label>
+
+		<div class="fs-switch">
+			<input type="checkbox" name="enabled" value="user" checked>
+			<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
+		</div>
+		<label class="fs-switch-label mr-4">Enabled <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Enable User"></i></label>
+
+		<div class="fs-switch">
+			<input type="checkbox" name="admin" value="user">
+			<label class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></label>
+		</div>
+		<label class="fs-switch-label">Admin <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Add Admin Role"></i></label>
+
+		<div>
+			<div class="card mt-5 p-2 d-inline-block">
+				<div>
+					<div class="fs-switch">
+						<input type="checkbox" name="enabled" value="turbo" checked>
+						<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
+					</div>
+					<label class="fs-switch-label">Turbo Mode <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Enable Turbo Mode"></i></label>
+				</div>
+
+				<div class="mt-2">
+					<div class="fs-switch">
+						<input type="checkbox" name="enabled" value="stealth">
+						<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
+					</div>
+					<label class="fs-switch-label">Stealth Mode <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Enable Stealth Mode"></i></label>
+				</div>
+
+				<div class="mt-2">
+					<div class="fs-switch">
+						<input type="checkbox" name="enabled" value="intelect" checked>
+						<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
+					</div>
+					<label class="fs-switch-label">Intelect Mode <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Enable Intelect Mode"></i></label>
+				</div>
+
+				<div class="mt-2">
+					<div class="fs-switch">
+						<input type="checkbox" name="enabled" value="strength">
+						<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
+					</div>
+					<label class="fs-switch-label">Strength Mode <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Enable Strength Mode"></i></label>
+				</div>
 			</div>
-			<label>Enabled <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Enable User"></i></label>
 		</div>
 
-		<div class="checkbox-switch m-top-md">
-			<div class="switch">
-				<input type="checkbox" name="admin" value="user">
-				<label class="switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></label>
-			</div>
-			<label>Admin <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Add Admin Role"></i></label>
-		</div>
 	</div> <!-- container -->
 
 	<div class="footer text-center my-4">&copy; Fontstrap, 2018</div>

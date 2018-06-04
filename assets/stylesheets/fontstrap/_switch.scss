@@ -14,55 +14,51 @@ $switch-width: 80px;
 $shadow-color: #d3d3d3;
 
 // Container
-.checkbox-switch {
+.fs-switch {
   display: inline-block;
+  height: $switch-height;
+  position: relative;
+  width: $switch-width;
 
-  .switch {
-    display: inline-block;
-    height: $switch-height;
-    position: relative;
-    width: $switch-width;
+  input {
+    cursor: pointer;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
 
-    input {
-      cursor: pointer;
-      height: 100%;
-      opacity: 0;
-      position: absolute;
-      width: 100%;
-      z-index: 100;
-
-      &:checked~label {
-        background: $switch-on-bg;
-        color: $switch-on-color;
-
-        div {
-          left: 40px;
-        }
-      }
-    }
-
-    label {
-      background: $switch-off-bg;
-      color: $switch-off-color;
-      display: block;
-      height: 100%;
-      position: relative;
-      transition: all .15s ease;
-      width: 100%;
+    &:checked~.fs-switch-magic {
+      background: $switch-on-bg;
+      color: $switch-on-color;
 
       div {
-        background: $white;
-        display: block;
-        height: $switch-height - 8;
-        left: 4px;
-        position: absolute;
-        top: 4px;
-        transition: all .15s ease;
-        width: 36px;
-        z-index: 3;
+        left: 40px;
       }
+    }
+  }
 
-      div:before {
+  .fs-switch-magic {
+    background: $switch-off-bg;
+    color: $switch-off-color;
+    display: block;
+    height: 100%;
+    position: relative;
+    transition: left .15s ease;
+    width: 100%;
+
+    div {
+      background: $white;
+      display: block;
+      height: $switch-height - 8;
+      left: 4px;
+      position: absolute;
+      top: 4px;
+      transition: left .15s ease;
+      width: 36px;
+      z-index: 3;
+
+      &::before {
         background: $shadow-color;
         bottom: 0;
         box-shadow: -6px 0 0 0 $shadow-color, 6px 0 0 0 $shadow-color;
@@ -74,31 +70,31 @@ $shadow-color: #d3d3d3;
         position: absolute;
         right: 0;
         top: 0;
-        transition: all .15s ease;
+        transition: left .15s ease;
         width: 3px;
       }
     }
-
-    .fa-ok,
-    .fa-check {
-      font-size: $switch-font-size;
-      left: 12px;
-      position: relative;
-      top: 6px;
-      z-index: 2;
-    }
-
-    .fa-times {
-      font-size: $switch-font-size;
-      left: 31px;
-      position: relative;
-      top: 6px;
-      z-index: 2;
-    }
   }
 
-  &> label {
+  .fa-ok,
+  .fa-check {
+    font-size: $switch-font-size;
+    left: 12px;
     position: relative;
     top: 6px;
+    z-index: 2;
   }
+
+  .fa-times {
+    font-size: $switch-font-size;
+    left: 35px;
+    position: relative;
+    top: 6px;
+    z-index: 2;
+  }
+}
+
+.fs-switch-label {
+  position: relative;
+  top: 6px;
 }
