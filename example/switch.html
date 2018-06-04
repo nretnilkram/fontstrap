@@ -35,13 +35,13 @@
 
 	<div class="container mt-5">
 
-		<div class="fs-switch">
+		<div class="fs-switch mr-3">
 			<input type="checkbox" name="enabled" value="user" checked>
 			<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
 		</div>
 		<label class="fs-switch-label mr-4">Enabled <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Enable User"></i></label>
 
-		<div class="fs-switch">
+		<div class="fs-switch mr-3">
 			<input type="checkbox" name="admin" value="user">
 			<label class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></label>
 		</div>
@@ -50,7 +50,7 @@
 		<div>
 			<div class="card mt-5 p-2 d-inline-block">
 				<div>
-					<div class="fs-switch">
+					<div class="fs-switch mr-3">
 						<input type="checkbox" name="enabled" value="turbo" checked>
 						<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
 					</div>
@@ -58,7 +58,7 @@
 				</div>
 
 				<div class="mt-2">
-					<div class="fs-switch">
+					<div class="fs-switch mr-3">
 						<input type="checkbox" name="enabled" value="stealth">
 						<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
 					</div>
@@ -66,7 +66,7 @@
 				</div>
 
 				<div class="mt-2">
-					<div class="fs-switch">
+					<div class="fs-switch mr-3">
 						<input type="checkbox" name="enabled" value="intelect" checked>
 						<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
 					</div>
@@ -74,7 +74,7 @@
 				</div>
 
 				<div class="mt-2">
-					<div class="fs-switch">
+					<div class="fs-switch mr-3">
 						<input type="checkbox" name="enabled" value="strength">
 						<div class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></div>
 					</div>
@@ -87,23 +87,71 @@
 		<div class="card p-2 d-inline-block">
 			<div class="fs-radio d-inline-block mr-2">
 			  <input class="fs-radio-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="A">
-			  <label for="inlineRadio1">A</label>
+			  <label class="fs-radio-label" for="inlineRadio1">A</label>
 			</div>
 			<div class="fs-radio d-inline-block mr-2">
 			  <input class="fs-radio-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="B">
-			  <label for="inlineRadio2">B</label>
+			  <label class="fs-radio-label" for="inlineRadio2">B</label>
 			</div>
 			<div class="fs-radio d-inline-block mr-2">
 			  <input class="fs-radio-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="C" checked>
-			  <label class="form-check-label" for="inlineRadio3">C</label>
+			  <label class="fs-radio-label" for="inlineRadio3">C</label>
 			</div>
 			<div class="fs-radio d-inline-block mr-2">
 			  <input class="fs-radio-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="D">
-			  <label class="form-check-label" for="inlineRadio4">D</label>
+			  <label class="fs-radio-label" for="inlineRadio4">D</label>
 			</div>
 			<div class="fs-radio d-inline-block">
 			  <input class="fs-radio-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="F">
-			  <label class="form-check-label" for="inlineRadio5">F</label>
+			  <label class="fs-radio-label" for="inlineRadio5">F</label>
+			</div>
+		</div>
+
+		<h2 class="mt-5">Grade</h2>
+		<div class="card p-2 d-inline-block">
+			<div class="fs-radio check d-inline-block mr-2">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions2" id="inlineRadio6" value="A">
+				<label for="inlineRadio6">A</label>
+			</div>
+			<div class="fs-radio d-inline-block mr-2">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions2" id="inlineRadio7" value="B" checked>
+				<label for="inlineRadio7">B</label>
+			</div>
+			<div class="fs-radio d-inline-block mr-2">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions2" id="inlineRadio8" value="C">
+			  <label for="inlineRadio8">C</label>
+			</div>
+			<div class="fs-radio d-inline-block mr-2">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions2" id="inlineRadio9" value="D">
+			  <label for="inlineRadio9">D</label>
+			</div>
+			<div class="fs-radio d-inline-block">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions2" id="inlineRadio10" value="F">
+			  <label for="inlineRadio10">F</label>
+			</div>
+		</div>
+
+		<h2 class="mt-5">Grade</h2>
+		<div class="card p-2 d-inline-block">
+			<div class="fs-radio mb-2">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions3" id="inlineRadio11" value="A">
+				<label for="inlineRadio11">Alpha</label>
+			</div>
+			<div class="fs-radio mb-2">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions3" id="inlineRadio12" value="B">
+				<label for="inlineRadio12">Beta</label>
+			</div>
+			<div class="fs-radio mb-2">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions3" id="inlineRadio13" value="C">
+			  <label for="inlineRadio13">Charlie</label>
+			</div>
+			<div class="fs-radio mb-2">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions3" id="inlineRadio14" value="D">
+			  <label for="inlineRadio14">Delta</label>
+			</div>
+			<div class="fs-radio">
+			  <input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions3" id="inlineRadio15" value="F" checked>
+			  <label for="inlineRadio15">Foxtrot</label>
 			</div>
 		</div>
 

@@ -5,7 +5,7 @@ $radio-color: $gray-300;
 $radio-check-color: $success;
 $radio-hover-color: $gray-400;
 
-$label-font-size: 25px;
+$label-font-size: 1.5rem;
 $radio-circumfrence: 40px;
 
 $shadow-color: #d3d3d3;
@@ -14,7 +14,6 @@ $shadow-color: #d3d3d3;
   border-radius: 50%;
   height: $radio-circumfrence;
   position: relative;
-  width: $radio-circumfrence;
 
   .fs-radio-input {
     -moz-appearance: none;
@@ -28,7 +27,6 @@ $shadow-color: #d3d3d3;
     cursor: pointer;
     display: inline-block;
     height: $radio-circumfrence;
-    margin-right: .5rem;
     outline: none;
     position: relative;
     width: $radio-circumfrence;
@@ -40,19 +38,36 @@ $shadow-color: #d3d3d3;
 
     &:checked {
       background: $radio-check-color;
+    }
 
-      &::before {
-        display: inline-block;
-        font-size: $label-font-size;
-        height: $radio-circumfrence;
-        line-height: $radio-circumfrence;
-        position: absolute;
-        text-align: center;
-        width: $radio-circumfrence;
+    &::before {
+      display: inline-block;
+      font-size: $label-font-size;
+      height: $radio-circumfrence;
+      line-height: $radio-circumfrence;
+      position: absolute;
+      text-align: center;
+      width: $radio-circumfrence;
+    }
+
+    &.checkmark {
+
+      &:hover {
+
+        &::before {
+          content: '\2713';
+        }
+      }
+
+      &:checked {
+
+        &::before {
+          content: '\2713';
+        }
       }
     }
 
-    &~label {
+    &~.fs-radio-label {
       color: $white;
       cursor: pointer;
       font-size: $label-font-size;
@@ -62,6 +77,13 @@ $shadow-color: #d3d3d3;
       top: 0;
       width: $radio-circumfrence;
       z-index: 11;
+    }
+
+    &~label {
+      display: inline-block;
+      font-size: $label-font-size;
+      position: relative;
+      top: -($label-font-size / 2);
     }
   }
 }
