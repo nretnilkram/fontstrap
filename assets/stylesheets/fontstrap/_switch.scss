@@ -77,7 +77,8 @@ $shadow-color: #d3d3d3;
   }
 
   .fa-ok,
-  .fa-check {
+  .fa-check,
+  .fs-switch-positive {
     font-size: $switch-font-size;
     left: 12px;
     position: relative;
@@ -85,12 +86,32 @@ $shadow-color: #d3d3d3;
     z-index: 2;
   }
 
-  .fa-times {
+  &.no-icons {
+
+    .fa-check,
+    .fa-times,
+    .fa-text {
+      visibility: hidden;
+    }
+  }
+
+  .fa-times,
+  .fs-switch-negative {
     font-size: $switch-font-size;
     left: 35px;
     position: relative;
     top: 6px;
     z-index: 2;
+  }
+
+  .fs-switch-positive {
+    left: 15px;
+    top: 3px;
+  }
+
+  .fs-switch-negative {
+    left: 40px;
+    top: 3px;
   }
 }
 

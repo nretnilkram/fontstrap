@@ -223,6 +223,58 @@ bundle exec rake fs:compile
 </script>
 ```
 
+## Checkbox switch
+
+### Icons
+```
+<div class="fs-switch">
+	<input type="checkbox" name="admin" value="user">
+	<label class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></label>
+</div>
+```
+
+### No Icons
+```
+<div class="fs-switch no-icons">
+	<input type="checkbox" name="admin" value="user">
+	<label class="fs-switch-magic"><i class="fa fa-check"></i><i class="fa fa-times"></i><div class="switch-handle"></div></label>
+</div>
+```
+
+### Custom Icon
+```
+<div class="fs-switch">
+	<input type="checkbox" name="admin" value="user">
+	<label class="fs-switch-magic"><i class="fa-text fs-switch-positive">Y</i><i class="fa-text fs-switch-negative">N</i><div class="switch-handle"></div></label>
+</div>
+```
+
+## Radio
+
+### Checkmark
+```
+<div class="fs-radio check">
+	<input class="fs-radio-input checkmark" type="radio" name="inlineRadioOptions2" id="inlineRadio6" value="A">
+	<label for="inlineRadio6">A</label>
+</div>
+```
+
+### Overlay
+```
+<div class="fs-radio">
+	<input class="fs-radio-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="A">
+	<label class="fs-radio-label" for="inlineRadio1">A</label>
+</div>
+```
+
+### No Checkmark
+```
+<div class="fs-radio">
+	<input class="fs-radio-input" type="radio" name="inlineRadioOptions2" id="inlineRadio6" value="A">
+	<label for="inlineRadio6">A</label>
+</div>
+```
+
 ### Local Storage:
 
 I created a jquery helper that is used by the offcanvas menu, but can also be used for other local storage needs.  You can initialize a new storage helper as follows.  The BrowserStorage class has an optional boolean variable for whether or not to use session instead of local storage, which defaults to false.
