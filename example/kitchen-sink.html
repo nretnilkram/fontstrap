@@ -75,7 +75,7 @@
 			<span class="navbar-text p-0 mr-3">
 				<i class="offcanvas-menu-toggle fa fa-bars fa-lg"></i>
 			</span>
-			<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="2.4.3">Fontstrap</span></a>
+			<a class="navbar-brand" href="#"><span data-toggle="tooltip" data-placement="bottom" title="2.5.0">Fontstrap</span></a>
 			<span class="navbar-text d-lg-inline d-none">
 				<strong>Contains: </strong>
 			</span>
@@ -310,6 +310,10 @@
 	</div>
 
 	<script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+	<script type="text/javascript">
+		var todaysDate = new Date;
+		$('.todays-date').html(todaysDate.getDate());
+	</script>
 	<script type="text/javascript" src="../dist/js/fontstrap.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -416,8 +420,6 @@
 					$('.theme-name h3').text(themeName + ' Theme');
 				}
 			});
-			var todaysDate = new Date;
-			$('.todays-date').html(todaysDate.getDate());
 		});
 	</script>
 
