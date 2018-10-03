@@ -53,7 +53,7 @@ bundle exec rake fs:compile
 
 ### Additional Fontstrap Features:
 
-* $().fullScreenBackground()
+#### $().fullScreenBackground()
 
 ```html
 ...
@@ -67,7 +67,7 @@ bundle exec rake fs:compile
 ...
 ```
 
-* $().keepAtTop() - When element reaches top of screen that element will remain fixed to the top of the screen until scrolled to a position where it would be below the top again.
+#### $().keepAtTop() - When element reaches top of screen that element will remain fixed to the top of the screen until scrolled to a position where it would be below the top again.
 
 ```html
 ...
@@ -89,7 +89,7 @@ bundle exec rake fs:compile
 ...
 ```
 
-* $().keepAtBottom() - When element reaches bottom of screen that element will remain fixed to the bottom of the screen until scrolled to a position where it would be above the bottom again.
+#### $().keepAtBottom() - When element reaches bottom of screen that element will remain fixed to the bottom of the screen until scrolled to a position where it would be above the bottom again.
 
 ```html
 ...
@@ -111,7 +111,7 @@ bundle exec rake fs:compile
 ...
 ```
 
-* $().keepOnScreen() - Combination of $().keepAtTop() and $().keepAtBottom().
+#### $().keepOnScreen() - Combination of $().keepAtTop() and $().keepAtBottom().
 
 ```html
 ...
@@ -133,7 +133,9 @@ bundle exec rake fs:compile
 ...
 ```
 
-* $().alignBlocks({countPerRow: 4, block: '.list-item', spaceBetween: 0}); - This will take a set of block and align them based on their height. The options and defaults are shown.
+
+#### $().alignBlocks({countPerRow: 4, block: '.list-item', spaceBetween: 0}); - This will take a set of block and align them based on their height. The options and defaults are shown.
+[https://jsfiddle.net/mlintern/xz8wqg9v/](https://jsfiddle.net/mlintern/xz8wqg9v/)
 
 ```html
 ...
@@ -160,7 +162,7 @@ bundle exec rake fs:compile
 ...
 ```
 
-* $().offcanvasMenu({width: 20, responsive: false, mainBlock: '.offcanvas-main-content', triggerEl: '.offcanvas-menu-toggle', submenuTrigger: '.submenu-toggle', submenuEl: '.submenu'}); - This will take a menu and turn it into an offcanvas menu.  It has many customizable elements and can be set for different widths based on screen size with the standard break points.
+#### $().offcanvasMenu({width: 20, responsive: false, mainBlock: '.offcanvas-main-content', triggerEl: '.offcanvas-menu-toggle', submenuTrigger: '.submenu-toggle', submenuEl: '.submenu'}); - This will take a menu and turn it into an offcanvas menu.  It has many customizable elements and can be set for different widths based on screen size with the standard break points.
 
 ```html
 ...
@@ -187,7 +189,7 @@ bundle exec rake fs:compile
 ...
 ```
 
-* $().imagePopOut(); - This will take an image or set of images and setup events so that when you click on the images they will show you a full screen view of that image.
+#### $().imagePopOut(); - This will take an image or set of images and setup events so that when you click on the images they will show you a full screen view of that image.
 
 ```html
 ...
@@ -205,7 +207,7 @@ bundle exec rake fs:compile
 </script>
 ```
 
-* $().zoomIn(); - This will take an image or set of images and setup events so that when you hover over the image it will become larger.
+#### $().zoomIn(); - This will take an image or set of images and setup events so that when you hover over the image it will become larger.
 
 ```html
 ...
@@ -302,7 +304,7 @@ Examples can be found in the examples directory.
 * blog.html - An example of a crude 2 column blog layout, which was built with Fontstrap.
 * depth.html - Demonstrates the bg-gradient-* option available in fontstrap-depth css file.
 * fixed.html - An example of the fixed position css utilities, which can be found in Fontstrap.
-* grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap.
+* grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap. [https://jsfiddle.net/mlintern/xz8wqg9v/](https://jsfiddle.net/mlintern/xz8wqg9v/)
 * ice-cream.html - An example of the ice-cream color theme found in `dist/css/theme`.
 * icons.html - Displays current icons available from Font Awesome.
 * image-pop-out.html - An example of the imagePopOut jquery functionality.
