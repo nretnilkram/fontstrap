@@ -135,7 +135,7 @@ bundle exec rake fs:compile
 
 
 #### $().alignBlocks({countPerRow: 4, block: '.list-item', spaceBetween: 0}); - This will take a set of block and align them based on their height. The options and defaults are shown.
-[JSFiddle Demo](https://jsfiddle.net/mlintern/xz8wqg9v/)
+[JSFiddle Demo](https://jsfiddle.net/mlintern/xz8wqg9v/) [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/grid-list.html)
 
 ```html
 ...
@@ -163,6 +163,7 @@ bundle exec rake fs:compile
 ```
 
 #### $().offcanvasMenu({width: 20, responsive: false, mainBlock: '.offcanvas-main-content', triggerEl: '.offcanvas-menu-toggle', submenuTrigger: '.submenu-toggle', submenuEl: '.submenu'}); - This will take a menu and turn it into an offcanvas menu.  It has many customizable elements and can be set for different widths based on screen size with the standard break points.
+[Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/offcanvas.html)
 
 ```html
 ...
@@ -190,6 +191,7 @@ bundle exec rake fs:compile
 ```
 
 #### $().imagePopOut(); - This will take an image or set of images and setup events so that when you click on the images they will show you a full screen view of that image.
+[Demo](https://rawgit.com/nretnilkram/fontstrap/master/image-pop-out.html)
 
 ```html
 ...
@@ -208,6 +210,7 @@ bundle exec rake fs:compile
 ```
 
 #### $().zoomIn(); - This will take an image or set of images and setup events so that when you hover over the image it will become larger.
+[Demo](https://rawgit.com/nretnilkram/fontstrap/master/image-pop-out.html)
 
 ```html
 ...
@@ -299,21 +302,21 @@ var storage = new BrowserStorage(true);
 ### Examples:
 
 Examples can be found in the examples directory.
-* advanced.html - A large compilation of features and functionality that are included in Fontstrap.
-* basic.html - A very small starter site of Fontstrap.
-* blog.html - An example of a crude 2 column blog layout, which was built with Fontstrap.
-* depth.html - Demonstrates the bg-gradient-* option available in fontstrap-depth css file.
-* fixed.html - An example of the fixed position css utilities, which can be found in Fontstrap.
-* grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap. [https://jsfiddle.net/mlintern/xz8wqg9v/](https://jsfiddle.net/mlintern/xz8wqg9v/)
-* ice-cream.html - An example of the ice-cream color theme found in `dist/css/theme`.
-* icons.html - Displays current icons available from Font Awesome.
-* image-pop-out.html - An example of the imagePopOut jquery functionality.
-* kitchen-sink.html - An example of all features and functionality added and found within Fontstrap.
-* multi-level-dropdown.html - An example of the multi-level dropdowns, which was built with Fontstrap.
-* neon.html - An example of the neon color theme found in `dist/css/theme`.
-* offcanvas.html - An example of the offCanvas Menu feature in action.
-* square.html - An example of the square theme found in `dist/css/theme`, which removes all border radius css.
-* width.html - An example of the added widths w-*, which is included in Fontstrap.
+* advanced.html - A large compilation of features and functionality that are included in Fontstrap. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/advanced.html)
+* basic.html - A very small starter site of Fontstrap. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/basic.html)
+* blog.html - An example of a crude 2 column blog layout, which was built with Fontstrap. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/blog.html)
+* depth.html - Demonstrates the bg-gradient-* option available in fontstrap-depth css file. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/depth.html)
+* fixed.html - An example of the fixed position css utilities, which can be found in Fontstrap. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/fixed.html)
+* grid-list.html - An example of the alignBlocks query function which can be found in Fontstrap. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/grid-list.html)
+* ice-cream.html - An example of the ice-cream color theme found in `dist/css/theme`. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/ice-cream.html)
+* icons.html - Displays current icons available from Font Awesome. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/icons.html)
+* image-pop-out.html - An example of the imagePopOut jquery functionality. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/image-pop-out.html)
+* kitchen-sink.html - An example of all features and functionality added and found within Fontstrap. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/kitchen-sink.html)
+* multi-level-dropdown.html - An example of the multi-level dropdowns, which was built with Fontstrap. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/multi-level-dropdown.html)
+* neon.html - An example of the neon color theme found in `dist/css/theme`. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/neon.html)
+* offcanvas.html - An example of the offCanvas Menu feature in action. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/offcanvas.html)
+* square.html - An example of the square theme found in `dist/css/theme`, which removes all border radius css. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/square.html)
+* width.html - An example of the added widths w-*, which is included in Fontstrap. [Demo](https://rawgit.com/nretnilkram/fontstrap/master/example/width.html)
 
 
 ### Troubleshooting/Development:
