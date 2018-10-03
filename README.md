@@ -135,7 +135,7 @@ bundle exec rake fs:compile
 
 
 #### $().alignBlocks({countPerRow: 4, block: '.list-item', spaceBetween: 0}); - This will take a set of block and align them based on their height. The options and defaults are shown.
-[https://jsfiddle.net/mlintern/xz8wqg9v/](https://jsfiddle.net/mlintern/xz8wqg9v/)
+[JSFiddle Demo](https://jsfiddle.net/mlintern/xz8wqg9v/)
 
 ```html
 ...
