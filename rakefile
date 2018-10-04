@@ -14,6 +14,12 @@ def minify_js(source, output)
   File.open(output, 'w') { |file| file.write(Uglifier.compile(File.read(source))) }
 end
 
+def fs_jquery(file)
+  combine(['assets/javascripts/fontstrap/fontstrap_header.txt',
+           'assets/javascripts/fontstrap/fontstrap-utilities.js',
+           'assets/javascripts/fontstrap/' + file], 'dist/js/fontstrap/fs-' + file)
+end
+
 namespace :test do
   task :html do
     system 'open example/*.html'
@@ -50,8 +56,22 @@ namespace :fs do
              'assets/javascripts/fontstrap/keepOnScreen.jquery.js',
              'assets/javascripts/fontstrap/zoomIn.jquery.js'], 'tmp/fontstrap-features.js')
     minify_js('tmp/fontstrap-features.js', 'tmp/fontstrap-features.min.js')
+
     FileUtils.mkdir_p('dist/js') unless Dir.exist? 'dist/js'
     combine(['assets/javascripts/bootstrap/bootstrap.bundle.min.js', 'assets/javascripts/fontawesome/all.min.js', 'assets/javascripts/third_party/lodash.min.js', 'tmp/fontstrap-features.min.js'], 'dist/js/fontstrap.min.js')
+
+    FileUtils.mkdir_p('dist/js/fontstrap') unless Dir.exist? 'dist/js/fontstrap'
+    fs_jquery('storage.js')
+    fs_jquery('alignBlocks.jquery.js')
+    fs_jquery('fullScreenBackground.jquery.js')
+    fs_jquery('imagePopOut.jquery.js')
+    fs_jquery('offcanvasMenu.jquery.js')
+    fs_jquery('keepOnScreen.jquery.js')
+    fs_jquery('zoomIn.jquery.js')
+
+    FileUtils.mkdir_p('dist/js/third_party') unless Dir.exist? 'dist/js/third_party'
+    FileUtils.cp('assets/javascripts/third_party/lodash.min.js', 'dist/js/third_party/lodash.min.js')
+    FileUtils.cp('assets/javascripts/third_party/jquery.min.js', 'dist/js/third_party/jquery.min.js')
   end
 
   #####

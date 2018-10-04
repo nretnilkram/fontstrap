@@ -9,7 +9,7 @@
 
 * jQuery: 3.3.1
 * bootstrap.bundle.js: 4.1.3 (contains Popper.js: 1.14.3)
-* Lodash.js: 4.17.10
+* Lodash.js: 4.17.11
 * fontstrap-features.js - functionality added for the Fontstrap suite
 
 ### How to Customize:
