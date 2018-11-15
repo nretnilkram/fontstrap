@@ -21,7 +21,7 @@ jQuery.fn.offcanvasMenu = function(settings) {
 
 	var options = jQuery.extend({
 		width: 25, // percentage
-		xsWidth: 75,
+		xsWidth: 100,
 		smWidth: 50,
 		mdWidth: 33,
 		lgWidth: 25,
