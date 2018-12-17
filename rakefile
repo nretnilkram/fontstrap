@@ -22,7 +22,7 @@ end
 
 namespace :test do
   task :html do
-    system 'open example/*.html'
+    system 'open docs/examples/*.html'
   end
 
   task :sass do
