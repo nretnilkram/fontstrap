@@ -24,6 +24,8 @@
 			.flex-md-equal > * { -ms-flex: 1; flex: 1; }
 		}
 		.overflow-hidden { overflow: hidden; }
+		.code-example { width: 90%; height: 300px; border-radius: 21px 21px 0 0; padding: 10px; min-height: 100%; }
+		.code-example pre { height: 280px }
 	</style>
 </head>
 <body>
@@ -35,7 +37,20 @@
 		<ul>
 			<li><a href="#"><i class="fa fa-home fa-fw fa-lg mr-2"></i> Home</a></li>
 			<li class='submenu-toggle'>
-				<a href='#'><i class="fab fa-erlang fa-fw fa-lg mr-2"></i>Examples<i class="offcanvas-menu-secondary-closed fa fa-caret-right float-right"></i><i class="offcanvas-menu-secondary-open fa fa-caret-down float-right"></i></a>
+				<a href='#'><i class="fab fa-tumblr fa-fw fa-lg mr-2"></i> Features<i class="offcanvas-menu-secondary-closed fa fa-caret-right float-right"></i><i class="offcanvas-menu-secondary-open fa fa-caret-down float-right"></i></a>
+				<ul class="submenu">
+					<li><a target="_blank" href="examples/kitchen-sink.html">Full Screen Background</a></li>
+					<li><a target="_blank" href="examples/kitchen-sink.html">Navbar Keep on Screen</a></li>
+					<li><a target="_blank" href="examples/grid-list.html">Align Blocks</a></li>
+					<li><a target="_blank" href="examples/switch.html">Custom Switch</a></li>
+					<li><a target="_blank" href="examples/offcanvas.html">Offcanvas Menu</a></li>
+					<li><a target="_blank" href="examples/image-pop-out.html">Image Popout</a></li>
+					<li><a target="_blank" href="examples/image-pop-out.html">Zoom In</a></li>
+					<li><a target="_blank" href="examples/local-storage.html">Local Storage</a></li>
+				</ul>
+			</li>
+			<li class='submenu-toggle'>
+				<a href='#'><i class="fab fa-erlang fa-fw fa-lg mr-2"></i> Examples<i class="offcanvas-menu-secondary-closed fa fa-caret-right float-right"></i><i class="offcanvas-menu-secondary-open fa fa-caret-down float-right"></i></a>
 				<ul class="submenu">
 					<li><a target="_blank" href="examples/advanced.html"><i class="fa-text fa-fw fa-lg mr-2">A</i> Advanced</a></li>
 					<li><a target="_blank" href="examples/basic.html"><i class="fa-text fa-fw fa-lg mr-2">B</i> Basic</a></li>
@@ -53,7 +68,7 @@
 				</ul>
 			</li>
 			<li class='submenu-toggle'>
-				<a href='#'><i class="fab fa-tumblr fa-fw fa-lg mr-2"></i>Themes<i class="offcanvas-menu-secondary-closed fa fa-caret-right float-right"></i><i class="offcanvas-menu-secondary-open fa fa-caret-down float-right"></i></a>
+				<a href='#'><i class="fab fa-tumblr fa-fw fa-lg mr-2"></i> Themes<i class="offcanvas-menu-secondary-closed fa fa-caret-right float-right"></i><i class="offcanvas-menu-secondary-open fa fa-caret-down float-right"></i></a>
 				<ul class="submenu">
 					<li><a target="_blank" href="examples/ice-cream.html"><i class="fa-text fa-fw fa-lg mr-2">IC</i> Ice Cream</a></li>
 					<li><a target="_blank" href="examples/neon.html"><i class="fa-text fa-fw fa-lg mr-2">N</i> Neon</a></li>
@@ -92,17 +107,45 @@
 		<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
 			<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 				<div class="my-3 p-3">
-					<h2 class="display-5">Another headline</h2>
-					<p class="lead">And an even wittier subheading.</p>
+					<h2 class="display-5">Full Screen Background</h2>
+					<p class="lead"><a class="text-dark" href="examples/kitchen-sink.html">Example</a></p>
 				</div>
-				<div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+				<div class="bg-dark shadow-sm mx-auto code-example">
+					<pre class="text-white text-left"><code>...
+&lt;div class="full-screen-bg dark" data-image="dist/img/boot.jpg"&gt;
+	&lt;div class="title"&gt;Full Screen Dark Background Title&lt;/div&gt;
+&lt;/div&gt;
+...
+&lt;script&gt;
+	$('.full-screen-bg').fullScreenBackground();
+&lt;/script&gt;
+...</code></pre>
+				</div>
 			</div>
 			<div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
 				<div class="my-3 py-3">
-					<h2 class="display-5">Another headline</h2>
-					<p class="lead">And an even wittier subheading.</p>
+					<h2 class="display-5">Navbar Keep on Screen</h2>
+					<p class="lead"><a class="text-white" href="examples/kitchen-sink.html">Example</a></p>
 				</div>
-				<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+				<div class="bg-light shadow-sm mx-auto code-example">
+					<pre class="text-left"><code>...
+&lt;nav class="navbar navbar-expand-lg"&gt;
+	&lt;a class="navbar-brand" href="#"&gt;Title&lt;/a&gt;
+	&lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+		&lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+	&lt;/button&gt;
+	&lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+		&lt;ul class="nav navbar-nav"&gt;
+			&lt;li class="nav-item"&gt;&lt;a class="nav-link" target="_blank" href="#"&gt;Bootstrap&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/nav&gt;
+...
+&lt;script&gt;
+	$('.navbar').keepOnScreen();
+&lt;/script&gt;
+...</code></pre>
+				</div>
 			</div>
 		</div>
 
@@ -181,19 +224,19 @@
 				<div class="col-6 col-md">
 					<h5>Features</h5>
 					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="examples/kitchen-sink.html">Full Screen Background</a></li>
-						<li><a class="text-muted" href="examples/kitchen-sink.html">Navbar Keep on Screen</a></li>
-						<li><a class="text-muted" href="examples/grid-list.html">Align Blocks</a></li>
-						<li><a class="text-muted" href="examples/switch.html">Custom Switch</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/kitchen-sink.html">Full Screen Background</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/kitchen-sink.html">Navbar Keep on Screen</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/grid-list.html">Align Blocks</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/switch.html">Custom Switch</a></li>
 					</ul>
 				</div>
 				<div class="col-6 col-md">
 					<h5>Features</h5>
 					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="examples/offcanvas.html">Offcanvas Menu</a></li>
-						<li><a class="text-muted" href="examples/image-pop-out.html">Image Popout</a></li>
-						<li><a class="text-muted" href="examples/image-pop-out.html">Zoom In</a></li>
-						<li><a class="text-muted" href="examples/local-storage.html">Local Storage</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/offcanvas.html">Offcanvas Menu</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/image-pop-out.html">Image Popout</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/image-pop-out.html">Zoom In</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/local-storage.html">Local Storage</a></li>
 					</ul>
 				</div>
 			</div>
