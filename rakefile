@@ -96,6 +96,15 @@ namespace :fs do
   task reset: %i[cleanup compile]
 
   #####
+  # Copy dist dir to docs dir.
+  #####
+  def copy_dist
+    FileUtils.remove_dir('docs/dist') if Dir.exist? 'docs/dist'
+    FileUtils.mkdir_p('docs/dist') unless Dir.exist? 'docs/dist'
+    FileUtils.copy_entry('dist', 'docs/dist')
+  end
+
+  #####
   # This task will create the minified version of the fontstrap css.  It initilizes with setup.
   #####
   task compile: :setup do
@@ -104,6 +113,8 @@ namespace :fs do
     system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/theme/fontstrap-ice-cream.min.css --style compressed'
     system 'sass assets/stylesheets/_fontstrap_neon.scss dist/css/theme/fontstrap-neon.min.css --style compressed'
     system 'sass assets/stylesheets/_fontstrap_depth.scss dist/css/theme/fontstrap-depth.min.css --style compressed'
+
+    copy_dist
   end
 
   #####
@@ -115,6 +126,8 @@ namespace :fs do
     system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/theme/fontstrap-ice-cream.min.css'
     system 'sass assets/stylesheets/_fontstrap_neon.scss dist/css/theme/fontstrap-neon.min.css'
     system 'sass assets/stylesheets/_fontstrap_depth.scss dist/css/theme/fontstrap-depth.min.css'
+
+    copy_dist
   end
 
   #####
