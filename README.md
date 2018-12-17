@@ -41,7 +41,7 @@ bundle exec rake fs:compile
 </head>
 <body>
 	<!-- Insert HTML code here. -->
-	<script type="text/javascript" src="dist/js/jquery.min.js"></script> <!-- optional jQuery load if needed -->
+	<script type="text/javascript" src="dist/js/third_party/jquery.min.js"></script> <!-- optional jQuery load if needed -->
 	<script type="text/javascript" src="dist/js/fontstrap.min.js"></script>
 	<script>
 		$(document).ready(function() {
