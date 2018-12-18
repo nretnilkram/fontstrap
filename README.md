@@ -302,12 +302,13 @@ var storage = new BrowserStorage(true);
 
 ### Other CSS Default Variations:
 
+* Fonstrap Depth allows for the bg-gradient-* option and can be found in the minified file in `dist/css/theme` directory. fontstrap-depth.min.css [Demo](https://nretnilkram.github.io/fontstrap/master/example/depth.html)
 * Fonstrap Ice Cream can be found minified in `dist/css/theme` directory.  This variation sets the default color scheme to yummy ice cream looking colors like chocolate, vanilla, and strawberry. fonstrap-ice-cream.min.css [Demo](https://nretnilkram.github.io/fontstrap/examples/ice-cream.html)
 * Fonstrap Neon can be found minified in `dist/css/theme` directory.  This variation sets the default color scheme to vibrant neon colors. fonstrap-neon.min.css [Demo](https://nretnilkram.github.io/fontstrap/examples/neon.html)
 * Fontstrap Square can be found minified in `dist/css/theme` directory.  This variation sets the default border-radius for all elements to 0 so they have square corners. fonstrap-square.min.css [Demo](https://nretnilkram.github.io/fontstrap/examples/square.html)
 
 
-### Examples:
+### All Examples:
 
 Examples can be found in the `docs/examples` directory.
 * advanced.html - A large compilation of features and functionality that are included in Fontstrap. [Demo](https://nretnilkram.github.io/fontstrap/master/example/advanced.html)
