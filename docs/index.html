@@ -151,51 +151,136 @@
 		<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
 			<div class="bg-warning mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 				<div class="my-3 py-3">
-					<h2 class="display-5">Another headline</h2>
-					<p class="lead">And an even wittier subheading.</p>
+					<h2 class="display-5">Align Blocks</h2>
+					<p class="lead"><a class="text-dark" href="examples/grid-list.html">Example</a></p>
 				</div>
-				<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+				<div class="bg-light shadow-sm mx-auto code-example">
+					<pre class="text-left"><code>...
+&lt;div class="uneven-list"&gt;
+	&lt;div class="list-item" style="height: 327px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 132px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 284px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 272px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 93px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 112px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 241px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 108px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 243px;"&gt;&lt;/div&gt;
+	&lt;div class="list-item" style="height: 202px;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+...
+&lt;script&gt;
+	$('.uneven-list').alignBlocks({
+		countPerRow: 4,
+		block: '.list-item',
+		spaceBetween: 0
+	});
+&lt;/script&gt;
+...</code></pre>
+				</div>
 			</div>
 			<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 				<div class="my-3 p-3">
-					<h2 class="display-5">Another headline</h2>
-					<p class="lead">And an even wittier subheading.</p>
+					<h2 class="display-5">Custom Switch</h2>
+					<p class="lead"><a class="text-dark" href="examples/grid-list.html">Example</a></p>
 				</div>
-				<div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+				<div class="bg-dark shadow-sm mx-auto code-example">
+					<pre class="text-white text-left"><code>&lt;div class="fs-switch"&gt;
+	&lt;input type="checkbox" name="admin" value="user"&gt;
+	&lt;label class="fs-switch-magic"&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;&lt;i class="fa fa-times"&gt;&lt;/i&gt;&lt;div class="switch-handle"&gt;&lt;/div&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;label class="fs-switch-label"&gt;Admin &lt;i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Add Admin Role"&gt;&lt;/i&gt;&lt;/label&gt;</code></pre>
+				</div>
 			</div>
 		</div>
 
 		<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
 			<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 				<div class="my-3 p-3">
-					<h2 class="display-5">Another headline</h2>
-					<p class="lead">And an even wittier subheading.</p>
+					<h2 class="display-5">Offcanvas Menu</h2>
+					<p class="lead"><a class="text-dark" href="examples/grid-list.html">Example</a></p>
 				</div>
-				<div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+				<div class="bg-dark shadow-sm mx-auto code-example">
+					<pre class="text-white text-left"><code>...
+&lt;div class="offcanvas-menu bg-secondary"&gt;
+	&lt;div class="offcanvas-menu-header clearfix"&gt;
+		&lt;button class="pull-right offcanvas-menu-toggle p-3 text-white"&gt;&lt;i class="fa fa-times"&gt;&lt;/i&gt;&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-home fa-fw mr-2"&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li class='submenu-toggle'&gt;
+			&lt;a href='#'&gt;&lt;i class="fa fa-text fa-fw mr-2"&gt;WS&lt;/i&gt; With Sub&lt;/a&gt;
+			&lt;ul class="submenu"&gt;
+				&lt;li&gt;&lt;a target="_blank" href="#"&gt;&lt;i class="fa fa-text fa-fw mr-2"&gt;1&lt;/i&gt; One&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a target="_blank" href="#"&gt;&lt;i class="fa fa-text fa-fw mr-2"&gt;2&lt;/i&gt; Two&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-text fa-fw mr-2"&gt;A&lt;/i&gt; About&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="offcanvas-main-content"&gt;
+...
+&lt;/div&gt;
+...</code></pre>
+				</div>
 			</div>
 			<div class="bg-danger mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
 				<div class="my-3 py-3">
-					<h2 class="display-5">Another headline</h2>
-					<p class="lead">And an even wittier subheading.</p>
+					<h2 class="display-5">Image Popout</h2>
+					<p class="lead"><a class="text-white" href="examples/grid-list.html">Example</a></p>
 				</div>
-				<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+				<div class="bg-light shadow-sm mx-auto code-example">
+					<pre class="text-left"><code>...
+&lt;div class="card"&gt;
+	&lt;img class="card-img-top" src="img/example.jpg" alt="Image"&gt;
+	&lt;div class="card-body"&gt;
+		&lt;p class="card-text"&gt;Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+...
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function() {
+		$('.card-img-top').imagePopOut();
+	});
+&lt;/script&gt;</code></pre>
+				</div>
 			</div>
 		</div>
 
 		<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
 			<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
 				<div class="my-3 py-3">
-					<h2 class="display-5">Another headline</h2>
-					<p class="lead">And an even wittier subheading.</p>
+					<h2 class="display-5">Zoom In</h2>
+					<p class="lead"><a class="text-white" href="examples/grid-list.html">Example</a></p>
 				</div>
-				<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+				<div class="bg-light shadow-sm mx-auto code-example">
+					<pre class="text-left"><code>...
+&lt;div class="card"&gt;
+	&lt;img class="card-img-top" src="img/example.jpg" data-magnification-times="3" data-magnification-direction="right" alt="Image"&gt;
+	&lt;div class="card-body"&gt;
+		&lt;p class="card-text"&gt;Sed viverra augue tellus nulla sollicitudin scelerisque, scelerisque rutrum mauris pharetra tempor donec arcu, ante nunc ipsum donec nec dis vitae, ipsum tempor.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+...
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function() {
+		$('.card-img-top').zoomIn();
+	});
+&lt;/script&gt;</code></pre>
+				</div>
 			</div>
 			<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 				<div class="my-3 p-3">
-					<h2 class="display-5">Another headline</h2>
-					<p class="lead">And an even wittier subheading.</p>
+					<h2 class="display-5">Local Storage</h2>
+					<p class="lead"><a class="text-dark" href="examples/grid-list.html">Example</a></p>
 				</div>
-				<div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+				<div class="bg-dark shadow-sm mx-auto code-example">
+					<pre class="text-white text-left"><code>* storage.get(id) - get data from storage with id.
+* storage.save(id, data) - save data to storage with id and data to save.
+* storage.delete(id) - delete data from storage with id.
+* storage.exists(id) - check if data exist with given id.</code></pre>
+				</div>
 			</div>
 		</div>
 

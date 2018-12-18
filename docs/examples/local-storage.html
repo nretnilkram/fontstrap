@@ -42,6 +42,7 @@
 	    <label>Body</label>
 	    <textarea type="email" class="form-control persist body" rows="10"></textarea>
 	  </div>
+		<button class="btn btn-danger btn-sm float-right clear">Clear</button>
 	</div> <!-- container -->
 
 	<div class="footer text-center my-4">&copy; Fontstrap, 2018</div>
@@ -51,25 +52,32 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
+			var storageId = 'storage-example';
+			var empty = { title: "", body: "" };
 
 			function save () {
 				var data = { title: $('.title').val(), body: $('.body').val() };
 				console.log("Saved: ", data);
-				storage.save('storage-example', data);
+				storage.save(storageId, data);
 			}
 
-			var limitedSave = _.throttle(save, 1000);
+			var throttledSave = _.throttle(save, 1000);
 
 			function load () {
-				var data = storage.get('storage-example');
-				console.log("Retrieved: ", data);
+				var data = storage.exists(storageId) ? storage.get(storageId) : empty;
+				console.log("Loaded: ", data);
 				$('.title').val(data['title']);
 				$('.body').val(data['body']);
 			}
 
-			$('.persist').on('keyup', function () {
-				limitedSave();
-			});
+			function clear () {
+				storage.delete(storageId);
+				load();
+			}
+
+			$('.persist').on('keyup', throttledSave);
+
+			$('.clear').on('click', clear);
 
 			load();
 		});
