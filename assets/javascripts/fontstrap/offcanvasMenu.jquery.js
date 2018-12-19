@@ -1,4 +1,3 @@
-
 /*
  * offcanvasMenu takes a menu and turns it into an offcanvas menu.
  */
@@ -86,7 +85,8 @@ jQuery.fn.offcanvasMenu = function(settings) {
 		$('.fixed-top, .fixed-bottom').animate({ 'left': 0 }, duration); // Fix for items that are fixed to the top or bottom of page
 		self.animate({ width: 0 }, duration);
 		self.removeClass('menu-open');
-		$(options.mainBlock).removeClass('menu-open menu-open-' + menuWidth);
+		var openClasses = ['menu-open', 'menu-open-' + options.width, 'menu-open-' + options.xsWidth, 'menu-open-' + options.smWidth, 'menu-open-' + options.mdWidth, 'menu-open-' + options.lgWidth, 'menu-open-' + options.xlWidth]
+		$(options.mainBlock).removeClass(openClasses.join(' '));
 		if ( options.push ) {
 			$(options.mainBlock).removeClass('push');
 		}

@@ -52,3 +52,23 @@
     transform: translateX(-50%);
   }
 }
+
+// Text Size
+$rem-sizes: (
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem
+) !default;
+
+@each $rem-size in map-keys($rem-sizes) {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      .text#{$infix}-#{$rem-size} { font-size: #{$rem-size}rem; }
+      .text#{$infix}-#{$rem-size}-half { font-size: #{$rem-size + .5}rem; }
+    }
+  }
+}

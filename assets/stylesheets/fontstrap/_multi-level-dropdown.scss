@@ -1,3 +1,5 @@
+$black-fog: rgba(0, 0, 0, .15);
+
 .multi-level {
   max-height: 60vh;
   min-width: 18rem;
@@ -6,8 +8,7 @@
 
   .sub-menu {
     background-color: $white;
-    border: 1px solid $black;
-    border: 1px solid rgba(0, 0, 0, .15);
+    border: 1px solid $black-fog;
     border-radius: .25em;
     left: 100%;
     min-width: 18rem;
