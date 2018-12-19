@@ -16,9 +16,7 @@ $shadow-color: #d3d3d3;
   position: relative;
 
   .fs-radio-input {
-    -moz-appearance: none;
-    -o-appearance: none;
-    -webkit-appearance: none;
+    @include vendor(appearance, none);
     appearance: none;
     background: $radio-color;
     border: 0;
@@ -67,7 +65,7 @@ $shadow-color: #d3d3d3;
       }
     }
 
-    &~.fs-radio-label {
+    ~.fs-radio-label {
       color: $white;
       cursor: pointer;
       font-size: $label-font-size;
@@ -81,7 +79,7 @@ $shadow-color: #d3d3d3;
       z-index: 11;
     }
 
-    &~label {
+    ~label {
       display: inline-block;
       font-size: $label-font-size;
       position: relative;

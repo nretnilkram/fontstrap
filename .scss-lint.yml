@@ -1,0 +1,7 @@
+Linters:
+  NestingDepth:
+    enabled: false
+    max_depth: 5
+
+  VendorPrefix:
+    enabled: false

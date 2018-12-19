@@ -8,6 +8,10 @@
   padding: 10vh 10vw;
   width: 100%;
 
+  @include media-breakpoint-up(sm) {
+    background-attachment: fixed;
+  }
+
   &.half {
     height: 50vh;
     padding: 5vh 10vw;
@@ -16,9 +20,5 @@
   .title {
     font-size: 50px;
     text-align: center;
-  }
-
-  @include media-breakpoint-up(sm) {
-    background-attachment: fixed;
   }
 }
