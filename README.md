@@ -3,7 +3,7 @@
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
 * Bootstrap: 4.2.0 - http://getbootstrap.com
-* Font Awesome: 5.6.1 - https://fontawesome.com
+* Font Awesome: 5.6.3 - https://fontawesome.com
 
 ### Additionally some necessary and useful javascript files are also combined and loaded from a single file. Those tools and versions are:
 
