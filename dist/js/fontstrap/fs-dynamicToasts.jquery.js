@@ -25,25 +25,8 @@ var elementMissing = function (sel, methodName) {
 		return false;
 	}
 };
-/*
- * Helpers for dynamicToasts
- */
-
 jQuery.fn.dynamicToasts = function(settings) {
-
-	if ( no_lodash ) {
-		console.log('Lodash was not found and is required by the alignBlocks plugin.');
-		return false;
-	}
-
 	if (elementMissing($(this), "dynamicToasts()")) { return false; }
-
-	var styles = jQuery.extend({
-		success: 'success',
-		warning: 'warning',
-		info: 'info',
-		error: 'danger'
-	});
 
 	var positions = jQuery.extend({
 		right: 'ml-auto',
@@ -51,7 +34,6 @@ jQuery.fn.dynamicToasts = function(settings) {
 	});
 
 	var options = jQuery.extend({
-		style: 'info',
 		message: 'Fontstrap Toast',
 		headerText: 'Fontstrap',
 		customClass: 'fs-toast',
@@ -61,12 +43,15 @@ jQuery.fn.dynamicToasts = function(settings) {
 	}, settings);
 
 	var toast = $('<div>').addClass('toast ' + options.customClass + ' ' + positions[options.position]).data('autohide', options.autohide).data('delay', options.delay);
+
 	var toastHeader = $('<div>').addClass('toast-header');
 	toastHeader.append($('<img>').attr('src','../dist/img/favicon.png').addClass("rounded mr-2").attr('width', '20px'));
 	toastHeader.append($('<strong>').addClass('mr-auto').html(options.headerText));
 	toastHeader.append($('<small>').addClass('text-muted').html('now'));
 	toastHeader.append($('<button>').attr('data-dismiss', 'toast').addClass('ml-2 mb-1 close').attr('type', 'button').append($('<span>').html('&times;')));
+
 	var toastBody = $('<div>').addClass('toast-body').html(options.message);
+
 	toast.append(toastHeader).append(toastBody);
 
 	$(this).append(toast);
