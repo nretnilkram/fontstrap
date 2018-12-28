@@ -1,4 +1,3 @@
-
 /*
  * zoomIn takes the image and increases it's size in place.
  */

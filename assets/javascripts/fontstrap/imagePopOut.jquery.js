@@ -19,7 +19,7 @@ jQuery.fn.imagePopOut = function(settings){
 	}, settings);
 
 	var $self = $(this),
-	closeIcon = $('<i>').addClass('fa fa-times')
+	closeIcon = $('<i>').addClass('fa fa-times'),
 	closeBtn = $('<button>').addClass('image-pop-out-close-btn btn-sm bg-dark text-white').append(closeIcon);
 
 	if ($('.image-pop-out-backdrop').length == 0) {

@@ -50,6 +50,7 @@ namespace :fs do
              'assets/javascripts/fontstrap/storage.js',
              'assets/javascripts/fontstrap/fontstrap-utilities.js',
              'assets/javascripts/fontstrap/alignBlocks.jquery.js',
+             'assets/javascripts/fontstrap/dynamicToasts.jquery.js',
              'assets/javascripts/fontstrap/fullScreenBackground.jquery.js',
              'assets/javascripts/fontstrap/imagePopOut.jquery.js',
              'assets/javascripts/fontstrap/offcanvasMenu.jquery.js',
@@ -67,6 +68,7 @@ namespace :fs do
     FileUtils.mkdir_p('dist/js/fontstrap') unless Dir.exist? 'dist/js/fontstrap'
     fs_jquery('storage.js')
     fs_jquery('alignBlocks.jquery.js')
+    fs_jquery('dynamicToasts.jquery.js')
     fs_jquery('fullScreenBackground.jquery.js')
     fs_jquery('imagePopOut.jquery.js')
     fs_jquery('offcanvasMenu.jquery.js')

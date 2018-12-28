@@ -1,4 +1,3 @@
-
 /*
  * keepAtTop will keep the block, like a navbar, on the top of the screen when scrolling down past the block.  Or if the block is above the screen when page is loaded.
  */

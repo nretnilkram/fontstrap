@@ -1,4 +1,4 @@
-# Fontstrap v2.8.0
+# Fontstrap v2.8.1
 
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
@@ -136,6 +136,20 @@ bundle exec rake fs:compile
 	$('.navbar').keepOnScreen();
 </script>
 ...
+```
+
+#### $().dynamicToasts(message: 'Fontstrap Toast', headerText: 'Fontstrap', customClass: 'fs-toast', delay: 2000, autohide: true, position: 'right'); - This will generate a toast on the fly in the given container element.
+[Demo](https://nretnilkram.github.io/fontstrap/examples/local-storage.html)
+
+```html
+...
+<div class="toasts-container fixed top right w-100 p-2"></div>
+...
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.toasts-container').dynamicToasts({message: 'Saved'});
+	});
+</script>
 ```
 
 

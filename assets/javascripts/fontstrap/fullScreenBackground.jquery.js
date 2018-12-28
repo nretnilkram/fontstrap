@@ -1,4 +1,3 @@
-
 /*
  * fullScreenBackground will take the block and make it the full viewing window along with CSS that accomanies.
  */

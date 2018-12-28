@@ -1,5 +1,5 @@
 /*
- * Fontstrap v2.8.0 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v2.8.1 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2018 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -46,7 +46,7 @@ jQuery.fn.imagePopOut = function(settings){
 	}, settings);
 
 	var $self = $(this),
-	closeIcon = $('<i>').addClass('fa fa-times')
+	closeIcon = $('<i>').addClass('fa fa-times'),
 	closeBtn = $('<button>').addClass('image-pop-out-close-btn btn-sm bg-dark text-white').append(closeIcon);
 
 	if ($('.image-pop-out-backdrop').length == 0) {

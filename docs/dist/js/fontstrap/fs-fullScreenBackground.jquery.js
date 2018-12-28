@@ -1,5 +1,5 @@
 /*
- * Fontstrap v2.8.0 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v2.8.1 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2018 Mark Lintern
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -25,7 +25,6 @@ var elementMissing = function (sel, methodName) {
 		return false;
 	}
 };
-
 /*
  * fullScreenBackground will take the block and make it the full viewing window along with CSS that accomanies.
  */
