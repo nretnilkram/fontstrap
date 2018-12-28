@@ -43,6 +43,7 @@
 					<li><a target="_blank" href="examples/kitchen-sink.html"><i class="fa-text fa-fw fa-lg mr-2">F</i> Full Screen Background</a></li>
 					<li><a target="_blank" href="examples/kitchen-sink.html"><i class="fa-text fa-fw fa-lg mr-2">N</i> Navbar Keep on Screen</a></li>
 					<li><a target="_blank" href="examples/grid-list.html"><i class="fa-text fa-fw fa-lg mr-2">AB</i> Align Blocks</a></li>
+					<li><a target="_blank" href="examples/local-storage.html"><i class="fa-text fa-fw fa-lg mr-2">DT</i> Dynamic Toasts</a></li>
 					<li><a target="_blank" href="examples/switch.html"><i class="fa-text fa-fw fa-lg mr-2">CS</i> Custom Switch</a></li>
 					<li><a target="_blank" href="examples/offcanvas.html"><i class="fa-text fa-fw fa-lg mr-2">OM</i> Offcanvas Menu</a></li>
 					<li><a target="_blank" href="examples/image-pop-out.html"><i class="fa-text fa-fw fa-lg mr-2">IP</i> Image Popout</a></li>
@@ -282,6 +283,35 @@
 			</div>
 		</div>
 
+			<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+				<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+					<div class="my-3 p-3">
+						<h2 class="display-5">DynamicToasts</h2>
+						<p class="lead"><a class="text-dark" target="_blank" href="examples/local-storage.html">Example</a></p>
+					</div>
+					<div class="bg-dark shadow-sm mx-auto code-example">
+						<pre class="text-white text-left"><code>...
+&lt;div class="toasts-container fixed top right w-100 p-2"&gt;&lt;/div&gt;
+...
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function() {
+		$('.toasts-container').dynamicToasts({message: 'Saved'});
+	});
+&lt;/script&gt;</code></pre>
+					</div>
+				</div>
+				<div class="bg-success mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+					<div class="my-3 py-3">
+						<h2 class="display-5">More to Come</h2>
+						<p class="lead"><a class="text-white" target="_blank" href="#">Example</a></p>
+					</div>
+					<div class="bg-light shadow-sm mx-auto code-example">
+						<pre class="text-left"><code></code></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="container footer py-5 position-relative overflow-hidden">
 			<div class="big-logo big-logo-3"><img src="http://dev.nretnil.com/staging/tools/fontstrap/img/favicon.png" width="400px"/></div>
 			<div class="row">
@@ -307,19 +337,20 @@
 				<div class="col-6 col-md">
 					<h5>Features</h5>
 					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" target="_blank" href="examples/kitchen-sink.html">Full Screen Background</a></li>
-						<li><a class="text-muted" target="_blank" href="examples/kitchen-sink.html">Navbar Keep on Screen</a></li>
 						<li><a class="text-muted" target="_blank" href="examples/grid-list.html">Align Blocks</a></li>
 						<li><a class="text-muted" target="_blank" href="examples/switch.html">Custom Switch</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/local-storage.html">Dynamic Toasts</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/kitchen-sink.html">Full Screen Background</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/kitchen-sink.html">Navbar Keep on Screen</a></li>
 					</ul>
 				</div>
 				<div class="col-6 col-md">
 					<h5>Features</h5>
 					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" target="_blank" href="examples/offcanvas.html">Offcanvas Menu</a></li>
 						<li><a class="text-muted" target="_blank" href="examples/image-pop-out.html">Image Popout</a></li>
-						<li><a class="text-muted" target="_blank" href="examples/image-pop-out.html">Zoom In</a></li>
 						<li><a class="text-muted" target="_blank" href="examples/local-storage.html">Local Storage</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/offcanvas.html">Offcanvas Menu</a></li>
+						<li><a class="text-muted" target="_blank" href="examples/image-pop-out.html">Zoom In</a></li>
 					</ul>
 				</div>
 			</div>
