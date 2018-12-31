@@ -35,28 +35,39 @@ function now() {
 
 function since(initTime) {
 	var diff = now() - parseInt(initTime);
-
+	var value = diff;
+	var label = 'sec';
 	if ( diff > (60 * 60 * 24) ) { // days
-		return new Date(initTime * 1000);
+		value = _.floor(diff / (60 * 60 * 24));
+		label = 'day'
 	} else if ( diff > (60 * 60) ) { // hours
-		return _.floor(diff / (60 * 60)) + ' hrs ago';
-	} else if ( diff > 60 ) { // mins
-		return _.floor(diff / 60) + ' mins ago';
-	} else { // secs
-		return diff + ' secs ago';
+		value = _.floor(diff / (60 * 60));
+		label = 'hr'
+	} else if ( diff > 59 ) { // mins
+		value = _.floor(diff / 60)
+		label = 'min';
 	}
+	if ( value > 1 ) {
+		label += 's'
+	}
+	if ( value == 0 ) {
+		return 'now'
+	}
+	return value + ' ' + label + ' ago';
 }
 
 var intervals = [];
 
+function updateTime(element) {
+	if ( $('.' + element + ':visible').length > 0 ) {
+		$('.' + element + ':visible').updateToasts();
+	} else {
+		stopUpdate();
+	}
+}
+
 function startUpdate(element, interval) {
-	intervals.push(setInterval(function () {
-		if ( $('.' + element + ':visible').length > 0 ) {
-			$('.' + element + ':visible').updateToasts();
-		} else {
-			stopUpdate();
-		}
-	}, interval));
+	intervals.push(setInterval(updateTime, interval, element));
 }
 
 function stopUpdate() {
@@ -120,6 +131,7 @@ jQuery.fn.dynamicToasts = function(settings) {
 
 	$(this).append(toast);
 	$(toast).toast('show');
+	updateTime(options.customClass);
 	stopUpdate();
 	startUpdate(options.customClass, options.updateInterval);
 };
