@@ -138,7 +138,7 @@ bundle exec rake fs:compile
 ...
 ```
 
-#### $().dynamicToasts(message: 'Fontstrap Toast', headerText: 'Fontstrap', customClass: 'fs-toast', delay: 2000, autohide: true, position: 'right'); - This will generate a toast on the fly in the given container element.
+#### $().dynamicToasts(message: 'Fontstrap Toast', headerText: 'Fontstrap', customClass: 'fs-toast', delay: 2000, updateInterval: 5000, autohide: true, position: 'right'); - This will generate a toast on the fly in the given container element.
 [Demo](https://nretnilkram.github.io/fontstrap/examples/local-storage.html)
 
 ```html

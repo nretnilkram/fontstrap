@@ -64,7 +64,7 @@
 				var data = { title: $('.title').val(), body: $('.body').val() };
 				console.log("Saved: ", data);
 				storage.save(storageId, data);
-				$('.toasts-container').dynamicToasts({ message: 'Saved' });
+				$('.toasts-container').dynamicToasts({ autohide: false, message: 'Saved' });
 			}
 
 			var throttledSave = _.throttle(save, 1000, { 'leading': false });
