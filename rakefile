@@ -5,6 +5,8 @@ require 'bundler/setup'
 require 'fileutils'
 require 'uglifier'
 
+@dist_dir = 'docs/dist'
+
 def combine(list_of_files, output_file = 'out.txt')
   File.open(output_file, 'w') { |f| f.puts(list_of_files.map { |s| IO.read(s) }) }
   system "sed -i '' '/sourceMappingURL/d' ./#{output_file}"
@@ -17,7 +19,7 @@ end
 def fs_jquery(file)
   combine(['assets/javascripts/fontstrap/fontstrap_header.txt',
            'assets/javascripts/fontstrap/fontstrap-utilities.js',
-           'assets/javascripts/fontstrap/' + file], 'dist/js/fontstrap/fs-' + file)
+           'assets/javascripts/fontstrap/' + file], @dist_dir + '/js/fontstrap/fs-' + file)
 end
 
 namespace :test do
@@ -37,8 +39,16 @@ namespace :fs do
   # This task will create the necessary directories should they not already exist.  It initilizes with cleanup.
   #####
   task create_dirs: :cleanup do
-    FileUtils.mkdir_p('dist/css') unless Dir.exist? 'dist/css'
-    FileUtils.mkdir_p('dist/css/theme') unless Dir.exist? 'dist/css/theme'
+    FileUtils.mkdir_p(@dist_dir + '/css') unless Dir.exist? @dist_dir + '/css'
+    FileUtils.mkdir_p(@dist_dir + '/css/theme') unless Dir.exist? @dist_dir + '/css/theme'
+    FileUtils.mkdir_p(@dist_dir + '/img') unless Dir.exist? @dist_dir + '/img'
+  end
+
+  #####
+  # This task will copy images from assets to dist.
+  #####
+  task :move_images do
+    FileUtils.cp('assets/images/favicon.png', @dist_dir + '/img/favicon.png')
   end
 
   #####
@@ -58,14 +68,14 @@ namespace :fs do
              'assets/javascripts/fontstrap/zoomIn.jquery.js'], 'tmp/fontstrap-features.js')
     minify_js('tmp/fontstrap-features.js', 'tmp/fontstrap-features.min.js')
 
-    FileUtils.mkdir_p('dist/js') unless Dir.exist? 'dist/js'
+    FileUtils.mkdir_p(@dist_dir + '/js') unless Dir.exist? @dist_dir + '/js'
     combine(['assets/javascripts/third_party/popper.min.js',
              'assets/javascripts/bootstrap/bootstrap.min.js',
              'assets/javascripts/fontawesome/all.min.js',
              'assets/javascripts/third_party/lodash.min.js',
-             'tmp/fontstrap-features.min.js'], 'dist/js/fontstrap.min.js')
+             'tmp/fontstrap-features.min.js'], @dist_dir + '/js/fontstrap.min.js')
 
-    FileUtils.mkdir_p('dist/js/fontstrap') unless Dir.exist? 'dist/js/fontstrap'
+    FileUtils.mkdir_p(@dist_dir + '/js/fontstrap') unless Dir.exist? @dist_dir + '/js/fontstrap'
     fs_jquery('storage.js')
     fs_jquery('alignBlocks.jquery.js')
     fs_jquery('dynamicToasts.jquery.js')
@@ -75,21 +85,21 @@ namespace :fs do
     fs_jquery('keepOnScreen.jquery.js')
     fs_jquery('zoomIn.jquery.js')
 
-    FileUtils.mkdir_p('dist/js/third_party') unless Dir.exist? 'dist/js/third_party'
-    FileUtils.cp('assets/javascripts/third_party/lodash.min.js', 'dist/js/third_party/lodash.min.js')
-    FileUtils.cp('assets/javascripts/third_party/jquery.min.js', 'dist/js/third_party/jquery.min.js')
+    FileUtils.mkdir_p(@dist_dir + '/js/third_party') unless Dir.exist? @dist_dir + '/js/third_party'
+    FileUtils.cp('assets/javascripts/third_party/lodash.min.js', @dist_dir + '/js/third_party/lodash.min.js')
+    FileUtils.cp('assets/javascripts/third_party/jquery.min.js', @dist_dir + '/js/third_party/jquery.min.js')
   end
 
   #####
   # This task combines create_dirs and move_static_content.
   #####
-  task setup: %i[create_dirs create_js_files]
+  task setup: %i[create_dirs create_js_files move_images]
 
   #####
   # This task removes the dist directory.
   #####
   task :cleanup do
-    FileUtils.remove_dir 'dist/css' if Dir.exist? 'dist/css'
+    FileUtils.remove_dir @dist_dir + '/css' if Dir.exist? @dist_dir + '/css'
   end
 
   #####
@@ -98,72 +108,59 @@ namespace :fs do
   task reset: %i[cleanup compile]
 
   #####
-  # Copy dist dir to docs dir.
-  #####
-  def copy_dist
-    FileUtils.remove_dir('docs/dist') if Dir.exist? 'docs/dist'
-    FileUtils.mkdir_p('docs/dist') unless Dir.exist? 'docs/dist'
-    FileUtils.copy_entry('dist', 'docs/dist')
-  end
-
-  #####
   # This task will create the minified version of the fontstrap css.  It initilizes with setup.
   #####
   task compile: :setup do
-    system 'sass assets/stylesheets/_fontstrap.scss dist/css/fontstrap.min.css --style compressed'
-    system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/theme/fontstrap-square.min.css --style compressed'
-    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/theme/fontstrap-ice-cream.min.css --style compressed'
-    system 'sass assets/stylesheets/_fontstrap_neon.scss dist/css/theme/fontstrap-neon.min.css --style compressed'
-    system 'sass assets/stylesheets/_fontstrap_depth.scss dist/css/theme/fontstrap-depth.min.css --style compressed'
-
-    copy_dist
+    system 'sass assets/stylesheets/_fontstrap.scss ' + @dist_dir + '/css/fontstrap.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_square.scss ' + @dist_dir + '/css/theme/fontstrap-square.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss ' + @dist_dir + '/css/theme/fontstrap-ice-cream.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_neon.scss ' + @dist_dir + '/css/theme/fontstrap-neon.min.css --style compressed'
+    system 'sass assets/stylesheets/_fontstrap_depth.scss ' + @dist_dir + '/css/theme/fontstrap-depth.min.css --style compressed'
   end
 
   #####
   # This task will create the non minified version of the fontstrap css.  It initilizes with setup.
   #####
   task compile_full: :setup do
-    system 'sass assets/stylesheets/_fontstrap.scss dist/css/fontstrap.css'
-    system 'sass assets/stylesheets/_fontstrap_square.scss dist/css/theme/fontstrap-square.css'
-    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss dist/css/theme/fontstrap-ice-cream.min.css'
-    system 'sass assets/stylesheets/_fontstrap_neon.scss dist/css/theme/fontstrap-neon.min.css'
-    system 'sass assets/stylesheets/_fontstrap_depth.scss dist/css/theme/fontstrap-depth.min.css'
-
-    copy_dist
+    system 'sass assets/stylesheets/_fontstrap.scss ' + @dist_dir + '/css/fontstrap.css'
+    system 'sass assets/stylesheets/_fontstrap_square.scss ' + @dist_dir + '/css/theme/fontstrap-square.css'
+    system 'sass assets/stylesheets/_fontstrap_ice-cream.scss ' + @dist_dir + '/css/theme/fontstrap-ice-cream.min.css'
+    system 'sass assets/stylesheets/_fontstrap_neon.scss ' + @dist_dir + '/css/theme/fontstrap-neon.min.css'
+    system 'sass assets/stylesheets/_fontstrap_depth.scss ' + @dist_dir + '/css/theme/fontstrap-depth.min.css'
   end
 
   #####
   # This task will create the minified version of fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task :watch do
-    system 'sass --watch assets/stylesheets/_fontstrap.scss:dist/css/fontstrap.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_fontstrap.scss:' + @dist_dir + '/css/fontstrap.min.css --style compressed'
   end
 
   #####
   # This task will create the minified version of square fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task :watch_square do
-    system 'sass --watch assets/stylesheets/_fontstrap_square.scss:dist/css/fontstrap-square.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_fontstrap_square.scss:' + @dist_dir + '/css/fontstrap-square.min.css --style compressed'
   end
 
   #####
   # This task will create the minified version of ice cream fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task :watch_ice_cream do
-    system 'sass --watch assets/stylesheets/_fontstrap_ice-cream.scss:dist/css/theme/fontstrap-ice-cream.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_fontstrap_ice-cream.scss:' + @dist_dir + '/css/theme/fontstrap-ice-cream.min.css --style compressed'
   end
 
   #####
   # This task will create the minified version of neon fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task :watch_neon do
-    system 'sass --watch assets/stylesheets/_fontstrap_neon.scss:dist/css/theme/fontstrap-neon.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_fontstrap_neon.scss:' + @dist_dir + '/css/theme/fontstrap-neon.min.css --style compressed'
   end
 
   #####
   # This task will create the minified version of neon fontrap css and then continue to watch for more changes.  It initilizes with setup.  You will need to use `ctrl + c` to stop.
   #####
   task :watch_depth do
-    system 'sass --watch assets/stylesheets/_fontstrap_depth.scss:dist/css/theme/fontstrap-depth.min.css --style compressed'
+    system 'sass --watch assets/stylesheets/_fontstrap_depth.scss:' + @dist_dir + '/css/theme/fontstrap-depth.min.css --style compressed'
   end
 end
