@@ -1,6 +1,6 @@
 /*
- * Fontstrap v2.8.2 (https://github.com/nretnilkram/fontstrap)
- * Copyright 2018 Mark Lintern
+ * Fontstrap v2.9.0 (https://github.com/nretnilkram/fontstrap)
+ * Copyright 2019 Nretnil Kram
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
 
