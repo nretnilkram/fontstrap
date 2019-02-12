@@ -1,10 +1,10 @@
 .offcanvas-menu {
+  color: $white;
   height: 100%;
   left: 0;
   overflow-x: hidden;
   position: fixed;
   top: 0;
-  // transition: .5s;
   width: 0;
   z-index: 1;
 
@@ -47,8 +47,28 @@
     }
   }
 
+  .menu-lock-toggle,
+  .offcanvas-menu-toggle {
+    background: transparent;
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    opacity: .5;
+    padding: 0;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
   @each $color, $value in $theme-colors {
     &.bg-#{$color} {
+      @if $color == 'light' {
+        color: $navbar-light-color;
+      }
 
       ul {
 
@@ -68,6 +88,22 @@
           }
         }
       }
+    }
+  }
+
+  &.offcanvas-light {
+    color: $navbar-light-color;
+
+    ul {
+
+      a {
+        color: $navbar-light-color;
+      }
+    }
+
+    .menu-lock-toggle,
+    .offcanvas-menu-toggle {
+      color: $navbar-light-color;
     }
   }
 
@@ -125,21 +161,5 @@
       transition: width .5s;
       width: 50%;
     }
-  }
-}
-
-.menu-lock-toggle,
-.offcanvas-menu-toggle {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  font-size: 1.5rem;
-  line-height: 1;
-  opacity: .5;
-  padding: 0;
-
-  &:focus {
-    box-shadow: none;
-    outline: none;
   }
 }
