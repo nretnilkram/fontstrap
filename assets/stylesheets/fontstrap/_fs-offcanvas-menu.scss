@@ -1,5 +1,5 @@
 .offcanvas-menu {
-  color: $white;
+  color: $navbar-dark-color;
   height: 100%;
   left: 0;
   overflow-x: hidden;
@@ -15,7 +15,7 @@
 
     a {
       border-left: solid 4px transparent;
-      color: $white;
+      color: $navbar-dark-color;
       display: block;
       padding: 15px;
 
@@ -41,6 +41,7 @@
       }
 
       &:hover {
+        color: $navbar-dark-hover-color;
         background-color: $gray-700;
         border-color: $black;
       }
@@ -66,18 +67,13 @@
 
   @each $color, $value in $theme-colors {
     &.bg-#{$color} {
-      @if $color == 'light' {
-        color: $navbar-light-color;
-      }
 
       ul {
 
         a {
-          @if $color == 'light' {
-            color: $navbar-light-color;
-          }
 
           &:hover {
+            color: $navbar-dark-hover-color;
             background-color: darken($value, 15%);
             border-color: darken($value, 25%);
           }
@@ -91,13 +87,18 @@
     }
   }
 
-  &.offcanvas-light {
+  &.offcanvas-light,
+  &.navbar-light {
     color: $navbar-light-color;
 
     ul {
 
       a {
         color: $navbar-light-color;
+
+        &:hover {
+          color: $navbar-light-hover-color;
+        }
       }
     }
 
