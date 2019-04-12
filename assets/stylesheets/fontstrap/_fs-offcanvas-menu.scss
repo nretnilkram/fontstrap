@@ -73,7 +73,6 @@
         a {
 
           &:hover {
-            color: $navbar-dark-hover-color;
             background-color: darken($value, 15%);
             border-color: darken($value, 25%);
           }
@@ -81,6 +80,11 @@
           &.active {
             background-color: lighten($value, 10%);
             border-color: darken($value, 25%);
+            color: darken($value, 25%);
+
+            &:hover {
+              color: darken($value, 25%);
+            }
           }
         }
       }
