@@ -1,4 +1,4 @@
-# Fontstrap v2.16.0
+# Fontstrap v2.16.1
 
 ### Fontstrap is a combination project where the latest Bootstrap and Font Awesome css versions are combined into a single css file using their SASS versions.  Currently those versions are:
 
@@ -10,7 +10,7 @@
 * jQuery: 3.5.1 http://jquery.com
 * bootstrap.js: 4.6.0 http://getbootstrap.com
 * all.min.js: 5.15.2 https://fontawesome.com
-* Popper.js: 1.16.0 https://popper.js.org (umd)
+* Popper.js: 1.16.1 https://popper.js.org (umd)
 * Lodash.js: 4.17.20 https://lodash.com
 * fontstrap-features.js - functionality added for the Fontstrap suite
 
