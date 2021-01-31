@@ -1,6 +1,6 @@
 /*
- * Fontstrap v2.15.0 (https://github.com/nretnilkram/fontstrap)
- * Copyright 2020 Nretnil Kram
+ * Fontstrap v2.16.0 (https://github.com/nretnilkram/fontstrap)
+ * Copyright 2021 Nretnil Kram
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
 

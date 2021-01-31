@@ -1,6 +1,6 @@
 /*
- * Fontstrap v2.15.0 (https://github.com/nretnilkram/fontstrap)
- * Copyright 2020 Nretnil Kram
+ * Fontstrap v2.16.0 (https://github.com/nretnilkram/fontstrap)
+ * Copyright 2021 Nretnil Kram
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
 
@@ -86,14 +86,21 @@ jQuery.fn.imagePopOut = function(settings){
 			$(options.backdropEl).addClass('open');
 			$(options.imgContainerEl).addClass('open');
 
+			// Hide until Loaded
+			$('.image-pop-out-wrapper').hide();
+
 			// Center the image
-			var diff =  wHeight - $('.image-pop-out-wrapper').height();
-			if ( diff > 0 ){
-				var padding = diff / 2;
-				$('.image-pop-out-wrapper').css({'margin-top': padding});
-			} else {
-				$('.pop-out-image').css({'height': wHeight});
-			}
+			$('.image-pop-out-wrapper img').on("load", function () {
+				var diff =  wHeight - $('.image-pop-out-wrapper').height();
+				if ( diff > 0 ){
+					var padding = diff / 2;
+					$('.image-pop-out-wrapper').css({'margin-top': padding});
+				} else {
+					$('.pop-out-image').css({'height': wHeight});
+				}
+				// Show Once Loaded
+				$('.image-pop-out-wrapper').show();
+			})
 
 			// Do not hide on image click
 			$(options.imgContainerEl + ' img').click(function (e) {
