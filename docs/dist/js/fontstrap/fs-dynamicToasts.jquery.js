@@ -102,7 +102,7 @@ jQuery.fn.dynamicToasts = function(settings) {
 	}
 
 	var positions = jQuery.extend({
-		right: 'ml-auto',
+		right: 'ms-auto',
 		left: 'mr-auto'
 	});
 
