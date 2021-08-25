@@ -10,7 +10,7 @@
 * jQuery: 3.6.0 http://jquery.com
 * bootstrap.js: 5.1.0 http://getbootstrap.com
 * all.min.js: 5.15.4 https://fontawesome.com
-* Popper.js: 1.16.1 https://popper.js.org (umd)
+* Popper.js: 2.9.3 https://popper.js.org
 * Lodash.js: 4.17.21 https://lodash.com
 * fontstrap-features.js - functionality added for the Fontstrap suite
 
