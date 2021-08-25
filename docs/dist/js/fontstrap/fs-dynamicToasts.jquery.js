@@ -1,5 +1,5 @@
 /*
- * Fontstrap v2.16.2 (https://github.com/nretnilkram/fontstrap)
+ * Fontstrap v3.0.0 (https://github.com/nretnilkram/fontstrap)
  * Copyright 2021 Nretnil Kram
  * Licensed under MIT (https://github.com/nretnilkram/fontstrap/blob/master/LICENSE)
  */
@@ -102,7 +102,7 @@ jQuery.fn.dynamicToasts = function(settings) {
 	}
 
 	var positions = jQuery.extend({
-		right: 'ml-auto',
+		right: 'ms-auto',
 		left: 'mr-auto'
 	});
 
